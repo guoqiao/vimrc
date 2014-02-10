@@ -62,6 +62,7 @@ set so=7
 set ruler
 set number
 set autoread
+set hidden
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
