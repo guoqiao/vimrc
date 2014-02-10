@@ -1,0 +1,170 @@
+set nocompatible              " be iMproved
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" vim-scripts repos
+Bundle 'colorizer'
+Bundle 'L9'
+"Bundle 'FuzzyFinder'
+Bundle 'taglist.vim'
+Bundle 'The-NERD-Commenter'
+Bundle 'The-NERD-tree'
+Bundle 'snipMate'
+Bundle 'surround.vim'
+Bundle 'SuperTab'
+Bundle 'matchit.zip'
+Bundle 'molokai'
+Bundle 'mru.vim'
+"Bundle 'JavaScript-Indent'
+Bundle 'python.vim'
+Bundle 'pyflakes.vim'
+"Bundle 'Emmet.vim'
+Bundle 'YankRing.vim'
+
+" My bundles here:
+"
+" original repos on GitHub
+
+Bundle 'mattn/emmet-vim'
+Bundle 'tpope/vim-fugitive'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'tpope/vim-rails.git'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'Lokaltog/vim-powerline'
+
+" non-GitHub repos
+" Bundle 'git://git.wincent.com/command-t.git'
+" Git repos on your local machine (i.e. when working on your own plugin)
+" Bundle 'file:///Users/gmarik/path/to/plugin'
+" ...
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install (update) bundles
+" :BundleSearch(!) foo - search (or refresh cache first) for foo
+" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle commands are not allowed.
+
+syntax on
+syntax enable
+set so=7
+set ruler
+set number
+set autoread
+set clipboard=unnamed
+set wildignore=*.o,*~,*.pyc
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+set encoding=utf8
+set ffs=unix,dos,mac
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+" No annoying sound on errors
+set noerrorbells
+set visualbell
+set t_vb=
+set tm=500
+
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch 
+set showmatch 
+"noremap % v%
+
+set expandtab
+set smarttab
+set smartindent
+set shiftwidth=4
+set tabstop=4
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" Smart way to manage tabs
+nnoremap tl :tabnext<CR>
+nnoremap th :tabprev<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tc :tabclose<CR>
+nnoremap tm :tabmove<CR>
+nnoremap to :tabonly<CR>
+
+nnoremap ; :
+map 0 ^
+cmap w!! w !sudo tee % >/dev/null
+let Grep_Skip_Dirs = '.git gen media'
+
+let mapleader = ","
+nmap <leader>h :noh<cr>
+map <leader>v :e! ~/.vimrc<cr>
+autocmd! bufwritepost .vimrc source % " or :so %
+
+set t_Co=256
+colorscheme molokai
+
+map <leader>f :MRU<CR>
+
+" powerline
+set laststatus=2
+let g:Powline_symbols='fancy'
+
+" nerd tree
+let g:NERDTreeDirArrows=0
+map tt :NERDTreeToggle<cr>
+
+" taglist.vim
+set autochdir
+set tags=.tags;
+map TT :TlistToggle<cr>
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+let Tlist_Inc_Winwidth = 0
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+
+function! VisualSelection(direction, extra_filter) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.' . a:extra_filter)
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap <silent> * :call VisualSelection('f', '')<CR>
+vnoremap <silent> # :call VisualSelection('b', '')<CR>
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
