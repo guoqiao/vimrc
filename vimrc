@@ -114,8 +114,9 @@ let Grep_Skip_Dirs = '.git gen media'
 
 let mapleader = ","
 nmap <leader>h :noh<cr>
-map <leader>v :e! ~/.vimrc<cr>
-autocmd! bufwritepost .vimrc source % " or :so %
+nmap <silent> <leader>ev :e  $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+autocmd! bufwritepost .vimrc source %
 
 set t_Co=256
 colorscheme molokai
