@@ -65,7 +65,7 @@ set autoread
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+set whichwrap+=<,>
 set encoding=utf8
 set ffs=unix,dos,mac
 
