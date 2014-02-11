@@ -38,6 +38,7 @@ Bundle 'tpope/vim-fugitive'
 "Bundle 'tpope/vim-rails.git'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'othree/xml.vim'
 
 " non-GitHub repos
 " Bundle 'git://git.wincent.com/command-t.git'
@@ -85,7 +86,8 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch 
-set showmatch 
+let loaded_matchparen = 1 " disable math parenthiese
+"set showmatch 
 "noremap % v%
 
 set expandtab
@@ -107,6 +109,18 @@ nnoremap tn :tabnew<CR>
 nnoremap tc :tabclose<CR>
 nnoremap tm :tabmove<CR>
 nnoremap to :tabonly<CR>
+
+" disable arrows in escape mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" disable arrows in insert mode
+"imap <up> <nop>
+"imap <down> <nop>
+"imap <left> <nop>
+"imap <right> <nop>
 
 nnoremap ; :
 map 0 ^
