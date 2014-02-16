@@ -11,31 +11,23 @@ Bundle 'gmarik/vundle'
 " vim-scripts repos
 Bundle 'colorizer'
 Bundle 'L9'
-"Bundle 'FuzzyFinder'
 Bundle 'taglist.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 Bundle 'snipMate'
+Bundle 'repeat.vim'
 Bundle 'surround.vim'
 Bundle 'SuperTab'
 Bundle 'matchit.zip'
 Bundle 'molokai'
 Bundle 'mru.vim'
-"Bundle 'JavaScript-Indent'
 Bundle 'python.vim'
 Bundle 'pyflakes.vim'
-"Bundle 'Emmet.vim'
 Bundle 'YankRing.vim'
 
-" My bundles here:
-"
 " original repos on GitHub
-
 Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tpope/vim-rails.git'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'othree/xml.vim'
@@ -59,7 +51,7 @@ filetype plugin indent on     " required!
 
 syntax on
 syntax enable
-set so=7
+set so=10
 set ruler
 set number
 set autoread
@@ -68,6 +60,7 @@ set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
 set whichwrap+=<,>
+set iskeyword+=-
 set encoding=utf8
 set ffs=unix,dos,mac
 
@@ -95,6 +88,10 @@ set smarttab
 set smartindent
 set shiftwidth=4
 set tabstop=4
+
+" Treat long lines as break lines (useful when moving around in them)
+map j gj
+map k gk
 
 " Smart way to move between windows
 map <C-j> <C-W>j
