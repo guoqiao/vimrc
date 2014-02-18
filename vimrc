@@ -8,36 +8,33 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
+" find popular plugins here:
+"http://vim.sourceforge.net/scripts/script_search_results.php?order_by=rating
+
 " vim-scripts repos
+Bundle 'AutoComplPop'
 Bundle 'colorizer'
 Bundle 'L9'
-"Bundle 'FuzzyFinder'
 Bundle 'taglist.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 Bundle 'snipMate'
+Bundle 'repeat.vim'
 Bundle 'surround.vim'
 Bundle 'SuperTab'
 Bundle 'matchit.zip'
 Bundle 'molokai'
 Bundle 'mru.vim'
-"Bundle 'JavaScript-Indent'
 Bundle 'python.vim'
 Bundle 'pyflakes.vim'
-"Bundle 'Emmet.vim'
 Bundle 'YankRing.vim'
 
-" My bundles here:
-"
 " original repos on GitHub
-
 Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tpope/vim-rails.git'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'othree/xml.vim'
 
 " non-GitHub repos
 " Bundle 'git://git.wincent.com/command-t.git'
@@ -58,14 +55,16 @@ filetype plugin indent on     " required!
 
 syntax on
 syntax enable
-set so=7
+set so=10
 set ruler
 set number
 set autoread
+set hidden
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+set whichwrap+=<,>
+set iskeyword+=-
 set encoding=utf8
 set ffs=unix,dos,mac
 
@@ -84,7 +83,8 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch 
-set showmatch 
+let loaded_matchparen = 1 " disable math parenthiese
+"set showmatch 
 "noremap % v%
 
 set expandtab
@@ -92,6 +92,10 @@ set smarttab
 set smartindent
 set shiftwidth=4
 set tabstop=4
+
+" Treat long lines as break lines (useful when moving around in them)
+map j gj
+map k gk
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -107,18 +111,37 @@ nnoremap tc :tabclose<CR>
 nnoremap tm :tabmove<CR>
 nnoremap to :tabonly<CR>
 
+" disable arrows in escape mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" disable arrows in insert mode
+"imap <up> <nop>
+"imap <down> <nop>
+"imap <left> <nop>
+"imap <right> <nop>
+
 nnoremap ; :
 map 0 ^
 cmap w!! w !sudo tee % >/dev/null
 let Grep_Skip_Dirs = '.git gen media'
 
 let mapleader = ","
-nmap <leader>h :noh<cr>
-map <leader>v :e! ~/.vimrc<cr>
-autocmd! bufwritepost .vimrc source % " or :so %
+nmap <leader>h :noh<CR>
+nmap <silent> <leader>ev :e  $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+autocmd! bufwritepost .vimrc source %
 
 set t_Co=256
+colorscheme desert
+set background=dark
+
+try
 colorscheme molokai
+catch
+endtry
 
 map <leader>f :MRU<CR>
 
@@ -128,18 +151,26 @@ let g:Powline_symbols='fancy'
 
 " nerd tree
 let g:NERDTreeDirArrows=0
-map tt :NERDTreeToggle<cr>
+map tt :NERDTreeToggle<CR>
 
 " taglist.vim
 set autochdir
 set tags=.tags;
-map TT :TlistToggle<cr>
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+map TT :TlistToggle<CR>
 let Tlist_Inc_Winwidth = 0
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
+
+" YankRing
+let g:yankring_max_history = 10
+let g:yankring_min_element_length = 3
+let g:yankring_max_element_length = 500
+let g:yankring_share_between_instances = 1
+let g:yankring_history_dir = '$HOME'
+let g:yankring_history_file = '.yankring'
+map <leader>y :YRShow<CR>
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
@@ -168,3 +199,9 @@ vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+
+try
+source ~/.vim/local.vim
+catch
+endtry
+
