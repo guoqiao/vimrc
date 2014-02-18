@@ -9,6 +9,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " vim-scripts repos
+Bundle 'AutoComplPop'
 Bundle 'colorizer'
 Bundle 'L9'
 Bundle 'taglist.vim'
@@ -147,7 +148,7 @@ map tt :NERDTreeToggle<cr>
 set autochdir
 set tags=.tags;
 map TT :TlistToggle<cr>
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+"let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 let Tlist_Inc_Winwidth = 0
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
