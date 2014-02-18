@@ -163,6 +163,15 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 
+" YankRing
+let g:yankring_max_history = 10
+let g:yankring_min_element_length = 3
+let g:yankring_max_element_length = 500
+let g:yankring_share_between_instances = 1
+let g:yankring_history_dir = '$HOME'
+let g:yankring_history_file = '.yankring'
+map <leader>y :YRShow<CR>
+
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
     execute "normal! vgvy"
