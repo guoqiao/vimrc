@@ -8,6 +8,9 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
+" find popular plugins here:
+"http://vim.sourceforge.net/scripts/script_search_results.php?order_by=rating
+
 " vim-scripts repos
 Bundle 'AutoComplPop'
 Bundle 'colorizer'
@@ -126,13 +129,19 @@ cmap w!! w !sudo tee % >/dev/null
 let Grep_Skip_Dirs = '.git gen media'
 
 let mapleader = ","
-nmap <leader>h :noh<cr>
+nmap <leader>h :noh<CR>
 nmap <silent> <leader>ev :e  $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 autocmd! bufwritepost .vimrc source %
 
 set t_Co=256
+colorscheme desert
+set background=dark
+
+try
 colorscheme molokai
+catch
+endtry
 
 map <leader>f :MRU<CR>
 
@@ -142,13 +151,12 @@ let g:Powline_symbols='fancy'
 
 " nerd tree
 let g:NERDTreeDirArrows=0
-map tt :NERDTreeToggle<cr>
+map tt :NERDTreeToggle<CR>
 
 " taglist.vim
 set autochdir
 set tags=.tags;
-map TT :TlistToggle<cr>
-"let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+map TT :TlistToggle<CR>
 let Tlist_Inc_Winwidth = 0
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
@@ -182,3 +190,9 @@ vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+
+try
+source ~/.vim/local.vim
+catch
+endtry
+
