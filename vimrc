@@ -166,7 +166,6 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 " YankRing
 let g:yankring_max_history = 10
 let g:yankring_min_element_length = 3
-let g:yankring_max_element_length = 500
 let g:yankring_share_between_instances = 1
 let g:yankring_history_dir = '$HOME'
 let g:yankring_history_file = '.yankring'
