@@ -175,8 +175,8 @@ let g:yankring_history_file = '.yankring'
 map <leader>y :YRShow<CR>
 
 " support snippets for django
-autocmd FileType python set ft=python.django
-autocmd FileType html set ft=htmldjango.html
+"autocmd FileType python set ft=python.django
+"autocmd FileType html set ft=htmldjango.html
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
