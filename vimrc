@@ -13,28 +13,31 @@ Bundle 'gmarik/vundle'
 
 " vim-scripts repos
 Bundle 'AutoComplPop'
-Bundle 'colorizer'
 Bundle 'L9'
-Bundle 'taglist.vim'
+Bundle 'SuperTab'
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
-Bundle 'snipMate'
-Bundle 'repeat.vim'
-Bundle 'surround.vim'
-Bundle 'SuperTab'
+Bundle 'YankRing.vim'
+Bundle 'colorizer'
 Bundle 'matchit.zip'
 Bundle 'molokai'
 Bundle 'mru.vim'
-Bundle 'python.vim'
 Bundle 'pyflakes.vim'
-Bundle 'YankRing.vim'
+Bundle 'python.vim'
+Bundle 'repeat.vim'
+Bundle 'surround.vim'
+Bundle 'taglist.vim'
 
 " original repos on GitHub
-Bundle 'mattn/emmet-vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'plasticboy/vim-markdown'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
+Bundle "tomtom/tlib_vim"
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'mattn/emmet-vim'
 Bundle 'othree/xml.vim'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'tpope/vim-fugitive'
 
 " non-GitHub repos
 " Bundle 'git://git.wincent.com/command-t.git'
@@ -170,6 +173,12 @@ let g:yankring_share_between_instances = 1
 let g:yankring_history_dir = '$HOME'
 let g:yankring_history_file = '.yankring'
 map <leader>y :YRShow<CR>
+
+function! CmdLine(str)
+    exe "menu Foo.Bar :" . a:str
+    emenu Foo.Bar
+    unmenu Foo
+endfunction 
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
