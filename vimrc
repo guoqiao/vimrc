@@ -160,6 +160,7 @@ map tt :NERDTreeToggle<CR>
 set autochdir
 set tags=.tags;
 map TT :TlistToggle<CR>
+let Tlist_Ctags_Cmd = '~/.vim/bin/ctags'
 let Tlist_Inc_Winwidth = 0
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
