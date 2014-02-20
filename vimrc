@@ -151,7 +151,7 @@ let g:Powline_symbols='fancy'
 
 " nerd tree
 let g:NERDTreeDirArrows=0
-map tt :NERDTreeToggle %<CR>
+map tt :NERDTreeToggle<CR>
 
 " taglist.vim
 set autochdir
