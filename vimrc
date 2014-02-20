@@ -28,8 +28,9 @@ Bundle 'repeat.vim'
 Bundle 'surround.vim'
 Bundle 'taglist.vim'
 
-" original repos on GitHub
-Bundle "SirVer/ultisnips"
+" GitHub
+" add snippets for django py and html, and fix taglist
+Bundle "guoqiao/snipmate.vim" 
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/emmet-vim'
 Bundle 'plasticboy/vim-markdown'
@@ -134,13 +135,13 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 autocmd! bufwritepost .vimrc source %
 
 set t_Co=256
-colorscheme desert
-set background=dark
 
 try
-colorscheme molokai
+    colorscheme molokai
 catch
+    colorscheme desert
 endtry
+set background=dark
 
 map <leader>f :MRU<CR>
 
