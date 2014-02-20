@@ -14,7 +14,6 @@ Bundle 'gmarik/vundle'
 " vim-scripts repos
 Bundle 'AutoComplPop'
 Bundle 'L9'
-" Bundle 'SuperTab'
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 Bundle 'YankRing.vim'
@@ -29,10 +28,7 @@ Bundle 'surround.vim'
 Bundle 'taglist.vim'
 
 " original repos on GitHub
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
-Bundle "tomtom/tlib_vim"
+Bundle "SirVer/ultisnips"
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/emmet-vim'
 Bundle 'othree/xml.vim'
