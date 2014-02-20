@@ -14,7 +14,7 @@ Bundle 'gmarik/vundle'
 " vim-scripts repos
 Bundle 'AutoComplPop'
 Bundle 'L9'
-Bundle 'SuperTab'
+" Bundle 'SuperTab'
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 Bundle 'YankRing.vim'
@@ -173,6 +173,10 @@ let g:yankring_share_between_instances = 1
 let g:yankring_history_dir = '$HOME'
 let g:yankring_history_file = '.yankring'
 map <leader>y :YRShow<CR>
+
+" support snippets for django
+autocmd FileType python set ft=python.django
+autocmd FileType html set ft=htmldjango.html
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
