@@ -63,7 +63,6 @@ set hidden
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
-set whichwrap+=<,>
 set iskeyword+=-
 set encoding=utf8
 set ffs=unix,dos,mac
@@ -84,8 +83,6 @@ set smartcase
 set hlsearch
 set incsearch 
 let loaded_matchparen = 1 " disable math parenthiese
-"set showmatch 
-"noremap % v%
 
 set expandtab
 set smarttab
@@ -125,16 +122,21 @@ map <right> <nop>
 
 nnoremap ; :
 map 0 ^
+map 9 $
 cmap w!! w !sudo tee % >/dev/null
 let Grep_Skip_Dirs = '.git gen media'
 
 let mapleader = ","
 nmap <leader>h :noh<CR>
+nmap <leader>e :e!<CR>
 nmap <silent> <leader>ev :e  $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 autocmd! bufwritepost .vimrc source %
 
 set t_Co=256
+"set guifont=Menlo:h18
+set guifont=Monaco:h20
+set guioptions-=r 
 
 try
     colorscheme molokai
@@ -211,7 +213,7 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
 try
-source ~/.vim/local.vim
+    source ~/.vim/local.vim
 catch
 endtry
 
