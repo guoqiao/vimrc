@@ -12,11 +12,12 @@ Bundle 'gmarik/vundle'
 "http://vim.sourceforge.net/scripts/script_search_results.php?order_by=rating
 
 " vim-scripts repos
-Bundle 'AutoComplPop'
 Bundle 'L9'
+Bundle 'AutoComplPop'
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 Bundle 'YankRing.vim'
+Bundle 'cocoa.vim'
 Bundle 'colorizer'
 Bundle 'matchit.zip'
 Bundle 'molokai'
@@ -123,7 +124,7 @@ map <right> <nop>
 nnoremap ; :
 map 0 ^
 map 9 $
-cmap w!! w !sudo tee % >/dev/null
+cmap w!! w !sudo tee % 
 let Grep_Skip_Dirs = '.git gen media'
 
 let mapleader = ","
@@ -167,7 +168,7 @@ let Tlist_Use_Right_Window = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 
 " YankRing
-let g:yankring_max_history = 10
+let g:yankring_max_history = 30
 let g:yankring_min_element_length = 3
 let g:yankring_share_between_instances = 1
 let g:yankring_history_dir = '$HOME'
