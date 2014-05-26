@@ -12,36 +12,30 @@ Bundle 'gmarik/vundle'
 "http://vim.sourceforge.net/scripts/script_search_results.php?order_by=rating
 
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'AutoComplPop'
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
-Bundle 'YankRing.vim'
-Bundle 'cocoa.vim'
-Bundle 'colorizer'
-Bundle 'matchit.zip'
-Bundle 'molokai'
-Bundle 'peaksea'
-Bundle 'mru.vim'
-Bundle 'pyflakes.vim'
-Bundle 'python.vim'
-Bundle 'repeat.vim'
-Bundle 'surround.vim'
 Bundle 'taglist.vim'
 
+" ctrp and yr both use ctrl+p, last one will override
+Bundle 'YankRing.vim'
+Bundle 'kien/ctrlp.vim'
+
+Bundle 'molokai'
+Bundle 'peaksea'
+Bundle 'colorizer'
+Bundle 'pyflakes.vim'
+Bundle 'python.vim'
+Bundle 'plasticboy/vim-markdown'
+
+Bundle 'matchit.zip'
+Bundle 'repeat.vim'
+Bundle 'surround.vim'
+
 " GitHub
-" add snippets for django py and html, and fix taglist
-Bundle "guoqiao/snipmate.vim" 
+Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/emmet-vim'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'tpope/vim-fugitive'
-
-" non-GitHub repos
-" Bundle 'git://git.wincent.com/command-t.git'
-" Git repos on your local machine (i.e. when working on your own plugin)
-" Bundle 'file:///Users/gmarik/path/to/plugin'
-" ...
+Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on     " required!
 "
@@ -59,8 +53,10 @@ syntax enable
 set so=10
 set ruler
 set number
-set autoread
+set nowrap
 set hidden
+set autoread
+set autochdir
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
@@ -69,8 +65,8 @@ set encoding=utf8
 set ffs=unix,dos,mac
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
 set nowb
+set nobackup
 set noswapfile
 
 " No annoying sound on errors
@@ -92,14 +88,14 @@ set shiftwidth=4
 set tabstop=4
 
 " Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+noremap j gj
+noremap k gk
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
 
 " Smart way to manage tabs
 nnoremap tl :tabnext<CR>
@@ -110,10 +106,10 @@ nnoremap tm :tabmove<CR>
 nnoremap to :tabonly<CR>
 
 " disable arrows in escape mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+"map <up> <nop>
+"map <down> <nop>
+"map <left> <nop>
+"map <right> <nop>
 
 " disable arrows in insert mode
 "imap <up> <nop>
@@ -128,10 +124,10 @@ cmap w!! w !sudo tee %
 let Grep_Skip_Dirs = '.git gen media'
 
 let mapleader = ","
-nmap <leader>h :noh<CR>
-nmap <leader>e :e!<CR>
-nmap <silent> <leader>ev :e  $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nnoremap <leader>h :noh<CR>
+nnoremap <leader>e :e!<CR>
+nnoremap <silent> <leader>ev :e  $MYVIMRC<CR>
+nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 autocmd! bufwritepost .vimrc source %
 
 set t_Co=256
@@ -146,7 +142,16 @@ catch
 endtry
 set background=dark
 
-map <leader>f :MRU<CR>
+" YouCompleteMe
+nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
 
 " powerline
 set laststatus=2
@@ -157,10 +162,7 @@ let g:NERDTreeDirArrows=0
 map tt :NERDTreeToggle<CR>
 
 " taglist.vim
-set autochdir
-set tags=.tags;
 map TT :TlistToggle<CR>
-let Tlist_Ctags_Cmd = '~/.vim/bin/ctags'
 let Tlist_Inc_Winwidth = 0
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
@@ -168,16 +170,12 @@ let Tlist_Use_Right_Window = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 
 " YankRing
+map <C-y> :YRShow<CR>
 let g:yankring_max_history = 30
 let g:yankring_min_element_length = 3
 let g:yankring_share_between_instances = 1
 let g:yankring_history_dir = '$HOME'
 let g:yankring_history_file = '.yankring'
-map <leader>y :YRShow<CR>
-
-" support snippets for django
-"autocmd FileType python set ft=python.django
-"autocmd FileType html set ft=htmldjango.html
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
@@ -217,4 +215,3 @@ try
     source ~/.vim/local.vim
 catch
 endtry
-
