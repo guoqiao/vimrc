@@ -171,11 +171,6 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 
 " YankRing
 map <C-y> :YRShow<CR>
-let g:yankring_max_history = 30
-let g:yankring_min_element_length = 3
-let g:yankring_share_between_instances = 1
-let g:yankring_history_dir = '$HOME'
-let g:yankring_history_file = '.yankring'
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
