@@ -16,7 +16,7 @@ Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 
-" ctrp and yr both use ctrl+p, last one will override
+" ctrlp and yr both use ctrl+p, last one will override
 Bundle 'YankRing.vim'
 Bundle 'kien/ctrlp.vim'
 
@@ -35,7 +35,10 @@ Bundle 'surround.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/emmet-vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'ervandew/supertab'
 
 filetype plugin indent on     " required!
 "
@@ -145,8 +148,10 @@ set background=dark
 " YouCompleteMe
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+let g:UltiSnipsExpandTrigger="<c-j>"
+
 " CtrlP
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
@@ -170,7 +175,7 @@ let Tlist_Use_Right_Window = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 
 " YankRing
-map <C-y> :YRShow<CR>
+map <leader>y :YRShow<CR>
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
