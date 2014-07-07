@@ -33,7 +33,8 @@ Bundle 'surround.vim'
 
 " GitHub
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'mattn/emmet-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
@@ -160,7 +161,7 @@ let g:ctrlp_prompt_mappings = {
 
 " powerline
 set laststatus=2
-let g:Powline_symbols='fancy'
+"let g:Powline_symbols='fancy'
 
 " nerd tree
 let g:NERDTreeDirArrows=0
