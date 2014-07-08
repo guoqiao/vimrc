@@ -61,7 +61,7 @@ set nowrap
 set hidden
 set autoread
 set autochdir
-set clipboard=unnamed
+set clipboard=unnamedplus
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
 set iskeyword+=-
