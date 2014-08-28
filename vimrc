@@ -137,7 +137,7 @@ autocmd! bufwritepost .vimrc source %
 set t_Co=256
 "set guifont=Menlo:h18
 set guifont=Monaco:h20
-set guioptions-=r 
+set guioptions-=L
 
 try
     colorscheme molokai
