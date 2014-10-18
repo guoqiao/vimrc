@@ -142,6 +142,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 
 " YankRing
 map <leader>y :YRShow<CR>
+let yankring_min_element_length=4
 
 " nerd tree
 let g:NERDTreeDirArrows=0
