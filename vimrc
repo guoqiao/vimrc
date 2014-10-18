@@ -33,13 +33,12 @@ Bundle 'surround.vim'
 
 " GitHub
 Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-powerline'
 Bundle 'bling/vim-airline'
 Bundle 'mattn/emmet-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'ervandew/supertab'
+Bundle 'mileszs/ack.vim'
 
 filetype plugin indent on     " required!
 "
@@ -60,13 +59,13 @@ set number
 set nowrap
 set hidden
 set autoread
-set autochdir
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
 set iskeyword+=-
 set encoding=utf8
 set ffs=unix,dos,mac
+set laststatus=2
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nowb
@@ -109,34 +108,22 @@ nnoremap tc :tabclose<CR>
 nnoremap tm :tabmove<CR>
 nnoremap to :tabonly<CR>
 
-" disable arrows in escape mode
-"map <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
-
-" disable arrows in insert mode
-"imap <up> <nop>
-"imap <down> <nop>
-"imap <left> <nop>
-"imap <right> <nop>
-
 nnoremap ; :
 map 0 ^
 map 9 $
-cmap w!! w !sudo tee % 
-let Grep_Skip_Dirs = '.git gen media'
 
 let mapleader = ","
 nnoremap <leader>h :noh<CR>
-nnoremap <leader>e :e!<CR>
+nnoremap <leader>e :e<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>x :x<CR>
 nnoremap <silent> <leader>ev :e  $MYVIMRC<CR>
 nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
-autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost vimrc source %
 
 set t_Co=256
-"set guifont=Menlo:h18
 set guifont=Monaco:h20
+set guioptions-=r
 set guioptions-=L
 
 try
@@ -146,26 +133,25 @@ catch
 endtry
 set background=dark
 
+" plugin settings
+
 " YouCompleteMe
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 
-" CtrlP
-let g:ctrlp_map = '<c-f>'
-let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-    \ }
-
-" powerline
-set laststatus=2
-"let g:Powline_symbols='fancy'
+" YankRing
+map <leader>y :YRShow<CR>
 
 " nerd tree
 let g:NERDTreeDirArrows=0
 map tt :NERDTreeToggle<CR>
+
+" CtrlP
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
 
 " taglist.vim
 map TT :TlistToggle<CR>
@@ -174,9 +160,6 @@ let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
-
-" YankRing
-map <leader>y :YRShow<CR>
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
@@ -211,8 +194,3 @@ vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
-
-try
-    source ~/.vim/local.vim
-catch
-endtry
