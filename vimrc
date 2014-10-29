@@ -35,6 +35,7 @@ Bundle 'surround.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
 Bundle 'mattn/emmet-vim'
+Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'Valloric/YouCompleteMe'
@@ -59,6 +60,7 @@ set number
 set nowrap
 set hidden
 set autoread
+set autochdir
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
@@ -138,7 +140,17 @@ set background=dark
 " YouCompleteMe
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-let g:UltiSnipsExpandTrigger="<c-j>"
+"au BufNewFile,BufRead *.html set filetype=htmldjango
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " YankRing
 map <leader>y :YRShow<CR>
@@ -147,12 +159,6 @@ let yankring_min_element_length=4
 " nerd tree
 let g:NERDTreeDirArrows=0
 map tt :NERDTreeToggle<CR>
-
-" CtrlP
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-    \ }
 
 " taglist.vim
 map TT :TlistToggle<CR>
