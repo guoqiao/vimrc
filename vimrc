@@ -37,7 +37,8 @@ Bundle 'bling/vim-airline'
 Bundle 'mattn/emmet-vim'
 Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+"Bundle 'honza/vim-snippets'
+Bundle 'guoqiao/snipmate_for_django'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'mileszs/ack.vim'
 
@@ -141,6 +142,8 @@ set background=dark
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "au BufNewFile,BufRead *.html set filetype=htmldjango
+autocmd FileType python set ft=python.django " For SnipMate
+autocmd FileType html set ft=htmldjango.html " For SnipMate
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -162,6 +165,7 @@ map tt :NERDTreeToggle<CR>
 
 " taglist.vim
 map TT :TlistToggle<CR>
+"let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Inc_Winwidth = 0
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
