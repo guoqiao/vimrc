@@ -205,3 +205,26 @@ vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+
+"cscope
+nmap <F3>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <F3>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <F3>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <F3>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <F3>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <F3>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <F3>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <F3>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+
+"Auto Load CScope, search ancestor dirs if needed
+function! LoadCscope()
+  let db = findfile("cscope.out", ".;")
+  if (!empty(db))
+    let path = strpart(db, 0, match(db, "/cscope.out$"))
+    set nocscopeverbose " suppress 'duplicate connection' error
+    exe "cs add " . db . " " . path
+    set cscopeverbose
+  endif
+endfunction
+"au BufEnter /* call LoadCscope()
+nmap <F3>l :call LoadCscope()<CR>
