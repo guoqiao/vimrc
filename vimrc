@@ -1,22 +1,32 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
 " let Vundle manage Vundle
 " required! 
+if has('win32')
+	set rtp+=$VIM/vimfiles/bundle/vundle/
+	call vundle#rc('$VIM/vimfiles/bundle/')
+else
+	set rtp+=~/.vim/bundle/vundle/
+	call vundle#rc()
+endif
+
 Bundle 'gmarik/vundle'
 
 " find popular plugins here:
 "http://vim.sourceforge.net/scripts/script_search_results.php?order_by=rating
+
+"below plugin conflict, need to switch manually
+if v:version > 703 || (v:version == 703 && has('patch584'))
+	Bundle "Valloric/YouCompleteMe"
+endif
+Bundle 'wesleyche/SrcExpl'
 
 " vim-scripts repos
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'wesleyche/SrcExpl'
 
 " ctrlp and yr both use ctrl+p, last one will override
 Bundle 'YankRing.vim'
@@ -41,8 +51,10 @@ Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
 "Bundle 'honza/vim-snippets'
 Bundle 'guoqiao/snipmate_for_django'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'mileszs/ack.vim'
+
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'terryma/vim-multiple-cursors'
 
 filetype plugin indent on     " required!
 "
@@ -71,8 +83,6 @@ set iskeyword+=-
 set encoding=utf8
 set ffs=unix,dos,mac
 set laststatus=2
-set tags=tags;
-set autochdir
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nowb
@@ -259,10 +269,11 @@ let g:SrcExpl_nextDefKey = "<F11>f"
 " // below listaccording to the command ":buffers!"                            " 
  let g:SrcExpl_pluginList = [ 
          \ "__Tag_List__", 
-         \ "_NERD_tree_" 
+         \ "__Tagbar__", 
+         \ "NERD_tree_",
+         \ "Quickfix List" 
      \ ] 
 "                                                                              " 
 " // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to " 
 " //  create/update a tags file                                                " 
-" let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
-
+let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
