@@ -18,6 +18,7 @@ Bundle 'taglist.vim'
 
 " ctrlp and yr both use ctrl+p, last one will override
 Bundle 'YankRing.vim'
+Bundle 'mru.vim'
 Bundle 'kien/ctrlp.vim'
 
 Bundle 'molokai'
@@ -25,6 +26,7 @@ Bundle 'peaksea'
 Bundle 'colorizer'
 Bundle 'pyflakes.vim'
 Bundle 'python.vim'
+Bundle 'vim-indent-object'
 Bundle 'plasticboy/vim-markdown'
 
 Bundle 'matchit.zip'
@@ -58,10 +60,9 @@ syntax enable
 set so=10
 set ruler
 set number
-set nowrap
 set hidden
 set autoread
-set autochdir
+"set autochdir
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
@@ -97,6 +98,13 @@ set tabstop=4
 noremap j gj
 noremap k gk
 
+" ctrl + c
+vmap <C-c> "+y
+" ctrl + x
+vmap <C-x> "+x
+" ctrl + v
+" nnoremap <C-v> "+gP
+
 " Smart way to move between windows
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
@@ -113,16 +121,19 @@ nnoremap to :tabonly<CR>
 
 nnoremap ; :
 map 0 ^
-map 9 $
+nnoremap B ^
+nnoremap E $
 
 let mapleader = ","
 nnoremap <leader>h :noh<CR>
-nnoremap <leader>e :e<CR>
-nnoremap <leader>w :w<CR>
-nnoremap <leader>x :x<CR>
-nnoremap <silent> <leader>ev :e  $MYVIMRC<CR>
-nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
+
+nnoremap <leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>ez :e ~/.zshrc<CR>
+
 autocmd! bufwritepost vimrc source %
+map <leader>pp :setlocal paste!<cr>
+map <leader>ss :setlocal spell!<cr>
 
 set t_Co=256
 set guifont=Monaco:h20
@@ -138,11 +149,19 @@ set background=dark
 
 " plugin settings
 
+" ctrlp
+" change to ctrl-f since yankring use ctrl-p
+let g:ctrlp_map = '<c-f>'
+let g:ctrlp_working_path_mode = 'ra'
+
+" MRU
+map <leader>f :MRU<CR>
+
 " YouCompleteMe
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "au BufNewFile,BufRead *.html set filetype=htmldjango
-autocmd FileType python set ft=python.django " For SnipMate
+"autocmd FileType python set ft=python.django " For SnipMate
 autocmd FileType html set ft=htmldjango.html " For SnipMate
 
 " make YCM compatible with UltiSnips (using supertab)

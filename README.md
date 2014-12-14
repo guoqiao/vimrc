@@ -17,8 +17,9 @@ That's all!
 * NERDTree: tt
 * taglist: TT
 * NERD-Commenter: <leader + c + i>
-* YankRing: <leader + y>
+* YankRing: <ctrl + p>
+* CtrlP: <ctrl + f>
+* MRU: <leader + f>
 * Emmet: <ctrl + y + ,>
-* CtrlP: <ctrl + p>
 * UltiSnips: ctrl + j
 * Ack: use Ack FOOBAR to search on cmdline
