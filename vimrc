@@ -23,6 +23,7 @@ Plugin 'pyflakes.vim'
 Plugin 'python.vim'
 Plugin 'vim-indent-object'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'matchit.zip'
 Plugin 'repeat.vim'
@@ -161,6 +162,12 @@ let yankring_min_element_length=4
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-b>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
