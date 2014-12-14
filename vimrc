@@ -29,10 +29,10 @@ Plugin 'terryma/vim-multiple-cursors'
 " Auto complete
 Plugin 'mattn/emmet-vim'
 Plugin 'neocomplcache'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'guoqiao/snipmate'
-
 
 " Colorscheme
 Plugin 'molokai'
@@ -77,7 +77,7 @@ set encoding=utf8
 set ffs=unix,dos,mac
 set laststatus=2
 
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
+" Turn backup off, since most stuff is in SVN, git etc.
 set nowb
 set nobackup
 set noswapfile
@@ -170,6 +170,13 @@ let g:ctrlp_working_path_mode = 'ra'
 " YankRing
 map <leader>y :YRShow<CR>
 let yankring_min_element_length=4
+
+nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
