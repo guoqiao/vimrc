@@ -8,46 +8,45 @@ call vundle#rc()
 " required!
 vundle 'gmarik/vundle'
 
-Bundle 'The-NERD-Commenter'
-Bundle 'The-NERD-tree'
-Bundle 'taglist.vim'
-Bundle 'majutsushi/tagbar'
+Plugin 'The-NERD-Commenter'
+Plugin 'The-NERD-tree'
+Plugin 'majutsushi/tagbar'
 
-Bundle 'YankRing.vim'
-Bundle 'mru.vim'
-Bundle 'kien/ctrlp.vim'
+Plugin 'YankRing.vim'
+Plugin 'mru.vim'
+Plugin 'kien/ctrlp.vim'
 
-Bundle 'molokai'
-Bundle 'peaksea'
-Bundle 'colorizer'
-Bundle 'pyflakes.vim'
-Bundle 'python.vim'
-Bundle 'vim-indent-object'
-Bundle 'plasticboy/vim-markdown'
+Plugin 'molokai'
+Plugin 'peaksea'
+Plugin 'colorizer'
+Plugin 'pyflakes.vim'
+Plugin 'python.vim'
+Plugin 'vim-indent-object'
+Plugin 'plasticboy/vim-markdown'
 
-Bundle 'matchit.zip'
-Bundle 'repeat.vim'
-Bundle 'surround.vim'
+Plugin 'matchit.zip'
+Plugin 'repeat.vim'
+Plugin 'surround.vim'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'bling/vim-airline'
-Bundle 'mattn/emmet-vim'
-Bundle 'ervandew/supertab'
-Bundle 'SirVer/ultisnips'
-Bundle 'guoqiao/snipmate_for_django'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'mattn/emmet-vim'
+Plugin 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
+Plugin 'guoqiao/snipmate_for_django'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'mileszs/ack.vim'
 
 filetype plugin indent on     " required!
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install (update) bundles
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle commands are not allowed.
+" NOTE: comments after Plugin commands are not allowed.
 
 syntax on
 syntax enable
