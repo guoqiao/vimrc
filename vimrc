@@ -8,37 +8,47 @@ call vundle#rc()
 " required!
 Plugin 'gmarik/vundle'
 
+" File explore
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
-Plugin 'majutsushi/tagbar'
-
-Plugin 'YankRing.vim'
-Plugin 'mru.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'mru.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'bling/vim-airline'
 
-Plugin 'molokai'
-Plugin 'peaksea'
-Plugin 'colorizer'
-Plugin 'pyflakes.vim'
-Plugin 'python.vim'
-Plugin 'vim-indent-object'
-Plugin 'thinca/vim-quickrun'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'terryma/vim-multiple-cursors'
-
+" Editing
+Plugin 'YankRing.vim'
 Plugin 'matchit.zip'
 Plugin 'repeat.vim'
 Plugin 'surround.vim'
+Plugin 'vim-indent-object'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'terryma/vim-multiple-cursors'
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
+" Auto complete
 Plugin 'mattn/emmet-vim'
 Plugin 'neocomplcache'
-Plugin 'mileszs/ack.vim'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'guoqiao/snipmate'
+
+
+" Colorscheme
+Plugin 'molokai'
+Plugin 'peaksea'
+
+" Syntax Highlight
+Plugin 'colorizer'
+Plugin 'plasticboy/vim-markdown'
+
+" Programming
+Plugin 'python.vim'
+Plugin 'pyflakes.vim'
+Plugin 'thinca/vim-quickrun'
+
+" Others
+Plugin 'tpope/vim-fugitive'
 
 filetype plugin indent on     " required!
 "
