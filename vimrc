@@ -6,7 +6,7 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required!
-vundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
@@ -31,11 +31,11 @@ Plugin 'surround.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'mattn/emmet-vim'
+Plugin 'neocomplcache'
+Plugin 'mileszs/ack.vim'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
-Plugin 'guoqiao/snipmate_for_django'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'mileszs/ack.vim'
+Plugin 'guoqiao/snipmate'
 
 filetype plugin indent on     " required!
 "
@@ -55,7 +55,7 @@ set ruler
 set number
 set hidden
 set autoread
-"set autochdir
+set autochdir
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
@@ -87,16 +87,15 @@ set smartindent
 set shiftwidth=4
 set tabstop=4
 
+map ; :
+map 0 ^
+map B ^
+map E $
+map Y y$
+
 " Treat long lines as break lines (useful when moving around in them)
 noremap j gj
 noremap k gk
-
-" ctrl + c
-vmap <C-c> "+y
-" ctrl + x
-vmap <C-x> "+x
-" ctrl + v
-" nnoremap <C-v> "+gP
 
 " Smart way to move between windows
 noremap <C-j> <C-W>j
@@ -111,11 +110,6 @@ nnoremap tn :tabnew<CR>
 nnoremap tc :tabclose<CR>
 nnoremap tm :tabmove<CR>
 nnoremap to :tabonly<CR>
-
-nnoremap ; :
-map 0 ^
-nnoremap B ^
-nnoremap E $
 
 let mapleader = ","
 nnoremap <leader>h :noh<CR>
@@ -142,41 +136,30 @@ set background=dark
 
 " plugin settings
 
-" ctrlp
+let g:NERDTreeDirArrows=0
+map tt :NERDTreeToggle<CR>
+map ff :NERDTreeFind<CR>
+
+map TT :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
+
+map <leader>f :MRU<CR>
+
+let g:neocomplcache_enable_at_startup = 1
+
 " change to ctrl-f since yankring use ctrl-p
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_working_path_mode = 'ra'
-
-" MRU
-map <leader>f :MRU<CR>
-
-" YouCompleteMe
-nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-"au BufNewFile,BufRead *.html set filetype=htmldjango
-"autocmd FileType python set ft=python.django " For SnipMate
-autocmd FileType html set ft=htmldjango.html " For SnipMate
-
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " YankRing
 map <leader>y :YRShow<CR>
 let yankring_min_element_length=4
 
-" nerd tree
-let g:NERDTreeDirArrows=0
-map tt :NERDTreeToggle<CR>
-
-" tagbar
-map TT :TagbarToggle<CR>
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
