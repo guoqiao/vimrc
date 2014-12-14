@@ -5,18 +5,14 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" required!
+vundle 'gmarik/vundle'
 
-" find popular plugins here:
-"http://vim.sourceforge.net/scripts/script_search_results.php?order_by=rating
-
-" vim-scripts repos
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
+Bundle 'majutsushi/tagbar'
 
-" ctrlp and yr both use ctrl+p, last one will override
 Bundle 'YankRing.vim'
 Bundle 'mru.vim'
 Bundle 'kien/ctrlp.vim'
@@ -33,13 +29,11 @@ Bundle 'matchit.zip'
 Bundle 'repeat.vim'
 Bundle 'surround.vim'
 
-" GitHub
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
 Bundle 'mattn/emmet-vim'
 Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
-"Bundle 'honza/vim-snippets'
 Bundle 'guoqiao/snipmate_for_django'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'mileszs/ack.vim'
@@ -85,7 +79,7 @@ set tm=500
 set ignorecase
 set smartcase
 set hlsearch
-set incsearch 
+set incsearch
 let loaded_matchparen = 1 " disable math parenthiese
 
 set expandtab
@@ -182,20 +176,14 @@ let yankring_min_element_length=4
 let g:NERDTreeDirArrows=0
 map tt :NERDTreeToggle<CR>
 
-" taglist.vim
-map TT :TlistToggle<CR>
-"let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-let Tlist_Inc_Winwidth = 0
-let Tlist_Show_One_File = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Use_Right_Window = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
+" tagbar
+map TT :TagbarToggle<CR>
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
     unmenu Foo
-endfunction 
+endfunction
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
