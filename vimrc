@@ -22,6 +22,7 @@ Plugin 'colorizer'
 Plugin 'pyflakes.vim'
 Plugin 'python.vim'
 Plugin 'vim-indent-object'
+Plugin 'thinca/vim-quickrun'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -147,6 +148,8 @@ let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 
 map <leader>f :MRU<CR>
+
+map <f5> :QuickRun<CR>
 
 let g:neocomplcache_enable_at_startup = 1
 
