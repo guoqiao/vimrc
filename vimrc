@@ -28,7 +28,6 @@ Plugin 'terryma/vim-multiple-cursors'
 
 " Auto complete
 Plugin 'mattn/emmet-vim'
-Plugin 'neocomplcache'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
