@@ -27,6 +27,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'matchit.zip'
 Plugin 'repeat.vim'
 Plugin 'surround.vim'
+Plugin 'Lokaltog/vim-easymotion'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
