@@ -1,4 +1,5 @@
 ## install
+backup your .vimrc and .vim first, and then:
 
     cd ~
     git clone https://github.com/guoqiao/vimx.git .vim
@@ -21,5 +22,4 @@ That's all!
 * CtrlP: <ctrl + f>
 * MRU: <leader + f>
 * Emmet: <ctrl + y + ,>
-* UltiSnips: ctrl + j
 * Ack: use Ack FOOBAR to search on cmdline
