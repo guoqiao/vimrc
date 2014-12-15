@@ -104,6 +104,7 @@ map 0 ^
 map B ^
 map E $
 map Y y$
+map <space> <C-D>
 
 " Treat long lines as break lines (useful when moving around in them)
 noremap j gj
