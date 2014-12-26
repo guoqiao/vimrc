@@ -17,10 +17,10 @@ That's all!
 * leader: ,
 
 ## plugin settings
-* NERDTree: <F8>f
-* taglist: <F8>t
-* Tagbar: <F8>p 
-* SrcExpl: <F8>s
+* NERDTree: < F8 > f
+* taglist: < F8 > t
+* Tagbar: < F8 > p 
+* SrcExpl: < F8 > s
 * NERD-Commenter: <leader + c + i>
 * YankRing: <leader + y>
 * Emmet: <ctrl + y + ,>
@@ -29,6 +29,6 @@ That's all!
 * Ack: use Ack FOOBAR to search on cmdline
 
 ## cscope
-* load cscope db file: <F3>l
-* reset cscope db file: <F3>r
-* find the cursor: <F3> c|d|e|f|g|i|s|t
+* load cscope db file: < F3 > l
+* reset cscope db file: < F3 > r
+* find the cursor: < F3 > c|d|e|f|g|i|s|t
