@@ -27,6 +27,7 @@ Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'hari-rangarajan/CCTree'
 
 " ctrlp and yr both use ctrl+p, last one will override
 Bundle 'YankRing.vim'
@@ -244,11 +245,16 @@ function! LoadCscope()
 endfunction
 "au BufEnter /* call LoadCscope()
 nmap <F3>l :call LoadCscope()<CR>
+nmap <F3>r ::cs reset<CR>  
 
 "tagbar 
 nmap <F8>p :TagbarToggle<CR>
 let g:tagbar_left = 0
 let g:tagbar_width = 30
+
+"CtrlP
+let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
+                          \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 
 " SrcExpl
 nmap <F8>s :SrcExplToggle<CR> 

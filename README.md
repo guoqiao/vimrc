@@ -1,7 +1,10 @@
+## original copy from:
+git clone https://github.com/guoqiao/vimx.git
+
 ## install
 
     cd ~
-    git clone https://github.com/guoqiao/vimx.git .vim
+    git clone https://github.com/liming01/vimx.git .vim
     cd .vim
     ./install.sh
 
@@ -14,11 +17,18 @@ That's all!
 * leader: ,
 
 ## plugin settings
-* NERDTree: tt
-* taglist: TT
+* NERDTree: <F8>f
+* taglist: <F8>t
+* Tagbar: <F8>p 
+* SrcExpl: <F8>s
 * NERD-Commenter: <leader + c + i>
 * YankRing: <leader + y>
 * Emmet: <ctrl + y + ,>
 * CtrlP: <ctrl + p>
 * UltiSnips: ctrl + j
 * Ack: use Ack FOOBAR to search on cmdline
+
+## cscope
+* load cscope db file: <F3>l
+* reset cscope db file: <F3>r
+* find the cursor: <F3> c|d|e|f|g|i|s|t
