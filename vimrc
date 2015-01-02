@@ -108,6 +108,8 @@ set smartindent
 set shiftwidth=4
 set tabstop=4
 
+set tags=tags;/
+
 " Treat long lines as break lines (useful when moving around in them)
 noremap j gj
 noremap k gk
@@ -240,6 +242,7 @@ function! LoadCscope()
     let path = strpart(db, 0, match(db, "/cscope.out$"))
     set nocscopeverbose " suppress 'duplicate connection' error
     exe "cs add " . db . " " . path
+    "exe "set tags=".path."/tags"
     set cscopeverbose
   endif
 endfunction
