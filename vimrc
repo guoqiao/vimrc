@@ -101,10 +101,8 @@ set tabstop=4
 
 map ; :
 map 0 ^
-map B ^
-map E $
+map <space> $
 map Y y$
-map <space> <C-D>
 
 " Treat long lines as break lines (useful when moving around in them)
 noremap j gj
