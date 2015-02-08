@@ -8,15 +8,6 @@ call vundle#rc()
 " required!
 Plugin 'gmarik/vundle'
 
-" File explore
-Plugin 'The-NERD-Commenter'
-Plugin 'The-NERD-tree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'mru.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'bling/vim-airline'
-
 " Editing
 Plugin 'YankRing.vim'
 Plugin 'matchit.zip'
@@ -26,10 +17,18 @@ Plugin 'vim-indent-object'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 
+" File explore
+Plugin 'The-NERD-Commenter'
+Plugin 'The-NERD-tree'
+" Both ctrlp and yankring use ctrl-p, the second one will work
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'mileszs/ack.vim'
+Plugin 'bling/vim-airline'
+
 " Auto complete
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'guoqiao/snipmate'
 
@@ -99,10 +98,10 @@ set smartindent
 set shiftwidth=4
 set tabstop=4
 
-map ; :
-map 0 ^
-map <space> $
-map Y y$
+noremap ; :
+noremap 0 ^
+noremap <space> $
+noremap Y y$
 
 " Treat long lines as break lines (useful when moving around in them)
 noremap j gj
@@ -149,37 +148,31 @@ set background=dark
 
 let g:NERDTreeDirArrows=0
 map tt :NERDTreeToggle<CR>
-map ff :NERDTreeFind<CR>
 
 map TT :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 
-map <leader>f :MRU<CR>
-
 map <f5> :QuickRun<CR>
 
-let g:neocomplcache_enable_at_startup = 1
-
-" change to ctrl-f since yankring use ctrl-p
-let g:ctrlp_map = '<c-f>'
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
 
 " YankRing
-map <leader>y :YRShow<CR>
+map <leader>p :YRShow<CR>
 let yankring_min_element_length=4
 
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-n>'
