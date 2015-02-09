@@ -148,6 +148,7 @@ set background=dark
 
 let g:NERDTreeDirArrows=0
 map tt :NERDTreeToggle<CR>
+map ff :NERDTreeFind<CR>
 
 map TT :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
