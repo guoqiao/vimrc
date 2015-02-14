@@ -30,7 +30,7 @@ Plugin 'bling/vim-airline'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
-Plugin 'guoqiao/snipmate'
+Plugin 'guoqiao/django-snippets'
 
 " Colorscheme
 Plugin 'molokai'
@@ -67,6 +67,7 @@ set number
 set hidden
 set autoread
 set autochdir
+set cursorline
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
@@ -133,7 +134,7 @@ map <leader>pp :setlocal paste!<cr>
 map <leader>ss :setlocal spell!<cr>
 
 set t_Co=256
-set guifont=Monaco:h20
+set guifont=Monaco:h18
 set guioptions-=r
 set guioptions-=L
 
@@ -156,6 +157,8 @@ let g:tagbar_autoclose = 1
 
 map <f5> :QuickRun<CR>
 
+let g:ctrlp_by_filename = 1
+let g:ctrlp_tabpage_position = 'a'
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .git
       \ --ignore .svn
