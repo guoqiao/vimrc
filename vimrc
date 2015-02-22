@@ -66,7 +66,7 @@ set ruler
 set number
 set hidden
 set autoread
-set autochdir
+"set autochdir
 set cursorline
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
@@ -134,7 +134,8 @@ map <leader>pp :setlocal paste!<cr>
 map <leader>ss :setlocal spell!<cr>
 
 set t_Co=256
-set guifont=Monaco:h18
+"set guifont=Monaco:h14
+set guifont=Source\ Code\ Pro\ Light:h16
 set guioptions-=r
 set guioptions-=L
 
@@ -148,6 +149,7 @@ set background=dark
 " plugin settings
 
 let g:NERDTreeDirArrows=0
+let g:NERDTreeChDirMode=2
 map tt :NERDTreeToggle<CR>
 map ff :NERDTreeFind<CR>
 
