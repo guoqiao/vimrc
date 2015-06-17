@@ -14,7 +14,6 @@ Plugin 'matchit.zip'
 Plugin 'repeat.vim'
 Plugin 'surround.vim'
 Plugin 'vim-indent-object'
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 
 " File explore
@@ -23,7 +22,6 @@ Plugin 'The-NERD-tree'
 " Both ctrlp and yankring use ctrl-p, the second one will work
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 
 " Auto complete
@@ -38,12 +36,10 @@ Plugin 'peaksea'
 
 " Syntax Highlight
 Plugin 'colorizer'
-Plugin 'plasticboy/vim-markdown'
 
 " Programming
 Plugin 'python.vim'
 Plugin 'pyflakes.vim'
-Plugin 'thinca/vim-quickrun'
 
 " Others
 Plugin 'tpope/vim-fugitive'
@@ -65,6 +61,7 @@ set so=10
 set ruler
 set number
 set hidden
+set nowrap
 set autoread
 "set autochdir
 set cursorline
@@ -156,8 +153,6 @@ map ff :NERDTreeFind<CR>
 map TT :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
-
-map <f5> :QuickRun<CR>
 
 let g:ctrlp_by_filename = 1
 let g:ctrlp_tabpage_position = 'a'
