@@ -63,7 +63,6 @@ set number
 set hidden
 set nowrap
 set autoread
-"set autochdir
 set cursorline
 set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
@@ -124,15 +123,13 @@ nnoremap <leader>h :noh<CR>
 
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
-nnoremap <leader>ez :e ~/.zshrc<CR>
 
 autocmd! bufwritepost vimrc source %
 map <leader>pp :setlocal paste!<cr>
 map <leader>ss :setlocal spell!<cr>
 
 set t_Co=256
-"set guifont=Monaco:h14
-set guifont=Source\ Code\ Pro\ Light:h16
+set guifont=Monaco:h16
 set guioptions-=r
 set guioptions-=L
 
@@ -154,7 +151,6 @@ map TT :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 
-let g:ctrlp_by_filename = 1
 let g:ctrlp_tabpage_position = 'a'
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .git
