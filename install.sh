@@ -1,4 +1,4 @@
 #!/bin/bash
-mkdir -p bundle
-git clone https://github.com/gmarik/vundle.git bundle/vundle
+mkdir -p ~/.vim/bundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall

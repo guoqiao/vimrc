@@ -1,10 +1,8 @@
 ## install
 backup your .vimrc and .vim first, and then:
 
-    cd ~
-    git clone https://github.com/guoqiao/vimx.git .vim
-    cd .vim
-    ./install.sh
+    git clone https://github.com/guoqiao/vimx.git ~/.vim
+    ~/.vim/install.sh
 
 That's all!
 

@@ -1,7 +1,3 @@
-" cd .vim
-" mkdir -p bundle
-" git clone https://github.com/gmarik/vundle.git bundle/vundle
-
 " Brief help
 " :PluginList          - list configured bundles
 " :PluginInstall(!)    - install (update) bundles
@@ -14,11 +10,11 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" let Vundle manage Vundle
-Plugin 'gmarik/vundle'        " required!
+" let Vundle manage Vundle, required!
+Plugin 'VundleVim/Vundle.vim'        
 
 " basic
 Plugin 'The-NERD-tree'
@@ -52,9 +48,12 @@ Plugin 'colorizer'
 Plugin 'python.vim'
 Plugin 'pyflakes.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
+
+call vundle#end()
 
 filetype plugin indent on     " required!
 
