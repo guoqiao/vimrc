@@ -16,7 +16,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required!
 Plugin 'VundleVim/Vundle.vim'        
 
-" basic
 Plugin 'The-NERD-tree'
 let g:NERDTreeDirArrows=0
 let g:NERDTreeChDirMode=2
@@ -25,8 +24,8 @@ map ff :NERDTreeFind<CR>
 
 Plugin 'YankRing.vim'
 let yankring_min_element_length=4
+" <leader> + p to trigger
 
-" ctrlp and yankring both use ctrl-p, last one works
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_tabpage_position = 'a'
 let g:ctrlp_by_filename = 1
@@ -52,6 +51,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
+" Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
@@ -103,9 +103,6 @@ set tabstop=4
 noremap ; :
 noremap 0 ^
 noremap <space> $
-noremap B ^
-noremap E $
-noremap Y y$
 
 " Treat long lines as break lines (useful when moving around in them)
 noremap j gj
@@ -129,18 +126,14 @@ com! FJ %!python -m json.tool
 autocmd! bufwritepost vimrc source %
 
 let mapleader = ","
-let g:mapleader = ","
+map <leader>p :YRShow<CR>
 nnoremap <leader>h :noh<CR>
-nnoremap <leader>w :w!<CR>
-nnoremap <leader>x :x<CR>
-nnoremap <leader>q :q!<CR>
 
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 map <leader>pp :setlocal paste!<cr>
 map <leader>ss :setlocal spell!<cr>
-map <leader>p :YRShow<CR>
 
 set t_Co=256
 set guifont=Monaco:h16
