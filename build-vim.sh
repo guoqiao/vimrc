@@ -25,5 +25,5 @@ fi
             --enable-pythoninterp \
             --enable-python3interp
 
-make VIMRUNTIMEDIR=/usr/share/vim/vim74
+make
 sudo make install
