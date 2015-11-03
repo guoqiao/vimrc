@@ -22,13 +22,13 @@ let g:NERDTreeChDirMode=2
 map tt :NERDTreeToggle<CR>
 map ff :NERDTreeFind<CR>
 
+" <leader> p to trigger
 Plugin 'YankRing.vim'
 let yankring_min_element_length=4
-" <leader> + p to trigger
 
 Plugin 'kien/ctrlp.vim'
-let g:ctrlp_tabpage_position = 'a'
-let g:ctrlp_by_filename = 1
+let g:ctrlp_tabpage_position  = 'a'
+let g:ctrlp_by_filename       = 1
 let g:ctrlp_working_path_mode = 'rw'
 
 Plugin 'The-NERD-Commenter'
@@ -66,7 +66,7 @@ set hidden
 set nowrap
 set autoread
 set cursorline
-set clipboard=unnamed
+set clipboard=unnamedplus
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
 set iskeyword+=-
@@ -126,7 +126,7 @@ com! FJ %!python -m json.tool
 autocmd! bufwritepost vimrc source %
 
 let mapleader = ","
-map <leader>p :YRShow<CR>
+nnoremap <leader>p :YRShow<CR>
 nnoremap <leader>h :noh<CR>
 
 nnoremap <leader>ev :e $MYVIMRC<CR>
