@@ -1,4 +1,9 @@
 #!/bin/bash
+git pull
 mkdir -p ~/.vim/bundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if cd ~/.vim/bundle/Vundle.vim/;
+    then git pull;
+    else git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim;
+fi
+vim +PluginClean +qall
 vim +PluginInstall +qall
