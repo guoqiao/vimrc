@@ -1,13 +1,11 @@
 ## clone this repo
 
-    cd ~
-    git clone https://github.com/guoqiao/vimx.git .vim
-    cd .vim
+    git clone https://github.com/guoqiao/vimx.git ~/.vim && cd ~/.vim
 
 ## install basic version
 backup your .vimrc and .vim first, and then:
 
-    ln  -s vim.basic vimrc
+    ln  -s vimrc.basic vimrc
     ./install.sh
 
 ## install pro version
@@ -15,14 +13,19 @@ Install dependencies:
 
 OS X:
 
-    brew install the_silver_searcher
+    brew install ctags-exuberant the_silver_searcher
 
 Ubuntu:
 
-    apt-get install exuberant-ctags silversearcher-ag
+    sudo apt-get install exuberant-ctags silversearcher-ag
 
 Then link and install:
-    ln  -s vim.pro vimrc
+
+    ln  -s vimrc.pro vimrc
+    ./install.sh
+
+Install YouCompleteMe:
+    cd bundle/YouCompleteMe
     ./install.sh
 
 That's all!
@@ -50,3 +53,17 @@ That's all!
 pro only:
 * tagbar: TT
 * YouCompleteMe: ,j to jump to def
+
+## Build latest vim
+clipboard and python support are required in this config, to check your current vim:
+    
+    vim --version | grep clip
+    vim --version | grep python
+
+There should be a '+' sign before them. If not, build vim yourself:
+
+    ./build-vim.sh
+    
+## Build latest ag|silver-searcher
+
+    ./build-ag.sh
