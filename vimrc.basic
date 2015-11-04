@@ -1,3 +1,6 @@
+" Vundle is used here to manage packages:
+" https://github.com/VundleVim/Vundle.vim
+"
 " Brief help
 " :PluginList          - list configured bundles
 " :PluginInstall(!)    - install (update) bundles
@@ -11,7 +14,7 @@ set nocompatible              " be iMproved
 filetype off                  " required!
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#rc()
 
 " let Vundle manage Vundle, required!
 Plugin 'VundleVim/Vundle.vim'        
@@ -19,23 +22,35 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'The-NERD-tree'
 let g:NERDTreeDirArrows=0
 let g:NERDTreeChDirMode=2
+" tt to toggle tree
 map tt :NERDTreeToggle<CR>
+" ff to find/reveal current file in tree
 map ff :NERDTreeFind<CR>
 
-" <leader> p to trigger
+" <leader> p to show paste history
 Plugin 'YankRing.vim'
 let yankring_min_element_length=4
 
+" ctrl + p to search
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_by_filename       = 1
 let g:ctrlp_working_path_mode = 'rw'
 
+" leader + c + i to toggle comment
 Plugin 'The-NERD-Commenter'
-let NERDSpaceDelims = 1 " add space for comment delim
+" add space after comment delim for pep8
+let NERDSpaceDelims = 1 
 
 Plugin 'airblade/vim-gitgutter'
 let g:gitgutter_sign_column_always = 1
+
+Plugin 'terryma/vim-multiple-cursors'
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-b>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 Plugin 'vim-indent-object'
 Plugin 'matchit.zip'
@@ -47,13 +62,12 @@ Plugin 'colorizer'
 Plugin 'python.vim'
 Plugin 'pyflakes.vim'
 Plugin 'mattn/emmet-vim'
+" :Tab/= to align to =
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
+" leader + leader + w 
 Plugin 'easymotion/vim-easymotion'
-" Plugin 'Valloric/YouCompleteMe'
-
-call vundle#end()
 
 filetype plugin indent on     " required!
 
@@ -100,19 +114,19 @@ set smartindent
 set shiftwidth=4
 set tabstop=4
 
-noremap ; :
-noremap 0 ^
-noremap <space> $
+nnoremap ; :
+nnoremap 0 ^
+nnoremap <space> $
 
 " Treat long lines as break lines (useful when moving around in them)
-noremap j gj
-noremap k gk
+nnoremap j gj
+nnoremap k gk
 
 " Smart way to move between windows
-noremap <C-j> <C-W>j
-noremap <C-k> <C-W>k
-noremap <C-h> <C-W>h
-noremap <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 " Smart way to manage tabs
 nnoremap tl :tabnext<CR>
@@ -126,11 +140,11 @@ com! FJ %!python -m json.tool
 autocmd! bufwritepost vimrc source %
 
 let mapleader = ","
-nnoremap <leader>p :YRShow<CR>
-nnoremap <leader>h :noh<CR>
+noremap <leader>p :YRShow<CR>
+noremap <leader>h :noh<CR>
 
-nnoremap <leader>ev :e $MYVIMRC<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+noremap <leader>ev :e $MYVIMRC<CR>
+noremap <leader>sv :source $MYVIMRC<CR>
 
 map <leader>pp :setlocal paste!<cr>
 map <leader>ss :setlocal spell!<cr>
