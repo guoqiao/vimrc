@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~/.vim
 git pull
 mkdir -p ~/.vim/bundle
 if cd ~/.vim/bundle/Vundle.vim/;

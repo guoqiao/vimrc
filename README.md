@@ -2,13 +2,7 @@
 
     git clone https://github.com/guoqiao/vimx.git ~/.vim && cd ~/.vim
 
-## install basic version
-backup your .vimrc and .vim first, and then:
-
-    ln  -s vimrc.basic vimrc
-    ./install.sh
-
-## install pro version
+## install
 Install dependencies:
 
 OS X:
@@ -19,9 +13,12 @@ Ubuntu:
 
     sudo apt-get install exuberant-ctags silversearcher-ag
 
-Then link and install:
+Or you can build ag:
 
-    ln  -s vimrc.pro vimrc
+    ./build-ag.sh
+
+Then install:
+
     ./install.sh
 
 Install YouCompleteMe:
