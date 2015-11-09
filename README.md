@@ -5,6 +5,14 @@
 ## install
 Install dependencies:
 
+- flake8 OR pylint was required by syntastic, install both here.
+- ctags was required by tagbar
+- silverseacher-ag was requrired by ctrlp
+
+pip:
+
+    pip install -U flake8 pylint
+
 OS X:
 
     brew install ctags-exuberant the_silver_searcher

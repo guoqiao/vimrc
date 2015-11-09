@@ -12,6 +12,7 @@
 
 set nocompatible              " be iMproved
 filetype off                  " required!
+let mapleader = ","
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
@@ -27,7 +28,18 @@ Plugin 'molokai'
 Plugin 'peaksea'
 Plugin 'colorizer'
 Plugin 'python.vim'
-Plugin 'pyflakes.vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'pyflakes'
+
+Plugin 'syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+
 Plugin 'mattn/emmet-vim'
 " :Tab/= to align to =
 Plugin 'godlygeek/tabular'
@@ -115,6 +127,8 @@ set ffs=unix,dos,mac
 set laststatus=2
 set foldmethod=indent
 set foldlevelstart=20
+set list
+set listchars=trail:-
 
 " Turn backup off, since most stuff is in SVN, git etc.
 set nowb
@@ -165,7 +179,6 @@ nnoremap to :tabonly<CR>
 com! FJ %!python -m json.tool
 autocmd! bufwritepost vimrc source %
 
-let mapleader = ","
 noremap <leader>p :YRShow<CR>
 noremap <leader>h :noh<CR>
 
