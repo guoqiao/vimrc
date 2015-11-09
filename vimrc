@@ -88,7 +88,6 @@ Plugin 'mileszs/ack.vim'
 " ctrl + p to search
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_tabpage_position  = 'a'
-let g:ctrlp_by_filename       = 1
 let g:ctrlp_working_path_mode = 'rw'
 
 if executable('ag')
