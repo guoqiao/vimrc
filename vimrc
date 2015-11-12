@@ -18,7 +18,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " let Vundle manage Vundle, required!
-Plugin 'VundleVim/Vundle.vim'        
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'vim-indent-object'
 Plugin 'matchit.zip'
@@ -28,8 +28,6 @@ Plugin 'molokai'
 Plugin 'peaksea'
 Plugin 'colorizer'
 Plugin 'python.vim'
-Plugin 'nvie/vim-flake8'
-Plugin 'pyflakes'
 
 Plugin 'syntastic'
 set statusline+=%#warningmsg#
@@ -75,12 +73,11 @@ let g:multi_cursor_prev_key='<C-b>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-if executable('ctags-exuberant')
-    Plugin 'majutsushi/tagbar' 
-    map TT :TagbarToggle<CR>
-    let g:tagbar_autofocus = 1
-    let g:tagbar_autoclose = 1
-endif
+Plugin 'majutsushi/tagbar' 
+map TT :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
+let g:tagbar_foldlevel = 0
 
 " :Ack to seach
 Plugin 'mileszs/ack.vim'
