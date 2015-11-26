@@ -28,6 +28,8 @@ Plugin 'molokai'
 Plugin 'peaksea'
 Plugin 'colorizer'
 Plugin 'python.vim'
+" F8
+Plugin 'vim-autopep8'
 
 Plugin 'syntastic'
 set statusline+=%#warningmsg#
@@ -37,6 +39,11 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
+let g:syntastic_python_checkers = ['flake8', 'pyflakes', 'pylint']
+" display all errors from all checkers together
+let g:syntastic_aggregate_errors = 0
+" disable all style messages
+" let g:syntastic_quiet_messages = { "type": "style" }
 
 Plugin 'mattn/emmet-vim'
 " :Tab/= to align to =

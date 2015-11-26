@@ -11,7 +11,7 @@ Install dependencies:
 
 pip:
 
-    pip install -U flake8 pylint
+    pip install -U flake8 pylint autopep8
 
 OS X:
 
@@ -61,14 +61,14 @@ pro only:
 
 ## Build latest vim
 clipboard and python support are required in this config, to check your current vim:
-    
+
     vim --version | grep clip
     vim --version | grep python
 
 There should be a '+' sign before them. If not, build vim yourself:
 
     ./build-vim.sh
-    
+
 ## Build latest ag|silver-searcher
 
     ./build-ag.sh
