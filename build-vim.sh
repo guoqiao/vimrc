@@ -1,6 +1,6 @@
 #!/bin/bash
 # for debian/ubuntu
-sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
+sudo apt-get install -y libncurses5-dev libgnome2-dev libgnomeui-dev \
     libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
     libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
     ruby-dev git
@@ -14,7 +14,7 @@ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
     # perl-ExtUtils-Embed
 # sudo ln -s /usr/bin/xsubpp /usr/share/perl5/ExtUtils/xsubpp 
 
-cd ~
+cd /tmp
 
 if cd vim;
     then git pull;

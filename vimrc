@@ -34,7 +34,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 
@@ -43,7 +43,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
-" leader + leader + w 
+" leader + leader + w
 Plugin 'easymotion/vim-easymotion'
 
 Plugin 'The-NERD-tree'
@@ -123,8 +123,8 @@ set ffs=unix,dos,mac
 set laststatus=2
 set foldmethod=indent
 set foldlevelstart=20
-set list
-set listchars=trail:-
+" set list
+" set listchars=trail:-
 
 " Turn backup off, since most stuff is in SVN, git etc.
 set nowb
@@ -147,6 +147,7 @@ set expandtab
 set smarttab
 set autoindent
 set smartindent
+set copyindent
 set shiftwidth=4
 set tabstop=4
 
@@ -172,9 +173,6 @@ nnoremap tc :tabclose<CR>
 nnoremap tm :tabmove<CR>
 nnoremap to :tabonly<CR>
 
-com! FJ %!python -m json.tool
-autocmd! bufwritepost vimrc source %
-
 noremap <leader>p :YRShow<CR>
 noremap <leader>h :noh<CR>
 
@@ -195,6 +193,13 @@ catch
     colorscheme desert
 endtry
 set background=dark
+
+autocmd! bufwritepost vimrc source %
+com! FJ %!python -m json.tool
+
+" Highlight whitespace at the end of lines
+hi ExtraWhitespace ctermbg=red guibg=red
+call matchadd('ExtraWhitespace', '\s\+\%#\@<!$')
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
