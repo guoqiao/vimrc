@@ -29,30 +29,14 @@ Plugin 'peaksea'
 Plugin 'colorizer'
 Plugin 'python.vim'
 
-Plugin 'nvie/vim-flake8'
-autocmd BufWritePost *.py call Flake8()
-let g:flake8_show_quickfix=0
-let g:flake8_quickfix_height=7
-
-let g:flake8_show_in_gutter=1
-let g:flake8_show_in_file=1
-
-let g:flake8_max_markers=500
-
-let g:flake8_error_marker='EE'
-let g:flake8_warning_marker='WW'
-let g:flake8_pyflake_marker='PF'
-let g:flake8_complexity_marker='MC'
-let g:flake8_naming_marker='NM'
-
-" Plugin 'syntastic'
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 0
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 1
+Plugin 'syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
 
 Plugin 'mattn/emmet-vim'
 " :Tab/= to align to =
