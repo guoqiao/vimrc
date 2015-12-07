@@ -23,6 +23,7 @@ fi
 
 ./configure --with-features=huge \
             --enable-pythoninterp \
+            --enable-rubyinterp \
             --enable-python3interp
 
 make
