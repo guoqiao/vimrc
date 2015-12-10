@@ -84,8 +84,9 @@ Plugin 'mileszs/ack.vim'
 
 " ctrl + p to search
 Plugin 'kien/ctrlp.vim'
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_tabpage_position  = 'a'
-let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_working_path_mode = 'ra'
 
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
