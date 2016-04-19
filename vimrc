@@ -39,7 +39,7 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
-let g:syntastic_python_checkers = ['flake8', 'pyflakes', 'pylint']
+let g:syntastic_python_checkers = ['pyflakes']
 " display all errors from all checkers together
 let g:syntastic_aggregate_errors = 0
 " disable all style messages
