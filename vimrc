@@ -90,7 +90,7 @@ let g:tagbar_foldlevel = 0
 Plugin 'mileszs/ack.vim'
 
 " ctrl + p to search
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_working_path_mode = 'ra'
