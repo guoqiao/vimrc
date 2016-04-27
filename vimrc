@@ -52,6 +52,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 " leader + leader + w
 Plugin 'easymotion/vim-easymotion'
+Plugin 'bronson/vim-trailing-whitespace'
 
 Plugin 'The-NERD-tree'
 let g:NERDTreeDirArrows=0
@@ -68,7 +69,7 @@ let yankring_min_element_length=4
 " leader + c + i to toggle comment
 Plugin 'The-NERD-Commenter'
 " add space after comment delim for pep8
-let NERDSpaceDelims = 1 
+let NERDSpaceDelims = 1
 
 Plugin 'airblade/vim-gitgutter'
 let g:gitgutter_sign_column_always = 1
@@ -80,7 +81,7 @@ let g:multi_cursor_prev_key='<C-b>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-Plugin 'majutsushi/tagbar' 
+Plugin 'majutsushi/tagbar'
 map TT :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
