@@ -1,0 +1,21 @@
+[user]
+    email = guoqiao@gmail.com
+    name = Guo Qiao
+[alias]
+    co = checkout
+    br = branch
+    bl = branch -l
+    ci = commit
+    ca = commit --amend
+    fa = fetch --all
+    st = status
+    rd = push origin --delete
+    rb = rebase -i origin/master
+    li = ls-files --other --ignored --exclude-standard  # list ignored files
+[push]
+    default = simple
+[color]
+    ui = true
+[core]
+    editor = vim
+    pager = less
