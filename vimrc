@@ -15,11 +15,10 @@ filetype off                  " required!
 let mapleader = ","
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle, required!
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'vim-indent-object'
 Plugin 'matchit.zip'
 Plugin 'repeat.vim'
@@ -112,6 +111,7 @@ Plugin 'Valloric/YouCompleteMe'
 let g:ycm_filetype_whitelist = { 'python':1 }
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+call vundle#end()
 filetype plugin indent on     " required!
 
 syntax on
@@ -132,8 +132,8 @@ set ffs=unix,dos,mac
 set laststatus=2
 set foldmethod=indent
 set foldlevelstart=20
-" set list
-" set listchars=trail:-
+set list
+set listchars=tab:>-,trail:~,extends:>,precedes:<
 
 " Turn backup off, since most stuff is in SVN, git etc.
 set nowb
