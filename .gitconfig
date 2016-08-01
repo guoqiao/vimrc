@@ -1,6 +1,6 @@
 [user]
-    email = guoqiao@gmail.com
-    name = Guo Qiao
+    email = name@email.com
+    name = Foo Bar
 [alias]
     co = checkout
     br = branch
