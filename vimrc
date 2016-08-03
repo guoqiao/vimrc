@@ -129,6 +129,7 @@ set backspace=eol,start,indent
 set iskeyword+=-
 set encoding=utf8
 set ffs=unix,dos,mac
+set statusline+=%F
 set laststatus=2
 set foldmethod=indent
 set foldlevelstart=20
@@ -193,6 +194,7 @@ map <leader>ss :setlocal spell!<cr>
 
 set t_Co=256
 set guifont=Monaco:h16
+" set guifont=Source\ Code\ Pro\ 16
 set guioptions-=r
 set guioptions-=L
 
