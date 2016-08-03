@@ -31,9 +31,6 @@ Plugin 'python.vim'
 Plugin 'vim-autopep8'
 
 Plugin 'syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
@@ -56,6 +53,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'The-NERD-tree'
 let g:NERDTreeDirArrows=0
 let g:NERDTreeChDirMode=2
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 " tt to toggle tree
 map tt :NERDTreeToggle<CR>
 " ff to find/reveal current file in tree
@@ -105,6 +103,8 @@ endif
 
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_filetype_whitelist = { 'python':1 }
+" very useful
+let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 call vundle#end()
@@ -120,16 +120,16 @@ set nowrap
 set autoread
 set cursorline
 set shell=/bin/bash
-set clipboard=unnamedplus
+set clipboard=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
 set iskeyword+=-
 set encoding=utf8
 set ffs=unix,dos,mac
-set statusline+=%F
 set laststatus=2
+set textwidth=120
 set foldmethod=indent
-set foldlevelstart=20
+set foldlevel=99
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 
@@ -206,8 +206,7 @@ autocmd! bufwritepost vimrc source %
 com! FJ %!python -m json.tool
 
 " Highlight whitespace at the end of lines
-hi ExtraWhitespace ctermbg=red guibg=red
-call matchadd('ExtraWhitespace', '\s\+\%#\@<!$')
+au BufRead,BufNewFile *.py, *.md, *.html, *.css, *.scss, *.js match BadWhitespace /\s\+$/
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
