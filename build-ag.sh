@@ -1,9 +1,4 @@
 #!/bin/bash
-# for debian/ubuntu
-sudo apt-get install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev
-
-# for redhat/centos/fedora
-# yum -y install pkgconfig automake gcc zlib-devel pcre-devel xz-devel
 
 cd /tmp
 

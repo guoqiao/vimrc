@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt-get install build-essential ncurses-dev libncurses5-dev gettext autoconf
-
 cd /tmp
 
 if cd fish-shell;
