@@ -9,9 +9,11 @@ Install dependencies:
 - ctags was required by tagbar
 - silverseacher-ag was requrired by ctrlp
 
-pip:
+install python dependencies:
 
-    pip install -U flake8 pylint autopep8
+    sudo pip install -U flake8 pylint autopep8
+
+install binary dependencies:
 
 OS X:
 
@@ -19,11 +21,7 @@ OS X:
 
 Ubuntu:
 
-    sudo apt-get install exuberant-ctags silversearcher-ag
-
-Or you can build ag:
-
-    ./build-ag.sh
+    sudo apt-get install exuberant-ctags silversearcher-ag cmake
 
 Then install:
 
