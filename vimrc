@@ -86,9 +86,6 @@ let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_foldlevel = 0
 
-" :Ack to seach
-Plugin 'mileszs/ack.vim'
-
 " ctrl + p to search
 Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_cmd = 'CtrlPMixed'
@@ -96,7 +93,6 @@ let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_working_path_mode = 'ra'
 
 if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
 
     let g:ctrlp_user_command = 'ag %s -S --nocolor --nogroup --hidden
           \ --ignore .git
