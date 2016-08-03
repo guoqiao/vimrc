@@ -123,6 +123,7 @@ set hidden
 set nowrap
 set autoread
 set cursorline
+set shell=/bin/bash
 set clipboard=unnamedplus
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
