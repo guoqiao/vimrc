@@ -206,7 +206,7 @@ autocmd! bufwritepost vimrc source %
 com! FJ %!python -m json.tool
 
 " Highlight whitespace at the end of lines
-au BufRead,BufNewFile *.py, *.md, *.html, *.css, *.scss, *.js match BadWhitespace /\s\+$/
+" au BufRead,BufNewFile *.py, *.md, *.html, *.css, *.scss, *.js match BadWhitespace /\s\+$/
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
@@ -241,3 +241,13 @@ vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  env = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(env, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF

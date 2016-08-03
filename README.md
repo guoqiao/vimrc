@@ -3,58 +3,52 @@
     git clone https://github.com/guoqiao/vimx.git ~/.vim && cd ~/.vim
 
 ## install
-Install dependencies:
-
-- flake8 OR pylint was required by syntastic, install both here.
-- ctags was required by tagbar
-- silverseacher-ag was requrired by ctrlp
-
-install python dependencies:
-
-    sudo pip install -U flake8 pylint autopep8
-
 install binary dependencies:
 
 OS X:
 
-    brew install ctags-exuberant the_silver_searcher
+    ./brew.sh
 
 Ubuntu:
 
-    sudo apt-get install exuberant-ctags silversearcher-ag cmake
+    ./apt-get.sh
 
 Then install:
 
     ./install.sh
 
 Install YouCompleteMe:
-    cd bundle/YouCompleteMe
-    ./install.sh
+
+    bundle/YouCompleteMe/install.sh
 
 That's all!
 
 ## basic usage
 * leader: ,
-* map ; to :
+* map ; to :, so you don't need to press shift for : each time.
 * tabs: tn to new, tc to close, th to left, tl to right, tm to mv to last
 * windows: ctrl + [hjkl]
 * no highlight: ,h
 * edit vimrc: ,ev
+* 0 line begin, <space> to end
+* visual select, then ,r to replace
+* Ctrl + G to show current file path
+* :ls list buffers(recently opened files)
+* :b <file> open buffer, press tab to cycle between recent files
 
 ## plugin settings
-* NERDTree: tt to toggle tree, ff to find file in tree
+* NERDTree: tt to toggle tree, ff to find file in tree(reveal)
 * NERD-Commenter: leader + c + i
 * YankRing: leader + p to open paste history, q to quit
 * CtrlP: ctrl + p
 * Emmet: ctrl + y + ,
-* Ack: use Ack FOOBAR to search on cmdline
 * vim-indent-object: ii, ia
 * vim-easymotion: ,,w
 * vim-multiple-cursors: ctrl + n for next, ctrl + b for prev, ctrl + x to skip, esc
 * tabular: :Tab/=, = is the char to align
 
 pro only:
-* tagbar: TT
+* tagbar: TT, show tags on right
 * YouCompleteMe: ,j to jump to def
 
 ## Build latest vim
