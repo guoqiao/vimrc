@@ -17,10 +17,6 @@ Then install:
 
     ./install.sh
 
-Install YouCompleteMe:
-
-    bundle/YouCompleteMe/install.sh
-
 That's all!
 
 ## basic usage
