@@ -115,6 +115,7 @@ syntax enable
 set so=10
 set ruler
 set number
+set relativenumber
 set hidden
 set nowrap
 set autoread
