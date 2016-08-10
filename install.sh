@@ -18,4 +18,7 @@ cd ~/.vim
 vim +PluginClean +qall
 vim +PluginInstall +qall
 
-~/.vim/bundle/YouCompleteMe/install.sh
+cd ~/.vim/bundle/YouCompleteMe/
+git pull
+git submodule update --init --recursive
+bash install.sh
