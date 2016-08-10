@@ -121,7 +121,7 @@ set nowrap
 set autoread
 set cursorline
 set shell=/bin/bash
-set clipboard=unnamed
+set clipboard^=unnamed,unnamedplus
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
 set iskeyword+=-
