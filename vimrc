@@ -86,7 +86,7 @@ let g:tagbar_foldlevel = 0
 
 " ctrl + p to search
 Plugin 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_working_path_mode = 'ra'
 
@@ -102,6 +102,9 @@ if executable('ag')
 endif
 
 Plugin 'Valloric/YouCompleteMe'
+let g:ycm_python_binary_path = 'python'
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
 let g:ycm_filetype_whitelist = { 'python':1 }
 " very useful
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -243,12 +246,3 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  env = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(env, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
