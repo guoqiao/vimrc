@@ -20,21 +20,27 @@ Ubuntu:
     ./install-ubuntu.sh
 
 This will also build the lastest vim and silversearcher-ag for you.
+
 Note: silversearcher-ag is a super fast command line search tool which I used for CtrlP.
+You can also use it to replace `find`, `locate`, `ack`, etc.
+
+To search text in dir: `ag TEXT`
+To search file in dir: `ag -g NAME`
 
 ## Useful mapping
+* leader key is `,`
 * map ; to :, so you don't need to press shift for : each time
-* 0 line begin, <space> to end
+* 0 line begin, [space] to end
 
 ## The leader key
-Leader key is , in this vimrc. Related shortcuts:
-* remove search result highlight: <leader>h
-* search and replace text: visual select, then <leader>r to replace
-* YouCompleteMe: <leader>j to jump to def
-* YankRing: <leader>p to open paste history, q to quit
-* vim-easymotion: <leader><leader>w
-* edit vimrc: <leader>ev
-* NERD-Commenter: <leader>ci
+Leader key is `,` in this vimrc. Related shortcuts:
+* remove search result highlight: [leader]h
+* search and replace text: visual select, then [leader]r to replace
+* YouCompleteMe: [leader]j to jump to def
+* YankRing: [leader]p to open paste history, q to quit
+* vim-easymotion: [leader][leader]w
+* edit vimrc: [leader]ev
+* NERD-Commenter: [leader]ci
 
 ## Tabs
 * tn: new tab
