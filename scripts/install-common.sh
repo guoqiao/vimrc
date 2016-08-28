@@ -1,4 +1,10 @@
 #!/bin/bash
+
+cd ~/.vim/scripts/
+
+./build-vim.sh
+./build-ag.sh
+
 cd ~/.vim
 
 git pull
@@ -21,4 +27,4 @@ vim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe/
 git pull
 git submodule update --init --recursive
-bash install.sh
+python install.py
