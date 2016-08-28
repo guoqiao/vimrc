@@ -1,8 +1,8 @@
 #!/bin/bash
 set -x
 
+# Ubuntu only
 sudo apt-get update
-
 sudo apt-get install -y \
 autoconf \
 automake \
@@ -31,4 +31,7 @@ ruby-dev \
 silversearcher-ag \
 zlib1g-dev \
 git
+sudo apt-get autoremove
+sudo apt-get clean
 
+bash scripts/install-common.sh
