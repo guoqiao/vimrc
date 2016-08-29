@@ -2,8 +2,10 @@
 
 cd ~/.vim/scripts/
 
-./build-vim.sh
 ./build-ag.sh
+./build-vim.sh
+./build-fish.sh
+./build-tmux.sh
 
 cd ~/.vim
 

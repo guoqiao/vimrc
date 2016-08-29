@@ -14,6 +14,7 @@ gettext \
 libatk1.0-dev \
 libbonoboui2-dev \
 libcairo2-dev \
+libevent-dev \
 libgnome2-dev \
 libgnomeui-dev \
 libgtk2.0-dev \

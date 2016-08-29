@@ -7,7 +7,8 @@ if cd vim;
     else git clone https://github.com/vim/vim.git && cd vim;
 fi
 
-./configure --with-features=huge \
+./configure --prefix=/usr/ \
+            --with-features=huge \
             --enable-pythoninterp \
             --enable-rubyinterp \
             --enable-python3interp

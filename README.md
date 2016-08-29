@@ -1,10 +1,11 @@
 # Background
 I have used this repo for more than 5 years, as a Python/Django developer, in both macOS and Ubuntu.
+Started from vim, it also incldues git, tmux, fish and ag support now.
 
 ## Principles:
 - keep it lightweight, only use necessary config and plugins
 - keep it general for both macOS and Ubuntu
-- keep it updated, never stop to absorb new ideas
+- keep it updated, never stop to absorb new ideas and tools.
 - keep it easy to use, use best shortcuts
 
 ## Install
@@ -19,28 +20,22 @@ Ubuntu:
 
     ./install-ubuntu.sh
 
-This will also build the lastest vim and silversearcher-ag for you.
-
-Note: silversearcher-ag is a super fast command line search tool which I used for CtrlP.
-You can also use it to replace `find`, `locate`, `ack`, etc.
-
-To search text in dir: `ag TEXT`
-To search file in dir: `ag -g NAME`
+This will also build the lastest vim, fish, tmux and ag for you.
 
 ## Useful mapping
 * leader key is `,`
-* map ; to :, so you don't need to press shift for : each time
-* 0 line begin, [space] to end
+* map `;` to `:`, so you don't need to press shift for `:` each time
+* `0` to line begin, [space] to line end
 
 ## The leader key
 Leader key is `,` in this vimrc. Related shortcuts:
-* remove search result highlight: [leader]h
-* search and replace text: visual select, then [leader]r to replace
-* YouCompleteMe: [leader]j to jump to def
-* YankRing: [leader]p to open paste history, q to quit
-* vim-easymotion: [leader][leader]w
-* edit vimrc: [leader]ev
-* NERD-Commenter: [leader]ci
+* remove search result highlight: [leader] + h
+* search and replace text: visual select, then [leader] + r to replace
+* YouCompleteMe: [leader] + j to jump to def
+* YankRing: [leader] + p to open paste history, q to quit
+* vim-easymotion: [leader][leader] + w
+* edit vimrc: [leader] + ev
+* NERD-Commenter: [leader] + ci
 
 ## Tabs
 * tn: new tab
@@ -51,7 +46,7 @@ Leader key is `,` in this vimrc. Related shortcuts:
 * to: close other tab
 
 ## Window split
-* windows: ctrl + [hjkl]
+* move around splits: ctrl + [hjkl]
 
 ## plugin settings
 * NERDTree: tt to toggle tree, ff to find file in tree(reveal)
@@ -62,7 +57,38 @@ Leader key is `,` in this vimrc. Related shortcuts:
 * tabular: :Tab/=, = is the char to align
 * tagbar: TT, show tags on right
 
-## build latest vim and ag
+## Tmux
+This repo now also incldues a tmux.conf. It's based on the lastest tmux from github.
+To build tmux and install it to `/usr/bin/`:
+
+    bash scripts/build-tmux.sh
+
+To install tmux.conf:
+
+    ln -s ~/.vim/tmux.conf ~/.tmux.conf
+    tmux kill-server
+
+Basic usage:
+
+- prefix: Ctrl + b (didn't change to Ctrl + a since that's a os level shortcuts to go to line begin)
+- prefix + - and | to split window, easy to remember
+- prefix + arrows to resize panes
+- prefix + r to reload conf and display a "Reloaded" message, otherwise you need to `tmux kill-server`
+- prefix + z to maximium current pane
+- prefix + space to switch between builtin layouts
+- Ctrl + arrows to move arround between panes, no prefix needed
+
+## ag
+The silversearcher-ag is a super fast command line search tool which I used for CtrlP.
+You can also use it to replace `find`, `locate`, `ack` in terminal.
+
+Basic usage:
+
+- search text in dir: `ag TEXT`
+- search file in dir: `ag -g NAME`
+- search python files only: `ag --python TEXT`
+
+## build latest vim
 Note: now this will be done in the install script automcatically.
 clipboard and python support are required in this config, to check your current vim:
 
@@ -73,6 +99,9 @@ There should be a '+' sign before them. If not, build vim yourself:
 
     bash script/build-vim.sh
 
-## build latest silversearcher-ag
+## Other tools
 
     bash script/build-ag.sh
+    bash script/build-fish.sh
+    bash script/build-tmux.sh
+

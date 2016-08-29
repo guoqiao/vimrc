@@ -8,6 +8,6 @@ if cd fish-shell;
 fi
 
 autoconf
-./configure
+./configure --prefix=/usr/
 make
 sudo make install
