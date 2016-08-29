@@ -7,6 +7,7 @@ sudo apt-get install -y \
 autoconf \
 automake \
 autotools-dev \
+bc \
 build-essential \
 cmake \
 exuberant-ctags \
