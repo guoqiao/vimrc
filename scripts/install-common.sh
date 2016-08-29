@@ -7,6 +7,8 @@ cd ~/.vim/scripts/
 ./build-fish.sh
 ./build-tmux.sh
 
+ln -s ~/.vim/tmux.conf ~/.tmux.conf
+
 cd ~/.vim
 
 git pull
