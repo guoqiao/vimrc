@@ -49,6 +49,7 @@ Plugin 'bling/vim-airline'
 " leader + leader + w
 Plugin 'easymotion/vim-easymotion'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'The-NERD-tree'
 let g:NERDTreeDirArrows=0
@@ -171,10 +172,10 @@ nnoremap j gj
 nnoremap k gk
 
 " Smart way to move between windows
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
+" nnoremap <C-j> <C-W>j
+" nnoremap <C-k> <C-W>k
+" nnoremap <C-h> <C-W>h
+" nnoremap <C-l> <C-W>l
 
 " Smart way to manage tabs
 nnoremap tl :tabnext<CR>
