@@ -45,7 +45,7 @@ Plugin 'mattn/emmet-vim'
 " :Tab/= to align to =
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 " leader + leader + w
 Plugin 'easymotion/vim-easymotion'
 Plugin 'bronson/vim-trailing-whitespace'
