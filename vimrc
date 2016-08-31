@@ -45,7 +45,7 @@ Plugin 'mattn/emmet-vim'
 " :Tab/= to align to =
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
+
 " leader + leader + w
 Plugin 'easymotion/vim-easymotion'
 Plugin 'bronson/vim-trailing-whitespace'
@@ -124,7 +124,6 @@ set hidden
 set nowrap
 set autoread
 set cursorline
-set shell=/bin/bash
 set clipboard^=unnamed,unnamedplus
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
@@ -206,6 +205,11 @@ catch
     colorscheme desert
 endtry
 set background=dark
+
+" powerline setup
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 autocmd! bufwritepost vimrc source %
 com! FJ %!python -m json.tool
