@@ -136,6 +136,7 @@ set foldmethod=indent
 set foldlevel=99
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
+set shell=/bin/bash
 
 " Turn backup off, since most stuff is in SVN, git etc.
 set nowb
