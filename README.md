@@ -32,3 +32,6 @@ That's all!
 * load cscope db file: < F3 > l
 * reset cscope db file: < F3 > r
 * find the cursor: < F3 > c|d|e|f|g|i|s|t
+
+
+## test
