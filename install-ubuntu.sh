@@ -31,6 +31,7 @@ pkg-config \
 python-dev \
 ruby-dev \
 silversearcher-ag \
+tmux \
 zlib1g-dev \
 git
 sudo apt-get autoremove

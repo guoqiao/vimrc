@@ -2,10 +2,7 @@
 
 cd ~/.vim/scripts/
 
-./build-ag.sh
 ./build-vim.sh
-./build-fish.sh
-./build-tmux.sh
 
 ln -s ~/.vim/tmux.conf ~/.tmux.conf
 
