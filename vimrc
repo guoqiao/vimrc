@@ -131,7 +131,6 @@ set iskeyword+=-
 set encoding=utf8
 set ffs=unix,dos,mac
 set laststatus=2
-set textwidth=120
 set foldmethod=indent
 set foldlevel=99
 set list

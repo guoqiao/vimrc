@@ -12,6 +12,7 @@ git config --global core.compression 9  # 0: raw, 1: fastest, 9: smallest -1: le
 
 git config --global alias.br branch
 git config --global alias.bl 'branch -l'
+git config --global alias.bd 'branch -d'
 git config --global alias.co checkout
 git config --global alias.ci commit
 git config --global alias.ca 'commit --amend'
