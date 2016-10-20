@@ -87,7 +87,7 @@ let g:tagbar_foldlevel = 0
 
 " ctrl + p to search
 Plugin 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_working_path_mode = 'ra'
 
