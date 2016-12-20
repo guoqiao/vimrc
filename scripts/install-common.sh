@@ -1,9 +1,5 @@
 #!/bin/bash
 
-cd ~/.vim/scripts/
-
-./build-vim.sh
-
 ln -s ~/.vim/tmux.conf ~/.tmux.conf
 
 cd ~/.vim
