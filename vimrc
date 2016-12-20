@@ -124,7 +124,7 @@ set hidden
 set nowrap
 set autoread
 set cursorline
-set clipboard^=unnamed,unnamedplus
+set clipboard^=unnamed
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
 set iskeyword+=-
