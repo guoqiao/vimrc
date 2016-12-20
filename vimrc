@@ -93,11 +93,12 @@ let g:ctrlp_working_path_mode = 'ra'
 
 if executable('ag')
 
-    let g:ctrlp_user_command = 'ag %s -S --nocolor --nogroup --hidden
+    let g:ctrlp_user_command = 'ag %s --smart-case --nogroup --hidden
           \ --ignore .git
           \ --ignore .svn
           \ --ignore .hg
           \ --ignore .DS_Store
+          \ --ignore __pycache__
           \ --ignore "**/*.pyc"
           \ -g ""'
 endif
