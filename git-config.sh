@@ -22,7 +22,7 @@ git config --global alias.st status
 git config --global alias.fa 'fetch --all'
 git config --global alias.rb 'rebase -i origin/master'
 git config --global alias.rd 'push origin --delete'
-git config --global alias.rd 'ls-files --other --ignored --exclude-standard  # list ignored files'
+git config --global alias.li 'ls-files --other --ignored --exclude-standard  # list ignored files'
 git config --global alias.ll 'log --pretty=format:"%C(yellow)%h %C(green)%ad%Cred%d %Creset%s%Cblue [%cn]" --decorate --date=short --graph'
 git config --global alias.ls 'log --pretty=format:"%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn]" --decorate --date=relative'
 git config --global alias.ld 'log --pretty=format:"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]" --decorate --numstat'

@@ -24,22 +24,22 @@ Plugin 'matchit.zip'
 Plugin 'repeat.vim'
 Plugin 'surround.vim'
 Plugin 'molokai'
-Plugin 'peaksea'
+" Plugin 'peaksea'
 Plugin 'colorizer'
 Plugin 'python.vim'
 " F8
-Plugin 'vim-autopep8'
+" Plugin 'vim-autopep8'
 
-Plugin 'syntastic'
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-let g:syntastic_python_checkers = ['pyflakes']
-" display all errors from all checkers together
-let g:syntastic_aggregate_errors = 0
-" disable all style messages
-" let g:syntastic_quiet_messages = { "type": "style" }
+Plugin 'w0rp/ale'
+let g:ale_sign_column_always = 1
+
+" Plugin 'syntastic'
+" let g:syntastic_always_populate_loc_list = 0
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 1
+" let g:syntastic_python_checkers = ['pyflakes']
+" let g:syntastic_aggregate_errors = 0
 
 Plugin 'mattn/emmet-vim'
 " :Tab/= to align to =
@@ -55,9 +55,7 @@ Plugin 'The-NERD-tree'
 let g:NERDTreeDirArrows=0
 let g:NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-" tt to toggle tree
 map tt :NERDTreeToggle<CR>
-" ff to find/reveal current file in tree
 map ff :NERDTreeFind<CR>
 
 " <leader> p to show paste history
@@ -110,7 +108,7 @@ let g:ycm_server_log_level = 'debug'
 let g:ycm_filetype_whitelist = { 'python':1 }
 " very useful
 let g:ycm_autoclose_preview_window_after_completion=1
-nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>j :YcmCompleter GoToDefinition<CR>
 
 call vundle#end()
 filetype plugin indent on     " required!
