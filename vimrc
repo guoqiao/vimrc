@@ -123,7 +123,13 @@ set hidden
 set nowrap
 set autoread
 set cursorline
-set clipboard^=unnamed,unnamedplus
+
+if has('unix')
+    set clipboard=unnamedplus
+else
+    set clipboard=unnamed
+endif
+
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
 set iskeyword+=-
