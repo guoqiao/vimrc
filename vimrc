@@ -17,39 +17,26 @@ let mapleader = ","
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required!
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-indent-object'
-Plugin 'Yggdroot/indentLine'
-Plugin 'matchit.zip'
-Plugin 'repeat.vim'
+Plugin 'VundleVim/Vundle.vim'  " let Vundle manage Vundle, required!
+Plugin 'vim-indent-object'  " vii to visual select current indent
+Plugin 'Yggdroot/indentLine' " show indent line
+Plugin 'matchit.zip' " % to match
+Plugin 'repeat.vim' " . to repeat
 Plugin 'surround.vim'
 Plugin 'molokai'
-" Plugin 'peaksea'
-Plugin 'colorizer'
+Plugin 'colorizer'  " show color for css
 Plugin 'python.vim'
-" F8
-" Plugin 'vim-autopep8'
+Plugin 'vim-autopep8'  " F8 to format
 
 Plugin 'w0rp/ale'
 let g:ale_sign_column_always = 1
 
-" Plugin 'syntastic'
-" let g:syntastic_always_populate_loc_list = 0
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 1
-" let g:syntastic_python_checkers = ['pyflakes']
-" let g:syntastic_aggregate_errors = 0
-
-Plugin 'mattn/emmet-vim'
-" :Tab/= to align to =
-Plugin 'godlygeek/tabular'
+Plugin 'mattn/emmet-vim'  " Ctrl + y + ,
+Plugin 'godlygeek/tabular'  " :Tab/= to align to =
 Plugin 'tpope/vim-fugitive'
 
-" leader + leader + w
-Plugin 'easymotion/vim-easymotion'
-Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'easymotion/vim-easymotion'  " leader + leader + w
+Plugin 'bronson/vim-trailing-whitespace'  " :FixWhitespace
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'The-NERD-tree'
@@ -63,10 +50,8 @@ map ff :NERDTreeFind<CR>
 Plugin 'YankRing.vim'
 let yankring_min_element_length=4
 
-" leader + c + i to toggle comment
-Plugin 'The-NERD-Commenter'
-" add space after comment delim for pep8
-let NERDSpaceDelims = 1
+Plugin 'The-NERD-Commenter'  " leader + c + i to toggle comment
+let NERDSpaceDelims = 1  " add space after comment delim for pep8
 
 Plugin 'airblade/vim-gitgutter'
 let g:gitgutter_sign_column_always = 1
@@ -84,8 +69,7 @@ let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_foldlevel = 0
 
-" ctrl + p to search
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'  " ctrl + p to search
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_working_path_mode = 'ra'
@@ -107,7 +91,6 @@ let g:ycm_python_binary_path = 'python'
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 let g:ycm_filetype_whitelist = { 'python':1 }
-" very useful
 let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>j :YcmCompleter GoToDefinition<CR>
 
@@ -141,9 +124,8 @@ set foldmethod=indent
 set foldlevel=99
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
-set shell=/bin/bash
 
-" Turn backup off, since most stuff is in SVN, git etc.
+" Turn backup off, since most stuff is in git.
 set nowb
 set nobackup
 set noswapfile
@@ -201,7 +183,7 @@ map <leader>ss :setlocal spell!<cr>
 
 set t_Co=256
 set guifont=Monaco:h16
-" set guifont=Source\ Code\ Pro\ 16
+set guifont=Source\ Code\ Pro\ 16
 set guioptions-=r
 set guioptions-=L
 
