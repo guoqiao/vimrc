@@ -20,6 +20,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required!
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-indent-object'
+Plugin 'Yggdroot/indentLine'
 Plugin 'matchit.zip'
 Plugin 'repeat.vim'
 Plugin 'surround.vim'
