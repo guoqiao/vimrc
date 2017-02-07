@@ -124,6 +124,7 @@ set foldmethod=indent
 set foldlevel=99
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
+set lazyredraw
 
 " Turn backup off, since most stuff is in git.
 set nowb
@@ -233,4 +234,3 @@ vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
-
