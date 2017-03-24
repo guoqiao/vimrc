@@ -70,9 +70,9 @@ let g:tagbar_autoclose = 1
 let g:tagbar_foldlevel = 0
 
 Plugin 'ctrlpvim/ctrlp.vim'  " ctrl + p to search
-let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_tabpage_position  = 'a'
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'r'
 
 if executable('ag')
 
@@ -108,10 +108,10 @@ set nowrap
 set autoread
 set cursorline
 
-if has('unix')
-    set clipboard=unnamedplus
-else
+if has('mac')
     set clipboard=unnamed
+else
+    set clipboard=unnamedplus
 endif
 
 set wildignore=*.o,*~,*.pyc
