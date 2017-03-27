@@ -12,7 +12,7 @@
 
 set nocompatible              " be iMproved
 filetype off                  " required!
-let mapleader = ","
+let mapleader = "\<Space>"
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -49,6 +49,7 @@ map ff :NERDTreeFind<CR>
 " <leader> p to show paste history
 Plugin 'YankRing.vim'
 let yankring_min_element_length=4
+noremap <leader>p :YRShow<CR>
 
 Plugin 'The-NERD-Commenter'  " leader + c + i to toggle comment
 let NERDSpaceDelims = 1  " add space after comment delim for pep8
@@ -153,7 +154,7 @@ set tabstop=4
 
 nnoremap ; :
 nnoremap 0 ^
-nnoremap <space> $
+nnoremap <CR> $
 
 " Treat long lines as break lines (useful when moving around in them)
 nnoremap j gj
@@ -173,8 +174,10 @@ nnoremap tc :tabclose<CR>
 nnoremap tm :tabmove<CR>
 nnoremap to :tabonly<CR>
 
-noremap <leader>p :YRShow<CR>
 noremap <leader>h :noh<CR>
+noremap <leader>w :w<CR>
+noremap <leader>q :q<CR>
+noremap <leader>x :x<CR>
 
 noremap <leader>ev :e $MYVIMRC<CR>
 noremap <leader>sv :source $MYVIMRC<CR>
