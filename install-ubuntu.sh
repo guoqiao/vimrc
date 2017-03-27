@@ -37,4 +37,6 @@ git
 sudo apt-get autoremove
 sudo apt-get clean
 
+gem install tmuxinator
+
 bash scripts/install-common.sh
