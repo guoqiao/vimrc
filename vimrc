@@ -157,6 +157,8 @@ set tabstop=4
 nnoremap ; :
 nnoremap 0 ^
 nnoremap <Space> $
+" Yank from the cursor to the end of the line, to be consistent with C and D.
+nnoremap Y y$
 
 " Treat long lines as break lines (useful when moving around in them)
 nnoremap j gj
