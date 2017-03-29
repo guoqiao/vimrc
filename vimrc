@@ -109,10 +109,12 @@ set nowrap
 set autoread
 set cursorline
 
-if has('mac')
-    set clipboard=unnamed
-else
-    set clipboard=unnamedplus
+if has('clipboard')
+    if has('unnamedplus')  " When possible use + register for copy-paste
+        set clipboard=unnamed,unnamedplus
+    else         " On mac and Windows, use * register for copy-paste
+        set clipboard=unnamed
+    endif
 endif
 
 set wildignore=*.o,*~,*.pyc
@@ -160,12 +162,6 @@ nnoremap <Space> $
 nnoremap j gj
 nnoremap k gk
 
-" Smart way to move between windows
-" nnoremap <C-j> <C-W>j
-" nnoremap <C-k> <C-W>k
-" nnoremap <C-h> <C-W>h
-" nnoremap <C-l> <C-W>l
-
 " Smart way to manage tabs
 nnoremap tl :tabnext<CR>
 nnoremap th :tabprev<CR>
@@ -176,6 +172,7 @@ nnoremap to :tabonly<CR>
 
 noremap <leader>h :noh<CR>
 noremap <leader>w :w<CR>
+noremap <leader>e :e!<CR>
 noremap <leader>q :q<CR>
 noremap <leader>x :x<CR>
 
