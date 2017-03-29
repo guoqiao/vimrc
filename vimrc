@@ -12,7 +12,7 @@
 
 set nocompatible              " be iMproved
 filetype off                  " required!
-let mapleader = "\<Space>"
+let mapleader = ","
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -154,7 +154,7 @@ set tabstop=4
 
 nnoremap ; :
 nnoremap 0 ^
-nnoremap <CR> $
+nnoremap <Space> $
 
 " Treat long lines as break lines (useful when moving around in them)
 nnoremap j gj
