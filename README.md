@@ -1,6 +1,6 @@
 # Background
-I have used this repo for more than 5 years, as a Python/Django developer, in both macOS and Ubuntu.
-Started from vim, it also incldues git, tmux, fish and ag support now.
+I have used this repo for more than 5 years, as a Python/Django developer, on both macOS and Ubuntu.
+Started from vim, it also includes git, tmux, fish and ag support now.
 
 ## Principles:
 - keep it lightweight, only use necessary config and plugins
