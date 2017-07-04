@@ -197,6 +197,9 @@ catch
 endtry
 set background=dark
 
+" add transparency, must be after colorscheme
+highlight Normal guibg=NONE ctermbg=NONE
+
 autocmd! bufwritepost vimrc source %
 com! FJ %!python -m json.tool
 
