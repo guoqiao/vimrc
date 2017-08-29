@@ -19,7 +19,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'  " let Vundle manage Vundle, required!
 Plugin 'vim-indent-object'  " vii to visual select current indent
-Plugin 'Yggdroot/indentLine' " show indent line
 Plugin 'matchit.zip' " % to match
 Plugin 'repeat.vim' " . to repeat
 Plugin 'surround.vim'
@@ -87,6 +86,7 @@ if executable('ag')
           \ -g ""'
 endif
 
+" hard to compile, optional
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_python_binary_path = 'python'
 let g:ycm_server_keep_logfiles = 1
