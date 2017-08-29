@@ -33,6 +33,8 @@ ruby-dev \
 silversearcher-ag \
 tmux \
 zlib1g-dev \
+vim-gtk \
+vim-gnome \
 git
 sudo apt-get autoremove
 sudo apt-get clean
