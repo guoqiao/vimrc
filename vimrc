@@ -26,6 +26,7 @@ Plugin 'molokai'
 Plugin 'colorizer'  " show color for css
 Plugin 'python.vim'
 Plugin 'vim-autopep8'  " F8 to format
+Plugin 'vim-airline/vim-airline'
 
 Plugin 'w0rp/ale'
 let g:ale_sign_column_always = 1
@@ -151,8 +152,18 @@ set smarttab
 set autoindent
 set smartindent
 set copyindent
-set shiftwidth=4
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+autocmd FileType python     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+autocmd FileType html       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType xml        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType css        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType scss       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+
 
 nnoremap ; :
 nnoremap 0 ^
