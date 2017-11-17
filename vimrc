@@ -152,9 +152,6 @@ set smarttab
 set autoindent
 set smartindent
 set copyindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
 
 autocmd FileType python     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd FileType html       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
