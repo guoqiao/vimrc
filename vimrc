@@ -106,7 +106,7 @@ set ruler
 set number
 set relativenumber
 set hidden
-set nowrap
+set wrap
 set autoread
 set cursorline
 
@@ -157,6 +157,7 @@ autocmd FileType python     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expand
 autocmd FileType html       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType xml        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType yml        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType css        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType scss       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
