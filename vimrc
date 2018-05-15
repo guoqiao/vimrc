@@ -157,6 +157,12 @@ nnoremap Y y$
 nnoremap j gj
 nnoremap k gk
 
+" Smart way to move between windows
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
+
 " Smart way to manage tabs
 nnoremap tl :tabnext<CR>
 nnoremap th :tabprev<CR>
