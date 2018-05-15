@@ -95,7 +95,7 @@ set ruler
 set number
 set relativenumber
 set hidden
-set wrap
+set nowrap
 set autoread
 set cursorline
 set signcolumn=yes
