@@ -18,7 +18,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'  " let Vundle manage Vundle, required!
-Plugin 'vim-indent-object'  " vii to visual select current indent
 Plugin 'matchit.zip' " % to match
 Plugin 'repeat.vim' " . to repeat
 Plugin 'surround.vim'
@@ -32,7 +31,6 @@ Plugin 'w0rp/ale'
 let g:ale_sign_column_always = 1
 
 Plugin 'mattn/emmet-vim'  " Ctrl + y + ,
-Plugin 'godlygeek/tabular'  " :Tab/= to align to =
 Plugin 'tpope/vim-fugitive'
 
 Plugin 'easymotion/vim-easymotion'  " leader + leader + w
