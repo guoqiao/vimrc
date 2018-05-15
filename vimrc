@@ -37,7 +37,6 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'easymotion/vim-easymotion'  " leader + leader + w
 Plugin 'bronson/vim-trailing-whitespace'  " :FixWhitespace
-Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'The-NERD-tree'
 let g:NERDTreeDirArrows=0
