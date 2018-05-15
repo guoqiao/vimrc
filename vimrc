@@ -196,6 +196,8 @@ set background=dark
 
 " add transparency, must be after colorscheme
 highlight Normal guibg=NONE ctermbg=NONE
+highlight ColorColumn ctermbg=red
+set colorcolumn=80
 
 autocmd! bufwritepost vimrc source %
 com! FJ %!python -m json.tool
