@@ -90,7 +90,7 @@ filetype plugin indent on     " required!
 
 syntax on
 syntax enable
-set so=10
+set scrolloff=10
 set ruler
 set number
 set relativenumber
@@ -141,7 +141,7 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
-autocmd FileType html,xml,yml,css,scss,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType html,xml,yaml,css,scss,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType c setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
 
 
