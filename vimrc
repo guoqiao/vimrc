@@ -54,7 +54,6 @@ Plugin 'The-NERD-Commenter'  " leader + c + i to toggle comment
 let NERDSpaceDelims = 1  " add space after comment delim for pep8
 
 Plugin 'airblade/vim-gitgutter'
-let g:gitgutter_sign_column_always = 1
 
 Plugin 'terryma/vim-multiple-cursors'
 let g:multi_cursor_use_default_mapping=0
@@ -108,14 +107,8 @@ set hidden
 set wrap
 set autoread
 set cursorline
-
-if has('clipboard')
-    if has('unnamedplus')  " When possible use + register for copy-paste
-        set clipboard=unnamed,unnamedplus
-    else         " On mac and Windows, use * register for copy-paste
-        set clipboard=unnamed
-    endif
-endif
+set signcolumn=yes
+set clipboard=unnamed
 
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
@@ -152,14 +145,13 @@ set autoindent
 set smartindent
 set copyindent
 
-autocmd FileType python     setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
-autocmd FileType html       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-autocmd FileType htmldjango setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-autocmd FileType xml        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-autocmd FileType yml        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-autocmd FileType css        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-autocmd FileType scss       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
+
+autocmd FileType html,xml,yml,css,scss,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType c setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
 
 
 nnoremap ; :
@@ -247,3 +239,7 @@ vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+
+if filereadable(expand("~/.vim/vimrc.local"))
+    source ~/.vim/vimrc.local
+endif
