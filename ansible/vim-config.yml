@@ -1,0 +1,19 @@
+---
+# vim:ff=unix ts=2 sw=2 ai expandtab
+
+- hosts: ubuntu
+  tasks:
+
+  - name: git clone Vundle.vim
+    git:
+      repo: 'https://github.com/VundleVim/Vundle.vim.git'
+      dest: '~/.vim/bundle/Vundle.vim'
+      clone: yes
+      update: yes
+      force: yes
+      version: master
+
+  - name: Vundle Plugin Clean and Install
+    shell: vim +PluginClean +qall & vim +PluginInstall +qall
+    args:
+      chdir: '~/.vim/'

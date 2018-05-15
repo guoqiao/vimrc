@@ -1,0 +1,51 @@
+---
+# vim:ff=unix ts=2 sw=2 ai expandtab
+
+- hosts: ubuntu
+  tasks:
+
+    - name: apt install deps
+      become: yes
+      apt:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - libx11-dev
+        - libxtst-dev
+        - xorg-dev  # for +clipboard
+        - exuberant-ctags  # for tagbar
+
+    - name: get latest vim code
+      git:
+        repo: 'https://github.com/vim/vim.git'
+        dest: '/tmp/vim'
+        clone: yes
+        update: yes
+        force: yes
+        version: master
+
+    - name: make distclean
+      shell: make distclean
+      args:
+        chdir: '/tmp/vim'
+
+    - name: config vim
+      shell: >
+          ./configure --with-x
+          --enable-gui=auto
+          --enable-pythoninterp
+          --enable-python3interp
+          --enable-rubyinterp
+      args:
+        chdir: '/tmp/vim'
+
+    - name: make vim
+      shell: make
+      args:
+        chdir: '/tmp/vim'
+
+    - name: make install vim
+      become: true
+      shell: make install
+      args:
+        chdir: '/tmp/vim'
