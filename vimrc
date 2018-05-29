@@ -85,6 +85,9 @@ endif
 " let g:ycm_autoclose_preview_window_after_completion=1
 " nnoremap <leader>j :YcmCompleter GoToDefinition<CR>
 
+Plugin 'davidhalter/jedi-vim'
+let g:jedi#goto_command = "<leader>j"
+
 call vundle#end()
 filetype plugin indent on     " required!
 
