@@ -185,8 +185,6 @@ map <leader>pp :setlocal paste!<cr>
 map <leader>ss :setlocal spell!<cr>
 
 set t_Co=256
-set guifont=Monaco:h16
-set guifont=Source\ Code\ Pro\ 16
 set guioptions-=r
 set guioptions-=L
 
