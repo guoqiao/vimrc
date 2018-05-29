@@ -201,10 +201,7 @@ highlight ColorColumn ctermbg=red
 set colorcolumn=80
 
 autocmd! bufwritepost vimrc source %
-com! FJ %!python -m json.tool
-
-" Highlight whitespace at the end of lines
-" au BufRead,BufNewFile *.py, *.md, *.html, *.css, *.scss, *.js match BadWhitespace /\s\+$/
+" com! FJ %!python -m json.tool
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
