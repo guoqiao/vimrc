@@ -102,7 +102,15 @@ set nowrap
 set autoread
 set cursorline
 set signcolumn=yes
-set clipboard=unnamed
+
+" On OS X and Windows, we have only system clipboard
+" On Linux, we have system clipboard and selection clipboard
+" For Vim: * --> unnamed, + --> unnamedplus
+" On OS X & Windows: + and * --> system clipboard
+" On Linux: + --> system clipboard, * --> selection clipboard
+" So this setting will make Vim use system clipboard for on all 3 platforms
+" However, on Linux, Vim will not use the selection clipboard
+set clipboard=unnamedplus
 
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
