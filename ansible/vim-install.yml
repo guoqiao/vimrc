@@ -14,6 +14,7 @@
         - libxtst-dev
         - xorg-dev  # for +clipboard
         - exuberant-ctags  # for tagbar
+        - silversearcher-ag  # ag and ctrlp
 
     - name: get latest vim code
       git:
