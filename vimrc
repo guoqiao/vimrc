@@ -86,7 +86,6 @@ endif
 " nnoremap <leader>j :YcmCompleter GoToDefinition<CR>
 
 Plugin 'davidhalter/jedi-vim'
-let g:jedi#goto_command = "<leader>j"
 
 call vundle#end()
 filetype plugin indent on     " required!
