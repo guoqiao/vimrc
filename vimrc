@@ -85,21 +85,32 @@ endif
 " let g:ycm_autoclose_preview_window_after_completion=1
 " nnoremap <leader>j :YcmCompleter GoToDefinition<CR>
 
+Plugin 'davidhalter/jedi-vim'
+let g:jedi#goto_command = "<leader>j"
+
 call vundle#end()
 filetype plugin indent on     " required!
 
 syntax on
 syntax enable
-set so=10
+set scrolloff=10
 set ruler
 set number
 set relativenumber
 set hidden
-set wrap
+set nowrap
 set autoread
 set cursorline
 set signcolumn=yes
-set clipboard=unnamed
+
+" On OS X and Windows, we have only system clipboard
+" On Linux, we have system clipboard and selection clipboard
+" For Vim: * --> unnamed, + --> unnamedplus
+" On OS X & Windows: + and * --> system clipboard
+" On Linux: + --> system clipboard, * --> selection clipboard
+" So this setting will make Vim use system clipboard for on all 3 platforms
+" However, on Linux, Vim will not use the selection clipboard
+set clipboard=unnamedplus
 
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
@@ -141,7 +152,7 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
-autocmd FileType html,xml,yml,css,scss,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType html,xml,yaml,css,scss,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd FileType c setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
 
 
@@ -182,8 +193,6 @@ map <leader>pp :setlocal paste!<cr>
 map <leader>ss :setlocal spell!<cr>
 
 set t_Co=256
-set guifont=Monaco:h16
-set guifont=Source\ Code\ Pro\ 16
 set guioptions-=r
 set guioptions-=L
 
@@ -200,10 +209,7 @@ highlight ColorColumn ctermbg=red
 set colorcolumn=80
 
 autocmd! bufwritepost vimrc source %
-com! FJ %!python -m json.tool
-
-" Highlight whitespace at the end of lines
-" au BufRead,BufNewFile *.py, *.md, *.html, *.css, *.scss, *.js match BadWhitespace /\s\+$/
+" com! FJ %!python -m json.tool
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str

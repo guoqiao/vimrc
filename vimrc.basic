@@ -1,0 +1,32 @@
+" Vim without plugins and new features
+" Copy it to a new linux server, should just work there.
+syntax on
+syntax enable
+
+filetype indent plugin on
+
+nnoremap ; :
+nnoremap 0 ^
+nnoremap <Space> $
+
+set number
+set ruler
+set scrolloff=10
+
+set noswapfile
+set backspace=indent,eol,start
+
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+set autoindent
+set smartindent
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
+
+autocmd FileType html,xml,yaml,css,scss,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType c          setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
