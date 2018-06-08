@@ -109,7 +109,7 @@ set signcolumn=yes
 " On Linux: + --> system clipboard, * --> selection clipboard
 " So this setting will make Vim use system clipboard for on all 3 platforms
 " However, on Linux, Vim will not use the selection clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
