@@ -119,8 +119,6 @@ set iskeyword+=-
 set encoding=utf8
 set ffs=unix,dos,mac
 set laststatus=2
-set foldmethod=indent
-set foldlevel=99
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set lazyredraw
@@ -142,11 +140,13 @@ set hlsearch
 set incsearch
 let loaded_matchparen = 1 " disable math parenthiese
 
-set expandtab
 set smarttab
 set autoindent
 set smartindent
 set copyindent
+set cindent
+set foldmethod=indent
+set foldlevel=99
 
 set shiftwidth=4
 set softtabstop=4
