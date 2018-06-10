@@ -102,6 +102,7 @@ set nowrap
 set autoread
 set cursorline
 set signcolumn=yes
+set showcmd
 
 " On OS X and Windows, we have only system clipboard
 " On Linux, we have system clipboard and selection clipboard
