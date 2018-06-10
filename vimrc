@@ -60,7 +60,7 @@ let g:tagbar_autoclose = 1
 let g:tagbar_foldlevel = 0
 
 Plugin 'ctrlpvim/ctrlp.vim'  " ctrl + p to search
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_working_path_mode = 'r'
 
