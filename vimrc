@@ -86,6 +86,7 @@ endif
 " nnoremap <leader>j :YcmCompleter GoToDefinition<CR>
 
 Plugin 'davidhalter/jedi-vim'
+let g:jedi#popup_on_dot = 0
 
 call vundle#end()
 filetype plugin indent on     " required!
