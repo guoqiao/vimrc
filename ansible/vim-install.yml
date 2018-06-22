@@ -13,6 +13,7 @@
         - libx11-dev
         - libxtst-dev
         - xorg-dev  # for +clipboard
+        - xsel  # for vim clipboard in vscode
         - exuberant-ctags  # for tagbar
         - silversearcher-ag  # ag and ctrlp
 

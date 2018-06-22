@@ -60,7 +60,7 @@ let g:tagbar_autoclose = 1
 let g:tagbar_foldlevel = 0
 
 Plugin 'ctrlpvim/ctrlp.vim'  " ctrl + p to search
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_working_path_mode = 'r'
 
@@ -86,7 +86,7 @@ endif
 " nnoremap <leader>j :YcmCompleter GoToDefinition<CR>
 
 Plugin 'davidhalter/jedi-vim'
-let g:jedi#goto_command = "<leader>j"
+let g:jedi#popup_on_dot = 0
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -102,6 +102,7 @@ set nowrap
 set autoread
 set cursorline
 set signcolumn=yes
+set showcmd
 
 " On OS X and Windows, we have only system clipboard
 " On Linux, we have system clipboard and selection clipboard
@@ -110,7 +111,7 @@ set signcolumn=yes
 " On Linux: + --> system clipboard, * --> selection clipboard
 " So this setting will make Vim use system clipboard for on all 3 platforms
 " However, on Linux, Vim will not use the selection clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
@@ -118,8 +119,6 @@ set iskeyword+=-
 set encoding=utf8
 set ffs=unix,dos,mac
 set laststatus=2
-set foldmethod=indent
-set foldlevel=99
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set lazyredraw
@@ -141,11 +140,13 @@ set hlsearch
 set incsearch
 let loaded_matchparen = 1 " disable math parenthiese
 
-set expandtab
 set smarttab
 set autoindent
 set smartindent
 set copyindent
+set cindent
+set foldmethod=indent
+set foldlevel=99
 
 set shiftwidth=4
 set softtabstop=4
