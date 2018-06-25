@@ -122,6 +122,7 @@ set laststatus=2
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set lazyredraw
+set tags=tags
 
 " Turn backup off, since most stuff is in git.
 set nowb
