@@ -12,7 +12,7 @@
 
 set nocompatible              " be iMproved
 filetype off                  " required!
-let mapleader = ","
+let mapleader = "\<Space>"
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -122,6 +122,7 @@ set laststatus=2
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set lazyredraw
+set tags=tags
 
 " Turn backup off, since most stuff is in git.
 set nowb
@@ -159,7 +160,6 @@ autocmd FileType c setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
 
 nnoremap ; :
 nnoremap 0 ^
-nnoremap <Space> $
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
