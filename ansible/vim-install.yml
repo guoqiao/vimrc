@@ -17,6 +17,7 @@
         - xsel  # for vim clipboard in vscode
         - exuberant-ctags  # for tagbar
         - silversearcher-ag  # ag and ctrlp
+        - shellcheck  # help to check shell script
 
     - name: get latest vim code
       git:
