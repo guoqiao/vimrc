@@ -60,9 +60,9 @@ let g:tagbar_autoclose = 1
 let g:tagbar_foldlevel = 0
 
 Plugin 'ctrlpvim/ctrlp.vim'  " ctrl + p to search
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_tabpage_position  = 'a'
-let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_working_path_mode = 0
 
 if executable('ag')
 
@@ -85,8 +85,8 @@ endif
 " let g:ycm_autoclose_preview_window_after_completion=1
 " nnoremap <leader>j :YcmCompleter GoToDefinition<CR>
 
-Plugin 'davidhalter/jedi-vim'
-let g:jedi#popup_on_dot = 0
+" Plugin 'davidhalter/jedi-vim'
+" let g:jedi#popup_on_dot = 0
 
 call vundle#end()
 filetype plugin indent on     " required!
