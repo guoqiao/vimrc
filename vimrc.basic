@@ -5,9 +5,9 @@ syntax enable
 
 filetype indent plugin on
 
+let mapleader = "\<Space>"
 nnoremap ; :
 nnoremap 0 ^
-nnoremap <Space> $
 
 set number
 set ruler

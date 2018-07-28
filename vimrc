@@ -76,14 +76,13 @@ if executable('ag')
           \ -g ""'
 endif
 
-" hard to compile, optional
-" Plugin 'Valloric/YouCompleteMe'
-" let g:ycm_python_binary_path = 'python'
-" let g:ycm_server_keep_logfiles = 1
-" let g:ycm_server_log_level = 'debug'
-" let g:ycm_filetype_whitelist = { 'python':1 }
-" let g:ycm_autoclose_preview_window_after_completion=1
-" nnoremap <leader>j :YcmCompleter GoToDefinition<CR>
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_python_binary_path = 'python'
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
+let g:ycm_filetype_whitelist = { 'python':1 }
+let g:ycm_autoclose_preview_window_after_completion=1
+nnoremap <leader>j :YcmCompleter GoToDefinition<CR>
 
 Plugin 'davidhalter/jedi-vim'
 let g:jedi#popup_on_dot = 0
@@ -104,13 +103,6 @@ set cursorline
 set signcolumn=yes
 set showcmd
 
-" On OS X and Windows, we have only system clipboard
-" On Linux, we have system clipboard and selection clipboard
-" For Vim: * --> unnamed, + --> unnamedplus
-" On OS X & Windows: + and * --> system clipboard
-" On Linux: + --> system clipboard, * --> selection clipboard
-" So this setting will make Vim use system clipboard for on all 3 platforms
-" However, on Linux, Vim will not use the selection clipboard
 set clipboard=unnamed
 
 set wildignore=*.o,*~,*.pyc
@@ -139,7 +131,6 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-let loaded_matchparen = 1 " disable math parenthiese
 
 set smarttab
 set autoindent
@@ -180,6 +171,8 @@ nnoremap tn :tabnew<CR>
 nnoremap tc :tabclose<CR>
 nnoremap tm :tabmove<CR>
 nnoremap to :tabonly<CR>
+
+let loaded_matchparen = 1 " disable math parenthiese
 
 noremap <leader>h :noh<CR>
 noremap <leader>w :w<CR>
@@ -245,7 +238,3 @@ vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
-
-if filereadable(expand("~/.vim/vimrc.local"))
-    source ~/.vim/vimrc.local
-endif
