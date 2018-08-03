@@ -205,6 +205,8 @@ set colorcolumn=80
 autocmd! bufwritepost vimrc source %
 " com! FJ %!python -m json.tool
 
+cmap w!! w !sudo tee > /dev/null %
+
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
