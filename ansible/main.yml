@@ -1,0 +1,8 @@
+#!/usr/bin/env ansible-playbook
+---
+
+- name: install and config vim with role
+  hosts: vim
+  roles:
+    - role: vim
+      requirements_path: ../requirements.txt
