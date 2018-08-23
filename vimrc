@@ -60,21 +60,25 @@ let g:tagbar_autoclose = 1
 let g:tagbar_foldlevel = 0
 
 Plugin 'ctrlpvim/ctrlp.vim'  " ctrl + p to search
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_working_path_mode = 0
 
 if executable('ag')
 
-    let g:ctrlp_user_command = 'ag %s --smart-case --nogroup --hidden
+    set grepprg=ag\ --nogroup\ --nocolor\ --column
+    set grepformat=%f:%l:%c%m
+
+    let g:ctrlp_use_caching = 0
+    let g:ctrlp_user_command = 'ag %s --nogroup --hidden
           \ --ignore .git
-          \ --ignore .svn
-          \ --ignore .hg
           \ --ignore .DS_Store
           \ --ignore __pycache__
           \ --ignore "**/*.pyc"
           \ -g ""'
 endif
+
+Plugin 'SirVer/ultisnips'
 
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_python_binary_path = 'python'
@@ -82,10 +86,9 @@ let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 let g:ycm_filetype_whitelist = { 'python':1 }
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_use_ultisnips_completer = 1
 nnoremap <leader>j :YcmCompleter GoToDefinition<CR>
-
-" Plugin 'davidhalter/jedi-vim'
-" let g:jedi#popup_on_dot = 0
 
 call vundle#end()
 filetype plugin indent on     " required!
