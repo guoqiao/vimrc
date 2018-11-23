@@ -26,6 +26,7 @@ Plugin 'colorizer'  " show color for css
 Plugin 'python.vim'
 Plugin 'vim-autopep8'  " F8 to format
 Plugin 'vim-airline/vim-airline'
+Plugin 'michaeljsmith/vim-indent-object'
 
 Plugin 'w0rp/ale'
 let g:ale_sign_column_always = 1
