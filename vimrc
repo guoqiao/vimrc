@@ -107,6 +107,7 @@ set cursorline
 set signcolumn=yes
 set showcmd
 
+" map to middle click on linux
 set clipboard=unnamed
 
 set wildignore=*.o,*~,*.pyc
