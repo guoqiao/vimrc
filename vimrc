@@ -82,6 +82,16 @@ if executable('ag')
 endif
 
 Plugin 'SirVer/ultisnips'
+Plugin 'guoqiao/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsExpandTrigger="<c-h>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_python_binary_path = 'python'
