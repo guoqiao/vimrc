@@ -65,7 +65,7 @@ let g:tagbar_foldlevel = 0
 Plugin 'ctrlpvim/ctrlp.vim'  " ctrl + p to search
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_tabpage_position  = 'a'
-let g:ctrlp_working_path_mode = 0
+let g:ctrlp_working_path_mode = 'r'
 
 if executable('ag')
 
@@ -74,6 +74,7 @@ if executable('ag')
 
     let g:ctrlp_use_caching = 0
     let g:ctrlp_user_command = 'ag %s --nogroup --hidden
+          \ --ignore bin
           \ --ignore .git
           \ --ignore .DS_Store
           \ --ignore __pycache__
