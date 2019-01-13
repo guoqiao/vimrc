@@ -158,6 +158,7 @@ autocmd FileType c setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
 
 nnoremap ; :
 nnoremap 0 ^
+nnoremap <Space> $
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
