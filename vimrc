@@ -12,7 +12,8 @@
 
 set nocompatible              " be iMproved
 filetype off                  " required!
-let mapleader = "\<Space>"
+" let mapleader = "\<Space>"
+let mapleader = ","
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
