@@ -15,6 +15,8 @@ set autoread
 set cursorline
 set signcolumn=yes
 set showcmd
+set history=9999
+set undolevels=32
 
 " map to middle click on linux
 set clipboard=unnamed
@@ -25,14 +27,17 @@ set iskeyword+=-
 set encoding=utf8
 set ffs=unix,dos,mac
 set laststatus=2
+
+" list mode, show tabs and spaces
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
+
 set lazyredraw
 set tags=tags
 
 " Turn backup off, since most stuff is in git.
-set nowb
 set nobackup
+set nowritebackup
 set noswapfile
 
 " No annoying sound on errors
@@ -106,8 +111,7 @@ noremap <leader>x :x<CR>
 noremap <leader>ev :e $MYVIMRC<CR>
 noremap <leader>sv :source $MYVIMRC<CR>
 
-map <leader>pp :setlocal paste!<cr>
-map <leader>ss :setlocal spell!<cr>
+set pastetoggle=<F2>
 
 set t_Co=256
 set guioptions-=r
