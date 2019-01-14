@@ -54,13 +54,18 @@ set cindent
 set foldmethod=indent
 set foldlevel=99
 
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+" default indent 2-space
+set autoindent
+set smartindent
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 
-autocmd FileType html,xml,yaml,css,scss,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-autocmd FileType c setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
+" python indent 4-space
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+" c indent 8-space
+autocmd FileType c      setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
 
 
 nnoremap ; :
