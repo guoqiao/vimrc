@@ -1,3 +1,8 @@
+" load vundle plugins if available
+if filereadable(expand("~/.vim/vimrc.vundle"))
+  source ~/.vim/vimrc.vundle
+endif
+
 syntax on
 syntax enable
 set scrolloff=10
