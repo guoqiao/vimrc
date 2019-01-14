@@ -1,16 +1,15 @@
 # Background
-I have used this repo for more than 5 years, as a Python/Django developer, on both macOS and Ubuntu.
-Started from vim, it also includes git, tmux, fish and ag support now.
+I have used this repo for more than 5 years, as a Python developer, on both macOS and Linux.
 
 ## Principles:
-- keep it lightweight, only use necessary config and plugins
-- keep it general for both macOS and Ubuntu
-- keep it updated, never stop to absorb new ideas and tools.
-- keep it easy to use, use best shortcuts
+- keep it lightweight and minimal, only use necessary config and plugins
+- keep it general for both macOS and Linux
+- keep it updated, never stop to absorb new ideas and tools
+- keep it easy to use, use most reasonable and handy shortcuts
 
 ## Install
 
-    git clone https://github.com/guoqiao/vimx.git ~/.vim && cd ~/.vim
+    git clone https://github.com/guoqiao/vimrc.git ~/.vim && cd ~/.vim
 
 macOS:
 
@@ -20,12 +19,10 @@ Ubuntu:
 
     ./install-ubuntu.sh
 
-This will also build the lastest vim, fish, tmux and ag for you.
-
 ## Useful mapping
 * leader key is `,`
 * map `;` to `:`, so you don't need to press shift for `:` each time
-* `0` to line begin, [space] to line end
+* `0` to line begin, `<Space>` to line end
 
 ## The leader key
 Leader key is `,` in this vimrc. Related shortcuts:
@@ -35,7 +32,7 @@ Leader key is `,` in this vimrc. Related shortcuts:
 * YankRing: [leader] + p to open paste history, q to quit
 * vim-easymotion: [leader][leader] + w
 * edit vimrc: [leader] + ev
-* NERD-Commenter: [leader] + ci
+* NERD-Commenter: [leader] + ci or Ctrl + /
 
 ## Tabs
 * tn: new tab
