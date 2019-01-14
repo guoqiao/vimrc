@@ -12,8 +12,6 @@
 
 set nocompatible              " be iMproved
 filetype off                  " required!
-" let mapleader = "\<Space>"
-let mapleader = ","
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -194,6 +192,9 @@ nnoremap tm :tabmove<CR>
 nnoremap to :tabonly<CR>
 
 let loaded_matchparen = 1 " disable math parenthiese
+
+" let mapleader = "\<Space>"
+let mapleader = ","
 
 noremap <leader>h :noh<CR>
 noremap <leader>w :w<CR>
