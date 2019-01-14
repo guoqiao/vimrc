@@ -53,6 +53,8 @@ noremap <leader>p :YRShow<CR>
 
 Plugin 'The-NERD-Commenter'  " leader + c + i to toggle comment
 let NERDSpaceDelims = 1  " add space after comment delim for pep8
+" For same reason vim registers <C-/> as <C-_>
+noremap <C-_> :call NERDComment(0, "toggle")<cr>
 
 Plugin 'airblade/vim-gitgutter'
 
