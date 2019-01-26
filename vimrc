@@ -1,6 +1,6 @@
-" load vundle plugins if available
-if filereadable(expand("~/.vim/vimrc.vundle"))
-  source ~/.vim/vimrc.vundle
+" load plugins if available
+if filereadable(expand("~/.vim/vimrc.advance"))
+  source ~/.vim/vimrc.advance
 endif
 
 syntax on
