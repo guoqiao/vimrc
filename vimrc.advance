@@ -1,0 +1,59 @@
+"let g:ctrlp_map = '<c-p>' use vim-plug or vundle
+if filereadable(expand("~/.vim/vimrc.vim-plug"))
+    source ~/.vim/vimrc.vim-plug
+endif
+
+" if filereadable(expand("~/.vim/vimrc.vundle"))
+    " source ~/.vim/vimrc.vundle
+" endif
+
+" plugins configure
+
+let g:ale_sign_column_always = 1
+
+let g:NERDTreeDirArrows=0
+let g:NERDTreeChDirMode=2
+map tt :NERDTreeToggle<CR>
+map ff :NERDTreeFind<CR>
+
+let NERDSpaceDelims = 1  " add space after comment delim for pep8
+" For same reason vim registers <C-/> as <C-_>
+noremap <C-_> :call NERDComment(0, "toggle")<cr>
+
+noremap TT :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
+let g:tagbar_foldlevel = 0
+
+let g:ycm_python_binary_path = 'python3'
+let g:ycm_filetype_whitelist = { 'python':1 }
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_confirm_extra_conf = 1
+nnoremap <leader>j :YcmCompleter GoToDefinition<CR>
+nnoremap <C-J> :YcmCompleter GoToDefinition<CR>
+
+let g:yankring_min_element_length=4
+" no <C-P>
+let g:yankring_replace_n_pkey = '<C-M>'
+noremap <leader>p :YRShow<CR>
+
+let g:ctrlp_map = '<C-P>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_tabpage_position  = 'a'
+let g:ctrlp_working_path_mode = 'r'
+
+if executable('ag')
+
+    set grepprg=ag\ --nogroup\ --nocolor\ --column
+    set grepformat=%f:%l:%c%m
+
+    let g:ctrlp_use_caching = 0
+    let g:ctrlp_user_command = 'ag %s --nogroup --hidden
+          \ --ignore bin
+          \ --ignore .git
+          \ --ignore .DS_Store
+          \ --ignore __pycache__
+          \ --ignore "**/*.pyc"
+          \ -g ""'
+endif
+
