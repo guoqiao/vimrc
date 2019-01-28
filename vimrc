@@ -68,7 +68,7 @@ set tabstop=4
 set expandtab
 
 " frontend indent 2-space
-autocmd FileType html   setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType html,yaml   setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 " c indent 8-space
 autocmd FileType c      setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
 
