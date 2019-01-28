@@ -1,8 +1,3 @@
-" load vundle plugins if available
-if filereadable(expand("~/.vim/vimrc.vundle"))
-  source ~/.vim/vimrc.vundle
-endif
-
 syntax on
 syntax enable
 set scrolloff=10
@@ -117,13 +112,6 @@ set t_Co=256
 set guioptions-=r
 set guioptions-=L
 
-try
-    colorscheme molokai
-catch
-    colorscheme desert
-endtry
-set background=dark
-
 " add transparency, must be after colorscheme
 highlight Normal guibg=NONE ctermbg=NONE
 highlight ColorColumn ctermbg=red
@@ -167,3 +155,17 @@ vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+
+
+" load plugins if available
+if filereadable(expand("~/.vim/vimrc.advance"))
+  source ~/.vim/vimrc.advance
+endif
+
+try
+    colorscheme molokai
+catch
+    colorscheme desert
+endtry
+set background=dark
+
