@@ -1,3 +1,8 @@
+" load plugins if available
+if filereadable(expand("~/.vim/vimrc.advance"))
+  source ~/.vim/vimrc.advance
+endif
+
 set nocompatible
 syntax on
 syntax enable
