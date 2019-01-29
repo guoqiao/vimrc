@@ -1,39 +1,50 @@
+set nocompatible
 syntax on
 syntax enable
-set scrolloff=10
+filetype indent on
+
+" bottom status bar
+set showmode
+set showcmd
 set ruler
+set laststatus=2
+set scrolloff=10
+
+" left side bar
 set number
 set relativenumber
-set hidden
-set nowrap
-set autoread
-set cursorline
 set signcolumn=yes
-set showcmd
-set history=9999
+
+" middle working area
+set lazyredraw
+set cursorline
 set undolevels=32
-
-" map to middle click on linux
-set clipboard=unnamed
-
-set wildignore=*.o,*~,*.pyc
 set backspace=eol,start,indent
 set iskeyword+=-
-set encoding=utf8
-set ffs=unix,dos,mac
-set laststatus=2
-
 " list mode, show tabs and spaces
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
+set textwidth=80
+set nowrap
+set linebreak
 
-set lazyredraw
-set tags=tags
-
+" file
+set hidden
+set autoread
+set wildignore=*.o,*~,*.pyc
+set encoding=utf8
+set ffs=unix,dos,mac
 " Turn backup off, since most stuff is in git.
 set nobackup
 set nowritebackup
 set noswapfile
+" make it possible to undo when reopen
+set undofile
+" // indicates that the file has abs path(?)
+set undodir=~/.vim/.undo//
+
+set wildmenu
+set wildmode=longest:list,full
 
 " No annoying sound on errors
 set noerrorbells
@@ -41,31 +52,41 @@ set visualbell
 set t_vb=
 set tm=500
 
+" search
+" with ingorecase if all lowercase, otherwise case sensitive
 set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+set showmatch
 
-set smarttab
-set autoindent
-set smartindent
-set copyindent
-set cindent
 set foldmethod=indent
 set foldlevel=99
 
 " default indent 4-space
 set autoindent
 set smartindent
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set copyindent
+set cindent
+
+set smarttab
 set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " frontend indent 2-space
 autocmd FileType html,yaml   setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 " c indent 8-space
 autocmd FileType c      setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
+
+set history=9999
+set tags=tags
+
+" map to middle click on linux
+set clipboard=unnamed
+set mouse=a
+
 
 
 nnoremap ; :
@@ -156,7 +177,6 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
-
 " load plugins if available
 if filereadable(expand("~/.vim/vimrc.advance"))
   source ~/.vim/vimrc.advance
@@ -169,3 +189,5 @@ catch
 endtry
 set background=dark
 
+" goog vim reference
+" https://www.tutorialdocs.com/article/vim-configuration.html
