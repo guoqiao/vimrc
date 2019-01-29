@@ -33,6 +33,14 @@ set textwidth=80
 set nowrap
 set linebreak
 
+set background=dark
+" molokai may not installed
+try
+    colorscheme molokai
+catch
+    colorscheme desert
+endtry
+
 " file
 set hidden
 set autoread
@@ -190,17 +198,6 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
-" load plugins if available
-if filereadable(expand("~/.vim/vimrc.advance"))
-  source ~/.vim/vimrc.advance
-endif
-
-try
-    colorscheme molokai
-catch
-    colorscheme desert
-endtry
-set background=dark
 
 " goog vim reference
 " https://www.tutorialdocs.com/article/vim-configuration.html
