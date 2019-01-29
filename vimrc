@@ -60,8 +60,11 @@ set hlsearch
 set incsearch
 set showmatch
 
+set foldenable
 set foldmethod=indent
+set foldlevelstart=4
 set foldlevel=99
+set foldnestmax=10
 
 " default indent 4-space
 set autoindent
@@ -90,8 +93,13 @@ set mouse=a
 
 
 nnoremap ; :
+
 nnoremap 0 ^
 nnoremap <Space> $
+
+nnoremap B ^
+nnoremap E $
+
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
