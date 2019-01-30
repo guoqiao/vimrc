@@ -75,7 +75,7 @@ set showmatch
 
 set foldenable
 set foldmethod=indent
-set foldlevelstart=4
+set foldlevelstart=6
 set foldlevel=99
 set foldnestmax=10
 
