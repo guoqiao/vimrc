@@ -3,6 +3,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/bronson/vim-trailing-whitespace'  " :FixWhitespace
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'  " ctrl + p to search
+Plug 'https://github.com/davidhalter/jedi-vim'
 Plug 'https://github.com/easymotion/vim-easymotion'  " leader + leader + w
 Plug 'https://github.com/lilydjwg/colorizer'  " show color for css
 Plug 'https://github.com/majutsushi/tagbar'
@@ -16,7 +17,6 @@ Plug 'https://github.com/tomasr/molokai'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-repeat' " . to repeat
 Plug 'https://github.com/tpope/vim-surround'
-Plug 'https://github.com/Valloric/YouCompleteMe', {'do': 'python3 ./install.py'}
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-scripts/YankRing.vim'
 Plug 'https://github.com/w0rp/ale'
