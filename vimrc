@@ -73,11 +73,11 @@ set hlsearch
 set incsearch
 set showmatch
 
-set foldenable
-set foldmethod=indent
-set foldlevelstart=6
-set foldlevel=99
-set foldnestmax=10
+" set foldenable
+" set foldmethod=indent
+" set foldlevelstart=6
+" set foldlevel=99
+" set foldnestmax=10
 
 " default indent 4-space
 set autoindent
