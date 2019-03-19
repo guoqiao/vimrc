@@ -18,7 +18,8 @@ set scrolloff=10
 " left side bar
 set number
 set relativenumber
-set signcolumn=yes
+" vi doesn't support this
+" set signcolumn=yes
 
 " middle working area
 set lazyredraw
