@@ -1,8 +1,6 @@
 #!/usr/bin/env ansible-playbook
 ---
 
-- name: install and config vim with role
-  hosts: vim
-  roles:
-    - role: vim
-      requirements_path: ../requirements.txt
+- import_playbook: vim-build.yml
+# - import_playbook: vim-vundle.yml
+- import_playbook: vim-plug.yml
