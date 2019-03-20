@@ -53,3 +53,6 @@
       shell: make install
       args:
         chdir: '/tmp/vim'
+
+    - name: show version
+      command: vim --version
