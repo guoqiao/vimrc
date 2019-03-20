@@ -1,6 +1,7 @@
 #!/usr/bin/env ansible-playbook
 ---
 
+- import_playbook: vim-deps.yml
 - import_playbook: vim-build.yml
 # - import_playbook: vim-vundle.yml
 - import_playbook: vim-plug.yml
