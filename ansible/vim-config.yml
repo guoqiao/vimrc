@@ -2,7 +2,7 @@
 ---
 # vim:ff=unix ts=2 sw=2 ai expandtab
 
-- hosts: ubuntu
+- hosts: vim
   tasks:
 
   - name: git clone Vundle.vim
