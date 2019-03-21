@@ -30,7 +30,8 @@ set iskeyword+=-
 " list mode, show tabs and spaces
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
-set textwidth=80
+" this will force cursor jump to new line
+" set textwidth=80
 set nowrap
 set linebreak
 
