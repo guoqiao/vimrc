@@ -23,7 +23,6 @@ set relativenumber
 
 " middle working area
 set lazyredraw
-set cursorline
 set undolevels=32
 set backspace=eol,start,indent
 set iskeyword+=-
@@ -160,6 +159,18 @@ set guioptions-=L
 highlight Normal guibg=NONE ctermbg=NONE
 highlight ColorColumn ctermbg=red
 set colorcolumn=80
+
+" cursor shape and color
+highlight Cursor guifg=white guibg=black
+highlight iCursor guifg=white guibg=steelblue
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
+
+" only show cursorline in insert mode
+autocmd InsertEnter * set cursorline
+autocmd InsertLeave * set nocursorline
 
 autocmd! bufwritepost vimrc source %
 " com! FJ %!python -m json.tool
