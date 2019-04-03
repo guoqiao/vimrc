@@ -18,6 +18,7 @@
         - exuberant-ctags  # for tagbar
         - silversearcher-ag  # ag and ctrlp
         - shellcheck  # help to check shell script
+        - libncurses-dev  # required to build vim
 
     - name: get latest vim code
       git:

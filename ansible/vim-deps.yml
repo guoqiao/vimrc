@@ -20,4 +20,5 @@
     - name: pip install deps
       become: yes
       pip:
+        executable: /usr/bin/pip3
         requirements: "{{ playbook_dir }}/../requirements.txt"
