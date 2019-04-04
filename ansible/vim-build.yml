@@ -11,14 +11,21 @@
         name: "{{ item }}"
         state: latest
       with_items:
+        - libxt-dev
         - libx11-dev
+        - libxpm-dev
         - libxtst-dev
+        - libcairo2-dev
+        - libncurses-dev
+        - libgnomeui-dev
         - xorg-dev  # for +clipboard
         - xsel  # for vim clipboard in vscode
         - exuberant-ctags  # for tagbar
         - silversearcher-ag  # ag and ctrlp
         - shellcheck  # help to check shell script
-        - libncurses-dev  # required to build vim
+        - python-dev
+        - python3-dev
+        - ruby-dev
 
     - name: get latest vim code
       git:
@@ -36,11 +43,18 @@
 
     - name: config vim
       shell: >
-          ./configure --with-x
-          --enable-gui=auto
-          --enable-pythoninterp
+          ./configure
+          --with-x
+          --with-features=huge
+          --enable-gui=gtk3
+          --enable-multibyte
           --enable-python3interp
+          --enable-pythoninterp
+          --with-python-config-dir=/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu
           --enable-rubyinterp
+          --enable-perlinterp
+          --enable-luainterp
+          --enable-cscope
       args:
         chdir: '/tmp/vim'
 
