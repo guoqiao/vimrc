@@ -28,7 +28,7 @@ let g:tagbar_foldlevel = 0
 let g:yankring_min_element_length=4
 " no <C-P>
 let g:yankring_replace_n_pkey = '<C-M>'
-noremap <leader>p :YRShow<CR>
+noremap <leader>y :YRShow<CR>
 
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlPMixed'
