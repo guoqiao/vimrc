@@ -31,7 +31,7 @@ let g:yankring_replace_n_pkey = '<C-M>'
 noremap <leader>y :YRShow<CR>
 
 let g:ctrlp_map = '<C-P>'
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_working_path_mode = 'r'
 
