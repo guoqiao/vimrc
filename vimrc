@@ -74,6 +74,17 @@ set hlsearch
 set incsearch
 set showmatch
 
+" add all files to find path
+" :find  FILE -> find FILE and open in current window
+" :sfind FILE -> find FILE and open in split
+" :tabf  FILE -> find FILE and open in tab
+set path=$PWD/**
+" enable wildmenu above status bar
+set wildmenu
+" press Tab once: show list for all match as prompt
+" press Tab twice: show wildmenu for all match and use Tab again to nav
+set wildmode=list:longest,full
+
 " set foldenable
 " set foldmethod=indent
 " set foldlevelstart=6
