@@ -22,7 +22,6 @@ Plugin 'https://github.com/tomasr/molokai'
 Plugin 'https://github.com/tpope/vim-fugitive'
 Plugin 'https://github.com/tpope/vim-repeat' " . to repeat
 Plugin 'https://github.com/tpope/vim-surround'
-Plugin 'https://github.com/Valloric/YouCompleteMe'
 Plugin 'https://github.com/vim-airline/vim-airline'
 Plugin 'https://github.com/vim-scripts/YankRing.vim'
 Plugin 'https://github.com/w0rp/ale'
