@@ -75,20 +75,31 @@ endif
 " K: doc
 let g:jedi#auto_initialization = 1
 let g:jedi#auto_vim_configuration = 1
-let g:jedi#use_tabs_not_buffers = 0
-" left|right|top|bottom|winwidth
-let g:jedi#use_splits_not_buffers = "winwidth"
-let g:jedi#popup_on_dot = 1
-let g:jedi#popup_select_first = 1
-let g:jedi#show_call_signatures = "1"
 
-let g:jedi#goto_command = "<leader>d"
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = ""
-" default: K
+" do not enable it by default, it will be very slow
+let g:jedi#popup_on_dot = 0
+" show doc on demand, default: K
 let g:jedi#documentation_command = "<leader>k"
+" where to show, left|right|top|bottom|winwidth
+let g:jedi#use_splits_not_buffers = "winwidth"
+" open a module in vim
+" :Pyimport os.path
+
+" goto_definnitions first, fallback to goto_assignments for builtin
+let g:jedi#goto_command = "<leader>g"
+let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>a"
+
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#usages_command = "<leader>n"
-let g:jedi#completions_enabled = 1
-let g:jedi#completions_command = "<C-Space>"
 
+let g:jedi#completions_enabled = 1
+let g:jedi#completions_command = "<Tab>"
+let g:jedi#popup_select_first = 1
+" close autocomplete item docstring preview window while leaving insert mode
+let g:jedi#auto_close_doc = 1
+
+" show function call signatures in insert mode in real time, very helpful
+let g:jedi#show_call_signatures = 1
+" from foo<space> add import and trigger popup
+let g:jedi#smart_auto_mappings = 1
