@@ -52,21 +52,7 @@ let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_working_path_mode = 'r'
-
-if executable('ag')
-
-    set grepprg=ag\ --nogroup\ --nocolor\ --column
-    set grepformat=%f:%l:%c%m
-
-    let g:ctrlp_use_caching = 0
-    let g:ctrlp_user_command = 'ag %s --nogroup --hidden
-          \ --ignore bin
-          \ --ignore .git
-          \ --ignore .DS_Store
-          \ --ignore __pycache__
-          \ --ignore "**/*.pyc"
-          \ -g ""'
-endif
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --others --exclude-standard', 'find %s -type f']
 
 " jedi-vim
 " <leader>g: goto
