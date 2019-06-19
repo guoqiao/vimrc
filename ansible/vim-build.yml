@@ -2,30 +2,24 @@
 ---
 # vim:ff=unix ts=2 sw=2 ai expandtab
 
-- hosts: vim
+- name: build vim from source code
+  hosts: vim
   tasks:
 
-    - name: apt install deps
+    - name: enable deb-src in sources.list
+      become: yes
+      replace:
+        path: /etc/apt/sources.list
+        regexp: '^# deb-src (.*)$'
+        replace: 'deb-src \1'
+        backup: yes
+
+    - name: apt install build deps
       become: yes
       apt:
-        name: "{{ item }}"
-        state: latest
-      with_items:
-        - libxt-dev
-        - libx11-dev
-        - libxpm-dev
-        - libxtst-dev
-        - libcairo2-dev
-        - libncurses-dev
-        - libgnomeui-dev
-        - xorg-dev  # for +clipboard
-        - xsel  # for vim clipboard in vscode
-        - exuberant-ctags  # for tagbar
-        - silversearcher-ag  # ag and ctrlp
-        - shellcheck  # help to check shell script
-        - python-dev
-        - python3-dev
-        - ruby-dev
+        name: vim
+        update_cache: yes
+        state: build-dep
 
     - name: get latest vim code
       git:
