@@ -44,7 +44,6 @@
           --enable-multibyte
           --enable-python3interp
           --enable-pythoninterp
-          --with-python-config-dir=/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu
           --enable-rubyinterp
           --enable-perlinterp
           --enable-luainterp
