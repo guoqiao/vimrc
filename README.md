@@ -1,9 +1,11 @@
-# Background
-I have used this repo for more than 5 years, as a Python developer, on both macOS and Linux.
+# guoqiao's vimrc
+
+## Background
+I have used this repo for more than 8 years, as a Python developer, on both macOS and Ubuntu.
 
 ## Principles:
 - keep it lightweight and minimal, only use necessary config and plugins
-- keep it general for both macOS and Linux
+- keep it general for both macOS and Ubuntu
 - keep it updated, never stop to absorb new ideas and tools
 - keep it easy to use, use most reasonable and handy shortcuts
 
