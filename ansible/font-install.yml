@@ -1,0 +1,17 @@
+#!/usr/bin/env ansible-playbook
+---
+# vim:ff=unix ts=2 sw=2 ai expandtab
+
+- hosts: vim
+  tasks:
+    - name: find all fonts
+      find:
+        paths: ../fonts/
+        recurse: yes
+      register: find_result
+
+    - name: copy font to font folder
+      copy:
+        src: "{{ item.path }}"
+        dest: "~/.local/share/fonts/"
+      loop: "{{ find_result.files }}"
