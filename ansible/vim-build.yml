@@ -21,6 +21,19 @@
         update_cache: yes
         state: build-dep
 
+    - name: apt install extra deps
+      become: yes
+      apt:
+        name:
+          - xsel
+          - xclip
+          - libx11-dev
+          - libxtst-dev
+          - libxt-dev
+          - libsm-dev
+          - libxpm-dev
+          - vim-gnome
+
     - name: get latest vim code
       git:
         repo: 'https://github.com/vim/vim.git'
