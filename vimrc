@@ -57,8 +57,13 @@ set undofile
 " // indicates that the file has abs path(?)
 set undodir=~/.vim/.undo//
 
+" :ls :buffers
+" :bn(ext) :bp(rev)
+" b <Tab>
+" b xx<Tab>
 set wildmenu
 set wildmode=longest:list,full
+set wildchar=<Tab> wildcharm=<C-Z>
 
 " No annoying sound on errors
 set noerrorbells
