@@ -31,6 +31,7 @@ let g:ale_sign_column_always = 1
 
 let g:NERDTreeDirArrows=0
 let g:NERDTreeChDirMode=2
+let NERDTreeIgnore = ['\.pyc$']
 map tt :NERDTreeToggle<CR>
 map ff :NERDTreeFind<CR>
 
