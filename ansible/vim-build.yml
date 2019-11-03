@@ -3,7 +3,7 @@
 # vim:ff=unix ts=2 sw=2 ai expandtab
 
 - name: build vim from source code
-  hosts: vim
+  hosts: localhost
   tasks:
 
     - name: enable deb-src in sources.list
