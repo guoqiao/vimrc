@@ -30,12 +30,7 @@ set nowrap
 set linebreak
 
 set background=dark
-" molokai may not installed
-try
-    colorscheme molokai
-catch
-    colorscheme desert
-endtry
+colorscheme desert
 
 " file
 set hidden
