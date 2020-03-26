@@ -30,6 +30,8 @@ set nowrap
 set linebreak
 
 set background=dark
+" :colorscheme <Tab> --> list all
+" /usr/share/vim/vim80/colors
 colorscheme desert
 
 " file
