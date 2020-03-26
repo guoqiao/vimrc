@@ -1,8 +1,3 @@
-" load plugins if available
-if filereadable(expand("~/.vim/vimrc.advance"))
-  source ~/.vim/vimrc.advance
-endif
-
 set nocompatible
 syntax on
 syntax enable
@@ -229,3 +224,8 @@ vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
 " goog vim reference
 " https://www.tutorialdocs.com/article/vim-configuration.html
+
+" load plugins if available
+if filereadable(expand("~/.vim/vimrc.advance"))
+  source ~/.vim/vimrc.advance
+endif
