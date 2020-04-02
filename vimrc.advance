@@ -22,10 +22,13 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-scripts/YankRing.vim'
 Plug 'https://github.com/w0rp/ale', {'for': 'python'}
 Plug 'https://github.com/ervandew/supertab'
+" Plug 'https://github.com/ap/vim-css-color'
 
 call plug#end()
 
 " plugins configure
+
+colorscheme molokai
 
 let g:ale_sign_column_always = 1
 
