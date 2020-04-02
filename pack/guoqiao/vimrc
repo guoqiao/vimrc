@@ -1,31 +1,3 @@
-" vim-plug
-call plug#begin('~/.vim/bundle')
-
-Plug 'https://github.com/airblade/vim-gitgutter'
-Plug 'https://github.com/bronson/vim-trailing-whitespace'  " :FixWhitespace
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'  " ctrl + p to search
-Plug 'https://github.com/davidhalter/jedi-vim', {'for': 'python'}
-Plug 'https://github.com/easymotion/vim-easymotion'  " leader + leader + w
-Plug 'https://github.com/lilydjwg/colorizer', {'for': 'css'}  " show color for css
-Plug 'https://github.com/majutsushi/tagbar'
-Plug 'https://github.com/mattn/emmet-vim', {'for': 'html'}
-Plug 'https://github.com/michaeljsmith/vim-indent-object'
-Plug 'https://github.com/scrooloose/nerdcommenter'  " leader + c + i to toggle comment
-Plug 'https://github.com/scrooloose/nerdtree'
-Plug 'https://github.com/tell-k/vim-autopep8', {'for': 'python'}  " F8 to format
-Plug 'https://github.com/tmhedberg/matchit' " % to match
-Plug 'https://github.com/tomasr/molokai'
-Plug 'https://github.com/tpope/vim-fugitive'
-Plug 'https://github.com/tpope/vim-repeat' " . to repeat
-Plug 'https://github.com/tpope/vim-surround'
-Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'https://github.com/vim-scripts/YankRing.vim'
-Plug 'https://github.com/w0rp/ale', {'for': 'python'}
-Plug 'https://github.com/ervandew/supertab'
-" Plug 'https://github.com/ap/vim-css-color'
-
-call plug#end()
-
 " plugins configure
 
 colorscheme molokai
