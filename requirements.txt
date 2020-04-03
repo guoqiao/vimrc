@@ -1,6 +1,0 @@
-flake8
-pylint
-pyflakes
-autopep8
-powerline-status
-jedi
