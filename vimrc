@@ -223,6 +223,6 @@ vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 " https://www.tutorialdocs.com/article/vim-configuration.html
 
 " load plugins if available
-if filereadable(expand("~/.vim/pack/devpy/vimrc.pack"))
-  source ~/.vim/pack/devpy/vimrc.pack
+if filereadable(expand("~/.vim/pack/guoqiao/vimrc.pack"))
+  source ~/.vim/pack/guoqiao/vimrc.pack
 endif
