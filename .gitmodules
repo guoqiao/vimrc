@@ -1,0 +1,3 @@
+[submodule "pack/guoqiao"]
+	path = pack/guoqiao
+	url = git@github.com:guoqiao/vim-pack-guoqiao.git
