@@ -1,12 +1,11 @@
 #!/usr/bin/env ansible-playbook
 ---
-# vim:ff=unix ts=2 sw=2 ai expandtab
 
-- hosts: vim
+- hosts: localhost
   tasks:
     - name: find all fonts
       find:
-        paths: ../fonts/
+        paths: fonts/
         recurse: yes
       register: find_result
 
