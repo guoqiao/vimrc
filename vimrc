@@ -165,7 +165,7 @@ set guioptions-=L
 " add transparency, must be after colorscheme
 highlight Normal guibg=NONE ctermbg=NONE
 highlight ColorColumn ctermbg=red
-set colorcolumn=80
+set colorcolumn=88
 
 " cursor shape and color
 highlight Cursor guifg=white guibg=black
