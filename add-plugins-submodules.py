@@ -35,7 +35,7 @@ OPT = [
 
 def add_url(folder, url):
     name = url.rsplit('/')[-1]
-    subprocess.check_call([
+    subprocess.call([
         'git', 'submodule', 'add',
         '--name', name, url,
         f'{folder}/{name}'
