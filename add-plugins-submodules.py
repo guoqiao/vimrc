@@ -52,3 +52,11 @@ folder = 'pack/plugins/opt'
 os.makedirs(folder, exist_ok=True)
 for url in OPT:
     add_url(folder, url)
+
+subprocess.call([
+    "git",
+    "submodule",
+    "update",
+    "--init",
+    "--recursive",
+])
