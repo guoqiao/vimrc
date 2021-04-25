@@ -7,6 +7,9 @@ let g:lightline = {'colorscheme': 'molokai'}
 
 " see all config -> :ALEInfo
 let g:ale_sign_column_always = 1
+let g:ale_sign_error = "xx"
+let g:ale_sign_warning = "!!"
+let g:ale_sign_info = ">>"
 
 let g:NERDTreeDirArrows=0
 let g:NERDTreeChDirMode=2
