@@ -57,6 +57,9 @@ subprocess.call([
     "git",
     "submodule",
     "update",
-    "--init",
     "--recursive",
+    "--init",
+    "--remote",
+    "--checkout",
+    "--force",
 ])
