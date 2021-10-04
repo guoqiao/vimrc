@@ -33,30 +33,36 @@ OPT = [
 ]
 
 
-def add_url(folder, url):
+PACK = {
+    "start": START,
+    "opt": OPT,
+}
+
+
+def add_repo(root, url):
     name = url.rsplit('/')[-1]
     subprocess.call([
         'git', 'submodule', 'add',
-        '--name', name, url,
-        f'{folder}/{name}'
+        '--name', name,
+        url,
+        f'{root}/{name}'
     ])
 
 
-folder = 'pack/plugins/start'
-os.makedirs(folder, exist_ok=True)
-for url in START:
-    add_url(folder, url)
+for folder, urls in PACK.items():
+    root = f'pack/plugins/{folder}'
+    os.makedirs(root, exist_ok=True)
+    for url in urls:
+        add_repo(root, url)
 
-
-folder = 'pack/plugins/opt'
-os.makedirs(folder, exist_ok=True)
-for url in OPT:
-    add_url(folder, url)
 
 subprocess.call([
     "git",
     "submodule",
     "update",
-    "--init",
     "--recursive",
+    "--init",
+    "--remote",
+    "--checkout",
+    "--force",
 ])
