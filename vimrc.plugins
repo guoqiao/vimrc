@@ -22,6 +22,7 @@ let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_foldlevel = 0
 
+let g:yankring_history_dir='/tmp/'
 let g:yankring_min_element_length=4
 " no <C-P>
 let g:yankring_replace_n_pkey = '<C-M>'
