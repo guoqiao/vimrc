@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import subprocess
+from pathlib import Path
 
 START = [
     'https://github.com/airblade/vim-gitgutter',
@@ -39,30 +40,19 @@ PACK = {
 }
 
 
-def add_repo(root, url):
+def clone_or_update_repo(root, url):
     name = url.rsplit('/')[-1]
-    subprocess.call([
-        'git', 'submodule', 'add',
-        '--name', name,
-        url,
-        f'{root}/{name}'
-    ])
+    path = root / name
+    if path.exists():
+        print(f'updating {path}: {url}')
+        subprocess.call(['git', 'pull'], cwd=path)
+    else:
+        print(f'cloning {path}: {url}')
+        subprocess.call(['git', 'clone', url, name], cwd=root)
 
 
 for folder, urls in PACK.items():
-    root = f'pack/plugins/{folder}'
-    os.makedirs(root, exist_ok=True)
+    root = Path(f'pack/plugins/{folder}')
+    root.mkdir(parents=True, exist_ok=True)
     for url in urls:
-        add_repo(root, url)
-
-
-subprocess.call([
-    "git",
-    "submodule",
-    "update",
-    "--recursive",
-    "--init",
-    "--remote",
-    "--checkout",
-    "--force",
-])
+        clone_or_update_repo(root, url)
