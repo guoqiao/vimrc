@@ -2,4 +2,4 @@
 
 sudo apt update
 sudo apt install --yes exuberant-ctags
-sudo python3 -m pip install -U jedi black
+sudo python3 -m pip install -U pip jedi black
