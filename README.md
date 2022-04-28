@@ -1,16 +1,23 @@
 # guoqiao's vimrc
 
-This repo itself aims to use vim without plugins, so you can copy vimrc to any server and start work there.
-All vim plugins are managed in a separate vim pack repo, which you can drop into `~/.vim/pack/` dir.
+I work as Python Dev and DevOps for 10+ years.
+Vim is my main editor, this repo is the configuration for it, works on both Ubuntu and macOS.
 
-Install with all plugins:
+## Quick Start
 
-    git clone --recurse-submodules https://github.com/guoqiao/vimrc.git ~/.vim
+On Ubuntu:
+```
+git clone https://github.com/guoqiao/vimrc.git ~/.vim
+cd ~/.vim
+./bootstrap.sh  # install deps via brew or apt
+./update-plugins.py  # clone all plugins into pack/
+```
 
-vim-pack repo for plugins: https://github.com/guoqiao/vim-pack-guoqiao
+Later, if you want to update plugins, just run:
 
-## Background
-I have used this repo for 8+ years, as a Python developer, on both macOS and Ubuntu.
+```
+./update-plugins.py
+```
 
 ## Principles:
 - keep it lightweight and minimal, only use necessary config and plugins
@@ -26,11 +33,9 @@ I have used this repo for 8+ years, as a Python developer, on both macOS and Ubu
 Leader key is `,` in this vimrc. Related shortcuts:
 * remove search result highlight: [leader] + h
 * search and replace text: visual select, then [leader] + r to replace
-* YouCompleteMe: [leader] + j to jump to def
-* YankRing: [leader] + p to open paste history, q to quit
 * vim-easymotion: [leader][leader] + w
 * edit vimrc: [leader] + ev
-* NERD-Commenter: [leader] + ci or Ctrl + /
+* NERD-Commenter: [leader] + ci or ctrl + /
 
 ## Tabs
 * tn: new tab
@@ -41,7 +46,8 @@ Leader key is `,` in this vimrc. Related shortcuts:
 * to: close other tab
 
 ## Window split
-* move around splits: ctrl + [hjkl]
+* open split in NerdTree with `s` or `i` on file.
+* move around splits: ctrl + ww, or ctrl + [hjkl]
 
 ## plugin settings
 * NERDTree: tt to toggle tree, ff to find file in tree(reveal)
@@ -51,3 +57,4 @@ Leader key is `,` in this vimrc. Related shortcuts:
 * vim-indent-object: vii, via
 * vim-multiple-cursors: ctrl + n for next, ctrl + b for prev, ctrl + x to skip, esc
 * tabular: :Tab/=, = is the char to align
+* rm trailing whitespaces: `:FixWhitespace`
