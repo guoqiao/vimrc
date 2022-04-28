@@ -36,6 +36,7 @@ Leader key is `,` in this vimrc. Related shortcuts:
 * vim-easymotion: [leader][leader] + w
 * edit vimrc: [leader] + ev
 * NERD-Commenter: [leader] + ci or ctrl + /
+* open current repo line(s) in github/gitlab/bitbucket: `[leader] + gh`
 
 ## Tabs
 * tn: new tab
