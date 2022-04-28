@@ -77,3 +77,10 @@ let g:jedi#smart_auto_mappings = 1
 
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
+
+
+" vim-gh-line
+" let g:gh_trace = 1
+let g:gh_line_map = '<leader>gh'
+let g:gh_line_blame_map = '<leader>gb'
+let g:gh_repo_map = '<leader>go'
