@@ -24,7 +24,6 @@ START = [
     'https://github.com/tpope/vim-surround',
     'https://github.com/vim-airline/vim-airline',
     'https://github.com/vim-scripts/YankRing.vim',
-    'https://github.com/w0rp/ale',
 ]
 
 
