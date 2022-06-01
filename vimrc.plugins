@@ -8,8 +8,8 @@ let g:lightline = {'colorscheme': 'molokai'}
 let g:NERDTreeDirArrows=0
 let g:NERDTreeChDirMode=2
 let NERDTreeIgnore = ['\.pyc$']
-map tt :NERDTreeToggle<CR>
-map ff :NERDTreeFind<CR>
+noremap tt :NERDTreeToggle<CR>
+noremap ff :NERDTreeFind<CR>
 
 let NERDSpaceDelims = 1  " add space after comment delim for pep8
 " For same reason vim registers <C-/> as <C-_>
