@@ -9,4 +9,4 @@ else
     sudo apt update && sudo apt install --yes exuberant-ctags
 fi
 
-sudo python3 -m pip install -U pip jedi black
+sudo python3 -m pip install -U -r requirements.txt

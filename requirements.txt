@@ -1,0 +1,4 @@
+pip
+black
+jedi
+pynvim
