@@ -16,7 +16,7 @@ START = [
     'https://github.com/michaeljsmith/vim-indent-object',
     'https://github.com/ruanyl/vim-gh-line',
     'https://github.com/scrooloose/nerdcommenter',
-    'https://github.com/scrooloose/nerdtree',
+    'https://github.com/preservim/nerdtree',
     'https://github.com/tell-k/vim-autopep8',
     'https://github.com/tmhedberg/matchit',
     'https://github.com/tpope/vim-fugitive',
