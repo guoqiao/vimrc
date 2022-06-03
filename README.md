@@ -41,21 +41,21 @@ Leader key is `,` in this vimrc. Related shortcuts:
 ## Tabs
 * tn: new tab
 * tc: close tab
+* to: keep only current tab/close all other tabs
 * th: move to left tab
 * tl: move to right tab
 * tm: move tab to last
-* to: close other tab
 
 ## Window split
 * open split in NerdTree with `s` or `i` on file.
 * move around splits: ctrl + ww, or ctrl + [hjkl]
 
 ## plugin settings
-* NERDTree: `tt` to toggle tree, `ff` to find file in tree(reveal)
-* tagbar: `TT`, show tags on right
-* CtrlP: Ctrl + p
-* Emmet: Ctrl + y + ,
-* vim-indent-object: vii, via
+* NERDTree: `tt` to toggle tree, `ff` to find file in tree(reveal), `m + [acd]` to add/copy/delete file on tree
+* tagbar: `TT`, toggle tags
+* CtrlP: Ctrl + p, search files
+* Emmet: Ctrl + y + , expand emmet to html
+* vim-indent-object: vii, select text in current indent level
 * vim-multiple-cursors: ctrl + n for next, ctrl + b for prev, ctrl + x to skip, esc
 * tabular: :Tab/=, = is the char to align
 * rm trailing whitespaces: `:FixWhitespace`
