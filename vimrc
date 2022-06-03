@@ -1,7 +1,12 @@
+" this file is aimed to use vim without plugins
+" drop it on any linux or mac, start your work
 set nocompatible
+
 syntax on
-syntax enable
+
+filetype on
 filetype indent on
+filetype plugin on
 
 " bottom status bar
 set showmode
@@ -149,7 +154,7 @@ let loaded_matchparen = 1 " disable math parenthiese
 " let mapleader = "\<Space>"
 let mapleader = ","
 
-noremap <leader>h :noh<CR>
+noremap <leader>h :nohlsearch<CR>
 noremap <leader>w :w<CR>
 noremap <leader>e :e!<CR>
 noremap <leader>q :q<CR>
