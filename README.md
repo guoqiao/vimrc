@@ -5,12 +5,12 @@ Vim is my main editor, this repo is the configuration for it, works on both Ubun
 
 ## Quick Start
 
-On Ubuntu:
+On Ubuntu or macOS:
 ```
 git clone https://github.com/guoqiao/vimrc.git ~/.vim
 cd ~/.vim
 ./bootstrap.sh  # install deps via brew or apt
-./update-plugins.py  # clone all plugins into pack/
+./update-plugins.py  # clone or update all plugin repos into pack/
 ```
 
 Later, if you want to update plugins, just run:
@@ -51,10 +51,10 @@ Leader key is `,` in this vimrc. Related shortcuts:
 * move around splits: ctrl + ww, or ctrl + [hjkl]
 
 ## plugin settings
-* NERDTree: tt to toggle tree, ff to find file in tree(reveal)
-* tagbar: TT, show tags on right
-* CtrlP: ctrl + p
-* Emmet: ctrl + y + ,
+* NERDTree: `tt` to toggle tree, `ff` to find file in tree(reveal)
+* tagbar: `TT`, show tags on right
+* CtrlP: Ctrl + p
+* Emmet: Ctrl + y + ,
 * vim-indent-object: vii, via
 * vim-multiple-cursors: ctrl + n for next, ctrl + b for prev, ctrl + x to skip, esc
 * tabular: :Tab/=, = is the char to align
