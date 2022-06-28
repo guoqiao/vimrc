@@ -5,18 +5,13 @@ Vim is my main editor, this repo is the configuration for it, works on both Ubun
 
 ## Quick Start
 
-On Ubuntu or macOS:
+On Ubuntu/Debian or macOS:
 ```
 git clone https://github.com/guoqiao/vimrc.git ~/.vim
 cd ~/.vim
-./bootstrap.sh  # install deps via brew or apt
-./update-plugins.py  # clone or update all plugin repos into pack/
-```
-
-Later, if you want to update plugins, just run:
-
-```
-./update-plugins.py
+make apt  # run apt to install deps, for debian/ubuntu
+# make brew  # run brew to install deps, for mac or linux with brew installed
+make plugins  # install or update plugins
 ```
 
 ## Principles:
