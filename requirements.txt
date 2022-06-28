@@ -3,4 +3,3 @@ black
 jedi
 pynvim
 pyright
-pylsp
