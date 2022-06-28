@@ -43,7 +43,7 @@ PACK = {
 
 def run_cmd(cmd, cwd='.'):
     print('running cmd in {}: {}'.format(cwd, ' '.join(cmd)))
-    subprocess.call(cmd, cwd=cwd)
+    subprocess.run(cmd, cwd=cwd)
 
 
 def clone_or_update_repo(root, url):
