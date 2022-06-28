@@ -7,7 +7,7 @@ let g:lightline = {'colorscheme': 'molokai'}
 
 let g:NERDTreeDirArrows=0
 let g:NERDTreeChDirMode=2
-let NERDTreeIgnore = ['\.pyc$']
+" let NERDTreeIgnore = ['\.pyc$']
 noremap tt :NERDTreeToggle<CR>
 noremap ff :NERDTreeFind<CR>
 
