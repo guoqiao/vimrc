@@ -41,15 +41,21 @@ PACK = {
 }
 
 
+def run_cmd(cmd, cwd='.'):
+    print('running cmd in {}: {}'.format(cwd, ' '.join(cmd)))
+    subprocess.call(cmd, cwd=cwd)
+
+
 def clone_or_update_repo(root, url):
     name = url.rsplit('/')[-1]
     path = root / name
     if path.exists():
         print(f'updating {path}: {url}')
-        subprocess.call(['git', 'pull'], cwd=path)
+        run_cmd(['git', 'pull', '--recurse-submodules'], cwd=path)
+        run_cmd(['git', 'submodule', 'update', '--init'], cwd=path)
     else:
         print(f'cloning {path}: {url}')
-        subprocess.call(['git', 'clone', url, name], cwd=root)
+        run_cmd(['git', 'clone', '--recursive', url, name], cwd=root)
 
 
 for folder, urls in PACK.items():
