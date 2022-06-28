@@ -69,6 +69,22 @@ let g:jedi#show_call_signatures = 1
 " from foo<space> add import and trigger popup
 let g:jedi#smart_auto_mappings = 1
 
+" ale: Asynchronous Lint Engine
+" let g:ale_fixers = {'python': ['black']}
+" let g:ale_fix_on_save = 0
+
+" let g:ale_linters = {'python': ['black']}
+" 1: only use specified linters
+" let g:ale_linters_explicit = 0
+" let g:ale_lint_on_enter = 1
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_insert_leave = 1
+" let g:ale_lint_on_save = 1
+
+let g:ale_sign_column_always = 1
+" let g:airline#extensions#ale#enabled = 1
+let g:ale_echo_msg_format = '[ALE][%severity%][%linter%] %s'
+
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
 
