@@ -1,11 +1,17 @@
 # guoqiao's vimrc
 
 I work as Python Dev and DevOps for 10+ years.
-Vim is my main editor, this repo is the configuration for it, works on both Ubuntu and macOS.
+Vim is my main editor, this repo is the configuration for it.
+
+Key Features:
+
+- work on Ubuntu/Debian Linux and macOS
+- use builtin vim pack to manage plugins
+- configurations for plugins are separate in `vimrc.plugins` and optional
 
 ## Quick Start
 
-On Ubuntu/Debian or macOS:
+On Ubuntu/Debian or macOS, open a terminal:
 ```
 git clone https://github.com/guoqiao/vimrc.git ~/.vim
 cd ~/.vim
@@ -54,3 +60,4 @@ Leader key is `,` in this vimrc. Related shortcuts:
 * vim-multiple-cursors: ctrl + n for next, ctrl + b for prev, ctrl + x to skip, esc
 * tabular: :Tab/=, = is the char to align
 * rm trailing whitespaces: `:FixWhitespace`
+* vim-gh-line: open current code line(s) in browser on github
