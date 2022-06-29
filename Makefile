@@ -8,5 +8,5 @@ brew:
 pip:
 	python3 -m pip install --user -Ur requirements.txt
 
-update:
+plugins:
 	./update-plugins.py
