@@ -11,13 +11,13 @@ Key Features:
 
 ## Quick Start
 
-On Ubuntu/Debian or macOS, open a terminal:
+On Ubuntu or macOS, open a terminal:
 ```
 git clone https://github.com/guoqiao/vimrc.git ~/.vim
 cd ~/.vim
 make apt  # run apt to install deps, for debian/ubuntu
-# make brew  # run brew to install deps, for mac or linux with brew installed
-make plugins  # install or update plugins
+# make brew  # run brew to install deps, for mac or ubuntu with homebrew installed
+make plugins  # optional: install or update plugins if you need plugins
 ```
 
 ## Principles:
