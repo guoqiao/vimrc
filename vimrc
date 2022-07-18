@@ -105,8 +105,10 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
+" python
+autocmd FileType py setlocal smarttab shiftwidth=4 softtabstop=4 tabstop=4
 " frontend indent 2-space
-autocmd FileType html,yaml,yml,css,js   setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType html,yaml,yml,css,js,tf   setlocal shiftwidth=2 softtabstop=2 tabstop=2
 " c indent 8-space
 autocmd FileType c setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
 " makefile: tab used for indent
