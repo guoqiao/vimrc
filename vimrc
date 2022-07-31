@@ -95,7 +95,8 @@ set wildmode=list:longest,full
 
 " default indent 4-space
 set autoindent
-set smartindent
+" not needed
+" set smartindent
 set copyindent
 set cindent
 
