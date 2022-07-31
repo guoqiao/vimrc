@@ -11,6 +11,7 @@ START = [
     'https://github.com/dense-analysis/ale',
     'https://github.com/easymotion/vim-easymotion',
     'https://github.com/ervandew/supertab',
+    'https://github.com/hashivim/vim-terraform',
     'https://github.com/lilydjwg/colorizer',
     'https://github.com/majutsushi/tagbar',
     'https://github.com/mattn/emmet-vim',

@@ -94,3 +94,9 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:gh_line_map = '<leader>gh'
 let g:gh_line_blame_map = '<leader>gb'
 let g:gh_repo_map = '<leader>go'
+
+
+" vim-terraform
+" https://github.com/hashivim/vim-terraform/blob/master/doc/terraform.txt
+let g:terraform_align = 0
+let g:terraform_fmt_on_save = 0
