@@ -7,6 +7,8 @@ let g:lightline = {'colorscheme': 'molokai'}
 
 let g:NERDTreeDirArrows=0
 let g:NERDTreeChDirMode=2
+let g:NERDTreeRemoveFileCmd="mv -t /tmp/ "
+let g:NERDTreeRemoveDirCmd="mv -t /tmp/ "
 " let NERDTreeIgnore = ['\.pyc$']
 noremap tt :NERDTreeToggle<CR>
 noremap ff :NERDTreeFind<CR>
