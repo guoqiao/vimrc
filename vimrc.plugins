@@ -44,7 +44,7 @@ let g:jedi#auto_initialization = 1
 let g:jedi#auto_vim_configuration = 1
 
 " do not enable it by default, it will be very slow
-let g:jedi#popup_on_dot = 1
+let g:jedi#popup_on_dot = 0
 " show doc on demand, default: K
 let g:jedi#documentation_command = "<leader>k"
 " where to show, left|right|top|bottom|winwidth
@@ -60,7 +60,7 @@ let g:jedi#goto_assignments_command = "<leader>a"
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#usages_command = "<leader>n"
 
-let g:jedi#completions_enabled = 1
+let g:jedi#completions_enabled = 0
 " let g:jedi#completions_command = "<Tab>"
 let g:jedi#popup_select_first = 1
 " close autocomplete item docstring preview window while leaving insert mode
