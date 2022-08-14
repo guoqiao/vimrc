@@ -3,11 +3,18 @@
 I work as Python Dev and DevOps for 10+ years.
 Vim is my main editor, this repo is the configuration for it.
 
-Key Features:
+## Key Features
 
 - work on Ubuntu/Debian Linux and macOS
-- use builtin vim pack to manage plugins
-- configurations for plugins are separate in `vimrc.plugins` and optional
+- use builtin vim pack feature to manage plugins
+- plugins are optional
+
+## Principles:
+- keep it lightweight and minimal, only use necessary config and plugins
+- keep it general for both macOS and Ubuntu
+- keep it updated, never stop to absorb new ideas and tools
+- keep it easy to use, use most reasonable and handy shortcuts
+
 
 ## Quick Start
 
@@ -20,11 +27,7 @@ make apt  # run apt to install deps, for debian/ubuntu
 make plugins  # optional: install or update plugins if you need plugins
 ```
 
-## Principles:
-- keep it lightweight and minimal, only use necessary config and plugins
-- keep it general for both macOS and Ubuntu
-- keep it updated, never stop to absorb new ideas and tools
-- keep it easy to use, use most reasonable and handy shortcuts
+If you don't want plugins, just rm `vimrc.plugins`, or comment out the lines at end of `vimrc`.
 
 ## Useful mapping
 * map `;` to `:`, so you don't need to press shift for `:` each time
