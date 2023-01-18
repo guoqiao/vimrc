@@ -7,6 +7,7 @@ START = [
     'https://github.com/airblade/vim-gitgutter',
     'https://github.com/bronson/vim-trailing-whitespace',
     'https://github.com/ctrlpvim/ctrlp.vim',
+    'https://github.com/davidhalter/jedi-vim',
     'https://github.com/dense-analysis/ale',
     'https://github.com/easymotion/vim-easymotion',
     'https://github.com/ervandew/supertab',
