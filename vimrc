@@ -120,8 +120,8 @@ set tags=tags
 
 " map to middle click on linux
 set clipboard=unnamed
-" FIX: right click will enter visual mode in vim8
-set mouse-=a
+" FIX: right click will open menu in neovim 0.8+
+set mouse=
 
 nnoremap ; :
 
