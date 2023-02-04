@@ -1,5 +1,12 @@
-pip
+bandit
 black
+flake8
 jedi
+pip
+pyflakes
+pylint
+#install error
+#pyre
+python-lsp-server
 pynvim
 pyright
