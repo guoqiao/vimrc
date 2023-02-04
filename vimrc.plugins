@@ -103,3 +103,7 @@ let g:gh_repo_map = '<leader>go'
 " https://github.com/hashivim/vim-terraform/blob/master/doc/terraform.txt
 let g:terraform_align = 0
 let g:terraform_fmt_on_save = 0
+
+" indentLine
+" https://github.com/Yggdroot/indentLine
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
