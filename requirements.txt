@@ -10,4 +10,5 @@ pylint
 python-lsp-server
 pynvim
 pyright
+pyyaml
 yamllint
