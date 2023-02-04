@@ -75,13 +75,13 @@ let g:jedi#smart_auto_mappings = 1
 " let g:ale_fixers = {'python': ['black']}
 " let g:ale_fix_on_save = 0
 
-" let g:ale_linters = {'python': ['black']}
+let g:ale_linters = {'python': ['pylint']}
 " 1: only use specified linters
 " let g:ale_linters_explicit = 0
 " let g:ale_lint_on_enter = 1
 " let g:ale_lint_on_text_changed = 'never'
 " let g:ale_lint_on_insert_leave = 1
-" let g:ale_lint_on_save = 1
+let g:ale_lint_on_save = 1
 
 let g:ale_sign_column_always = 1
 " let g:airline#extensions#ale#enabled = 1
