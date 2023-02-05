@@ -3,7 +3,7 @@ apt:
 	sudo apt install --yes exuberant-ctags
 
 brew:
-	brew install ctags jq yq the_silver_searcher ripgrep
+	brew install ctags jq yq the_silver_searcher ripgrep hadolint
 
 pip:
 	python3 -m pip install --user -Ur requirements.txt

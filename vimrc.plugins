@@ -76,7 +76,7 @@ let g:jedi#smart_auto_mappings = 1
 " let g:ale_fix_on_save = 0
 
 " https://github.com/dense-analysis/ale/tree/master/ale_linters/python
-let g:ale_linters = {'python': ['pyflakes'], 'yaml': ['yamllint']}
+let g:ale_linters = {'python': ['pyflakes'], 'yaml': ['yamllint'], 'dockerfile': ['hadolint']}
 " 1: only use specified linters
 " let g:ale_linters_explicit = 0
 " let g:ale_lint_on_enter = 1
