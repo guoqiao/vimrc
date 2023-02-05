@@ -1,3 +1,4 @@
+ansible_lint
 bandit
 black
 flake8
