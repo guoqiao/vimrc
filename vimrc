@@ -87,10 +87,16 @@ set wildmenu
 " press Tab twice: show wildmenu for all match and use Tab again to nav
 set wildmode=list:longest,full
 
-" set foldenable
-" set foldmethod=indent
-" set foldlevelstart=6
-" set foldlevel=99
+" control current fold at cursor: zc: close, zo: open, za: toggle, zr: reduce 1 fold level, zm: 1 more folder level
+" control all parent folds at cursor: zC, zO, zA
+" control all folds in file(you may only need these):
+" zM: More folds, set foldlevel to 0, fold Most/All.
+" zR: Reduce folds, set folderlvel to max, fold Least/Zero.
+" zi: enable/disable fold, toggle doc (current) folding status
+set nofoldenable  " no folding when start, but you can stilluse above cmds to control folding
+set foldmethod=indent
+" set foldlevelstart=99
+" set foldlevel=1
 " set foldnestmax=10
 
 " default indent 4-space
