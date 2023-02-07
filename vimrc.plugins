@@ -79,9 +79,10 @@ let g:jedi#smart_auto_mappings = 1
 " for ansible_lint, add `# vi: ft=ansible.yaml` in file
 let g:ale_linters = {
 \    'python': ['pyflakes'],
-\    'yaml': ['yamllint'],
-\    'dockerfile': ['hadolint'],
+\    'sh': ['shellcheck'],
 \    'make': ['checkmake'],
+\    'dockerfile': ['hadolint'],
+\    'yaml': ['yamllint'],
 \    'ansible': ['ansible_lint'],
 \}
 " let g:ale_linters_explicit = 0
