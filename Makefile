@@ -19,5 +19,9 @@ brew:
 pip:
 	python3 -m pip install --user -Ur requirements.txt
 
+
+npm:
+	npm install -g prettier
+
 plugins:
 	./update-plugins.py
