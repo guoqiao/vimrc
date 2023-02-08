@@ -5,7 +5,16 @@ apt:
 	sudo apt install --yes exuberant-ctags
 
 brew:
-	brew install ctags jq yq the_silver_searcher ripgrep hadolint checkmake shellcheck
+	brew install \
+		actionlint \
+		checkmake \
+		ctags \
+		hadolint \
+		jq \
+		ripgrep \
+		shellcheck \
+		the_silver_searcher \
+		yq
 
 pip:
 	python3 -m pip install --user -Ur requirements.txt
