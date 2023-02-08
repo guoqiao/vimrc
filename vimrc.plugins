@@ -94,6 +94,15 @@ au BufRead,BufNewFile */.github/*/*.y{,a}ml let b:ale_linters = {'yaml': ['yamll
 " let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_save = 1
 
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['black'],
+\   'css': ['prettier'],
+\   'json': ['prettier'],
+\   'yaml': ['prettier']
+\}
+
+let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
 " let g:airline#extensions#ale#enabled = 1
 let g:ale_echo_msg_format = '[ALE][%severity%][%linter%] %s'
