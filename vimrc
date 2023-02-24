@@ -212,7 +212,7 @@ autocmd InsertEnter * set cursorline
 autocmd InsertLeave * set nocursorline
 
 autocmd! bufwritepost vimrc source %
-command FJ % !python3 -m json.tool --indent 4
+command FJ % !python3 -m json.tool --indent 2
 
 cmap w!! w !sudo tee > /dev/null %
 
