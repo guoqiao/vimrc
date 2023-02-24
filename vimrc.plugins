@@ -78,9 +78,10 @@ let g:jedi#smart_auto_mappings = 1
 " https://github.com/dense-analysis/ale/tree/master/ale_linters/python
 " for ansible_lint, add `# vi: ft=ansible.yaml` in file
 let g:ale_linters = {
-\    'python': ['pyflakes'],
+\    'python': ['pylint'],
 \    'sh': ['shellcheck'],
 \    'make': ['checkmake'],
+\    'markdown': [],
 \    'dockerfile': ['hadolint'],
 \    'yaml': ['yamllint'],
 \    'ansible': ['ansible_lint'],
