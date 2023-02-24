@@ -64,3 +64,25 @@ Leader key is `,` in this vimrc. Related shortcuts:
 * tabular: :Tab/=, = is the char to align
 * rm trailing whitespaces: `:FixWhitespace`
 * vim-gh-line: open current code line(s) in browser on github
+
+## Debug Vim
+
+option to start vim/nvim in verbose mode:
+```
+-V[N][logfile]
+```
+N: optional, default to 10, can be 20 or higher.
+logfile: optional, print to terminal when omit
+
+run with verbose mode:
+```
+vim -V
+vim -V20
+vim -V20vim.log
+vim -V20vim.log file.txt
+```
+
+when logfile is provided, in another terminal, tail your log:
+```
+tail -f vim.log
+```
