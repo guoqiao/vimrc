@@ -128,6 +128,12 @@ let g:terraform_fmt_on_save = 0
 
 " indentLine
 " https://github.com/Yggdroot/indentLine
+" toggle with :IndentLinesToggle
+let g:indentLine_enabled = 1
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " vim default 0: off, indentLine set it to 2, which will hide quotes in json file
-let g:indentLine_conceallevel = 1
+let g:indentLine_conceallevel = 2
+let g:indentLine_concealcursor = 'inc'
+" enable indentLine, while still show quotes for json and markdown
+let g:vim_json_conceal = 0
+let g:markdown_syntax_conceal = 0
