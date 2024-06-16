@@ -1,8 +1,7 @@
 .PHONY: all test clean
 
 apt:
-	sudo apt update
-	sudo apt install --yes \
+	which apt && sudo apt update && sudo apt install --yes \
 		git \
 		tig \
 		tree \
@@ -10,7 +9,7 @@ apt:
 		shellcheck \
 		silversearcher-ag \
 		exuberant-ctags \
-		vim
+		vim || true
 
 pip:
 	python3 -m pip install --user -Ur requirements.txt

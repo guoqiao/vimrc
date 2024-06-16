@@ -1,0 +1,90 @@
+# please change this to your own info
+[user]
+    email = geek@hack.com
+    name = geek
+
+[color]
+    ui = true
+
+[push]
+    default = simple
+
+[core]
+    editor = vim
+    # pager = bat
+    # pager = delta
+    # linux/mac: input, win: true
+    # https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings
+    autocrlf = input
+    safecrlf = false
+    compression = 9
+    quotepath = false
+    excludesfile = ~/.gitignore
+
+[pager]
+    status = false
+    branch = false
+
+[interactive]
+    # diffFilter = delta --color-only
+    # diffFilter = delta --side-by-side --line-numbers
+
+[delta]
+    navigate = true
+
+[alias]
+    br = branch
+    bl = branch -l
+    ba = branch -la
+    bc = branch --contains
+    bd = branch -d
+    bdf = branch -D
+    co = checkout
+    cb = checkout -b
+    cp = cherry-pick
+    cpa = cherry-pick --abort
+    cpc = cherry-pick --continue
+    cps = cherry-pick --skip
+    ci = commit
+    cn = commit --no-verify
+    ca = commit --amend
+    cl = config --list
+    dc = diff --cached
+    rmc = rm --cached
+    st = status
+    sub = submodule
+    subu = submodule update --recursive
+    fa = fetch --all
+    forget = rm -r --cached
+    pd = push --delete
+    pdo = push --delete origin
+    re = remote
+    rb = rebase
+    rbi = rebase -i
+    rbm = rebase -i origin/main
+    rbmn = rebase -i origin/main
+    rbc = rebase --continue
+    rba = rebase --abort
+    rbs = rebase --skip
+    ls = ls-files
+    lp = log -p
+    ll = log --oneline
+    lg = log --oneline --graph
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = true
+
+[status]
+    submodulesummary = 1
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[credential]
+    helper = manager
