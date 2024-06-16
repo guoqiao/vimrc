@@ -3,6 +3,15 @@
 I work as Python Dev and DevOps for 10+ years.
 Vim is my main editor, this repo is the configuration for it.
 
+## Quick Start
+
+On Ubuntu or macOS, open a terminal:
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/guoqiao/vimrc/master/install.sh)"
+```
+You can open open the `install.sh` script to see what it does.
+
+
 ## Key Features
 
 - work on Ubuntu/Debian Linux and macOS
@@ -15,17 +24,6 @@ Vim is my main editor, this repo is the configuration for it.
 - keep it updated, never stop to absorb new ideas and tools
 - keep it easy to use, use most reasonable and handy shortcuts
 
-
-## Quick Start
-
-On Ubuntu or macOS, open a terminal:
-```
-git clone https://github.com/guoqiao/vimrc.git ~/.vim
-cd ~/.vim
-make apt  # run apt to install deps, for debian/ubuntu
-# make brew  # run brew to install deps, for mac or ubuntu with homebrew installed
-make plugins  # optional: install or update plugins if you need plugins
-```
 
 If you don't want plugins, just rm `vimrc.plugins`, or comment out the lines at end of `vimrc`.
 
