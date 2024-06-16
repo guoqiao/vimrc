@@ -10,9 +10,9 @@ On Ubuntu or macOS, open a terminal:
 
 ### Full Install with deps and plugins:
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/guoqiao/vimrc/master/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/guoqiao/vimrc/master/setup.sh)"
 ```
-You can open the `install.sh` script to see what it does.
+You can open the `setup.sh` script to see what it does.
 
 ### Minimal Install without deps and plugins:
 If you don't want plugins, you can just use the vimrc file:
