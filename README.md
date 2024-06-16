@@ -1,31 +1,38 @@
 # guoqiao's vimrc
 
-I work as Python Dev and DevOps for 10+ years.
+I work as Python Developer and DevOps for 10+ years.
 Vim is my main editor, this repo is the configuration for it.
+
 
 ## Quick Start
 
 On Ubuntu or macOS, open a terminal:
+
+### Full Install with deps and plugins:
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/guoqiao/vimrc/master/install.sh)"
 ```
-You can open open the `install.sh` script to see what it does.
+You can open the `install.sh` script to see what it does.
+
+### Minimal Install without deps and plugins:
+If you don't want plugins, you can just use the vimrc file:
+```
+wget https://raw.githubusercontent.com/guoqiao/vimrc/master/vimrc -O ~/.vimrc
+```
 
 
 ## Key Features
-
-- work on Ubuntu/Debian Linux and macOS
+- work on Debian/Ubuntu Linux and macOS
 - use builtin vim pack feature to manage plugins
 - plugins are optional
 
+
 ## Principles:
 - keep it lightweight and minimal, only use necessary config and plugins
-- keep it general for both macOS and Ubuntu
+- keep it general for both macOS and Debian/Ubuntu
 - keep it updated, never stop to absorb new ideas and tools
 - keep it easy to use, use most reasonable and handy shortcuts
 
-
-If you don't want plugins, just rm `vimrc.plugins`, or comment out the lines at end of `vimrc`.
 
 ## Useful mapping
 * map `;` to `:`, so you don't need to press shift for `:` each time
