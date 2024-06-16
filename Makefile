@@ -12,6 +12,9 @@ apt:
 		exuberant-ctags \
 		vim
 
+pip:
+	python3 -m pip install --user -Ur requirements.txt
+
 brew:
 	which brew && brew install \
 		actionlint \
@@ -22,15 +25,12 @@ brew:
 		ripgrep \
 		shellcheck \
 		the_silver_searcher \
-		yq
-
-pip:
-	python3 -m pip install --user -Ur requirements.txt
+		yq || true
 
 npm:
-	npm install -g prettier
+	which npm && npm install -g prettier || true
 
 plugins:
 	./update-plugins.py
 
-all: apt brew pip plugins
+all: apt pip brew npm plugins
