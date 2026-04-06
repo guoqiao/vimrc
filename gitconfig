@@ -1,7 +1,12 @@
-# please change this to your own info
-[user]
-    email = geek@hack.com
-    name = geek
+# use env vars for user info
+# export GIT_AUTHOR_NAME="Your Name"
+# export GIT_AUTHOR_EMAIL="your.email@example.com"
+# export GIT_COMMITTER_NAME="Your Name"
+# export GIT_COMMITTER_EMAIL="your.email@example.com"
+
+#[user]
+#    email = geek@hack.com
+#    name = geek
 
 [color]
     ui = true
@@ -34,6 +39,9 @@
 
 [alias]
     br = branch
+    undo = reset --soft HEAD~1
+    amend = commit --amend --no-edit
+    hist = log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
     bl = branch -l
     ba = branch -la
     bc = branch --contains

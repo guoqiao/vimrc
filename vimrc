@@ -82,10 +82,7 @@ set showmatch
 " :tabf  FILE -> find FILE and open in tab
 set path=$PWD/**
 " enable wildmenu above status bar
-set wildmenu
-" press Tab once: show list for all match as prompt
-" press Tab twice: show wildmenu for all match and use Tab again to nav
-set wildmode=list:longest,full
+" (wildmenu and wildmode already set above)
 
 " control current fold at cursor: zc: close, zo: open, za: toggle, zr: reduce 1 fold level, zm: 1 more folder level
 " control all parent folds at cursor: zC, zO, zA
@@ -181,7 +178,7 @@ set guioptions-=L
 " add transparency, must be after colorscheme
 highlight Normal guibg=NONE ctermbg=NONE
 highlight ColorColumn ctermbg=red
-set colorcolumn=88
+set colorcolumn=80
 
 " Cursor in terminal
 " https://vim.fandom.com/wiki/Configuring_the_cursor
