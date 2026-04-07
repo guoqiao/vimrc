@@ -32,4 +32,4 @@ npm:
 plugins:
 	./update-plugins.py
 
-all: apt pip brew npm plugins
+all: brew npm plugins
