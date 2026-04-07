@@ -121,8 +121,12 @@ autocmd FileType make setlocal noexpandtab
 set history=9999
 set tags=tags
 
-" map to middle click on linux
-set clipboard=unnamed
+if has('macunix')
+    set clipboard=unnamed
+else
+    set clipboard=unnamedplus
+endif
+
 " FIX: right click will open menu in neovim 0.8+
 set mouse=
 
