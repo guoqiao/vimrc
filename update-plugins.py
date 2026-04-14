@@ -1,37 +1,42 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 import subprocess
 from pathlib import Path
 
 START = [
-    'https://github.com/airblade/vim-gitgutter',
-    'https://github.com/bronson/vim-trailing-whitespace',
-    'https://github.com/ctrlpvim/ctrlp.vim',
-    #  'https://github.com/davidhalter/jedi-vim',
-    'https://github.com/dense-analysis/ale',
-    'https://github.com/easymotion/vim-easymotion',
-    'https://github.com/ervandew/supertab',
-    'https://github.com/hashivim/vim-terraform',
-    'https://github.com/lilydjwg/colorizer',
-    'https://github.com/majutsushi/tagbar',
-    'https://github.com/mattn/emmet-vim',
-    'https://github.com/michaeljsmith/vim-indent-object',
+    # tt: show tree, ff: reveal file in tree
     'https://github.com/preservim/nerdtree',
-    'https://github.com/ruanyl/vim-gh-line',
+    # :FixWhitespace to rm tailing white spaces
+    'https://github.com/bronson/vim-trailing-whitespace',
+    # ctrl p to select file
+    'https://github.com/ctrlpvim/ctrlp.vim',
+    # leader leader w
+    'https://github.com/easymotion/vim-easymotion',
+    # TT to show tags
+    'https://github.com/majutsushi/tagbar',
+    # leader c c to comment, leader c i to toggle comment
     'https://github.com/scrooloose/nerdcommenter',
-    'https://github.com/tell-k/vim-autopep8',
+    # use % to jump to match brackets
     'https://github.com/tmhedberg/matchit',
-    'https://github.com/tpope/vim-fugitive',
     'https://github.com/tpope/vim-repeat',
+    # change surroundings:
+    # cs"':  "Hi" -> 'Hi'
+    # cst": <p>Hi</p> -> "Hi"
+    # cs"<q>: "Hi" -> <q>Hi</q>
+    # ds": "Hi" -> Hi
+    # yss/vit
     'https://github.com/tpope/vim-surround',
-    'https://github.com/vim-airline/vim-airline',
-    'https://github.com/vim-scripts/YankRing.vim',
+    # vii to select current indent level
+    'https://github.com/michaeljsmith/vim-indent-object',
+    # show vertical indent lines
     'https://github.com/Yggdroot/indentLine',
+    # show status line
+    'https://github.com/vim-airline/vim-airline',
+    # show color for color code
+    'https://github.com/BourgeoisBear/clrzr',
 ]
 
 
 OPT = [
-    'https://github.com/morhetz/gruvbox',
-    'https://github.com/sjl/badwolf',
     'https://github.com/tomasr/molokai',
 ]
 
