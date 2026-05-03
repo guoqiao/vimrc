@@ -31,8 +31,6 @@ START = [
     'https://github.com/Yggdroot/indentLine',
     # show status line
     'https://github.com/vim-airline/vim-airline',
-    # show color for color code
-    'https://github.com/BourgeoisBear/clrzr',
 ]
 
 
