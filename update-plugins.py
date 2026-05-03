@@ -17,6 +17,7 @@ START = [
     'https://github.com/scrooloose/nerdcommenter',
     # use % to jump to match brackets
     'https://github.com/tmhedberg/matchit',
+    # make builtin . cmd more powerful
     'https://github.com/tpope/vim-repeat',
     # change surroundings:
     # cs"':  "Hi" -> 'Hi'
