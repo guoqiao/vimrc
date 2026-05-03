@@ -31,11 +31,12 @@ START = [
     'https://github.com/Yggdroot/indentLine',
     # show status line
     'https://github.com/vim-airline/vim-airline',
+    # color schema
+    'https://github.com/tomasr/molokai',
 ]
 
 
 OPT = [
-    'https://github.com/tomasr/molokai',
 ]
 
 
