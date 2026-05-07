@@ -66,7 +66,6 @@ Leader key is `,` in this vimrc. Related shortcuts:
 * vim-indent-object: vii, select text in current indent level
 * vim-multiple-cursors: ctrl + n for next, ctrl + b for prev, ctrl + x to skip, esc
 * tabular: :Tab/=, = is the char to align
-* rm trailing whitespaces: `:FixWhitespace`
 * vim-gh-line: open current code line(s) in browser on github
 
 ## Debug Vim

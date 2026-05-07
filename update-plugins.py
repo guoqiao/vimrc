@@ -5,8 +5,6 @@ from pathlib import Path
 START = [
     # tt: show tree, ff: reveal file in tree
     'https://github.com/preservim/nerdtree',
-    # :FixWhitespace to rm tailing white spaces
-    'https://github.com/bronson/vim-trailing-whitespace',
     # ctrl p to select file
     'https://github.com/ctrlpvim/ctrlp.vim',
     # leader leader w
@@ -15,8 +13,6 @@ START = [
     'https://github.com/majutsushi/tagbar',
     # leader c c to comment, leader c i to toggle comment
     'https://github.com/scrooloose/nerdcommenter',
-    # use % to jump to match brackets
-    'https://github.com/tmhedberg/matchit',
     # make builtin . cmd more powerful
     'https://github.com/tpope/vim-repeat',
     # change surroundings:
@@ -36,8 +32,6 @@ START = [
     'https://github.com/airblade/vim-gitgutter',
     # async linting and fixing
     'https://github.com/dense-analysis/ale',
-    # show status line
-    'https://github.com/vim-airline/vim-airline',
     # color schema
     'https://github.com/tomasr/molokai',
 ]
