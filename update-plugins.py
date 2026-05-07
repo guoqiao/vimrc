@@ -37,16 +37,6 @@ START = [
 ]
 
 
-OPT = [
-]
-
-
-PACK = {
-    "start": START,
-    "opt": OPT,
-}
-
-
 def run_cmd(cmd, cwd='.'):
     print('running cmd in {}: {}'.format(cwd, ' '.join(cmd)))
     subprocess.run(cmd, cwd=cwd)
@@ -64,8 +54,13 @@ def clone_or_update_repo(root, url):
         run_cmd(['git', 'clone', '--recursive', url, name], cwd=root)
 
 
-for folder, urls in PACK.items():
-    root = Path(f'pack/plugins/{folder}')
+def main():
+    root = Path(f'pack/plugins/start')
     root.mkdir(parents=True, exist_ok=True)
-    for url in urls:
+    for url in START:
         clone_or_update_repo(root, url)
+
+
+if __name__ == "__main__":
+    main()
+
