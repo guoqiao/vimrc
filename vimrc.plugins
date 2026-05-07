@@ -25,8 +25,11 @@ let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_working_path_mode = 'ra'
-" brew install fd
-let g:ctrlp_user_command = 'fd'
+if executable('fd')
+  let g:ctrlp_user_command = 'fd --type f'
+else
+  let g:ctrlp_user_command = 'find %s -type f'
+endif
 
 " vim-gitgutter
 let g:gitgutter_map_keys = 0
