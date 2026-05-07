@@ -16,15 +16,10 @@ pip:
 
 brew:
 	which brew && brew install \
-		actionlint \
-		checkmake \
-		ctags \
-		hadolint \
-		jq \
-		ripgrep \
+		jq yq \
+		ripgrep the_silver_searcher
 		shellcheck \
-		the_silver_searcher \
-		yq || true
+		fd
 
 npm:
 	which npm && npm install -g prettier || true

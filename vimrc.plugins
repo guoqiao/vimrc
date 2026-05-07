@@ -33,7 +33,7 @@ let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_tabpage_position  = 'a'
 let g:ctrlp_working_path_mode = 'ra'
-" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --others --exclude-standard', 'find %s -type f']
+" brew install fd
 let g:ctrlp_user_command = 'fd'
 
 " jedi-vim
