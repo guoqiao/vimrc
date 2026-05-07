@@ -28,6 +28,50 @@ let g:ctrlp_working_path_mode = 'ra'
 " brew install fd
 let g:ctrlp_user_command = 'fd'
 
+" vim-gitgutter
+let g:gitgutter_map_keys = 0
+let g:gitgutter_sign_priority = 5
+nnoremap <leader>hn :GitGutterNextHunk<CR>
+nnoremap <leader>hp :GitGutterPrevHunk<CR>
+nnoremap <leader>hv :GitGutterPreviewHunk<CR>
+nnoremap <leader>hs :GitGutterStageHunk<CR>
+nnoremap <leader>hu :GitGutterUndoHunk<CR>
+
+" ALE: Asynchronous Lint Engine
+let g:ale_linters = {
+\    'python': ['pylint'],
+\    'sh': ['shellcheck'],
+\    'make': ['checkmake'],
+\    'dockerfile': ['hadolint'],
+\    'yaml': ['yamllint'],
+\}
+
+augroup user_ale
+  autocmd!
+  " Enable actionlint only for GitHub workflow YAML files.
+  autocmd BufRead,BufNewFile */.github/*/*.y{,a}ml let b:ale_linters = {'yaml': ['yamllint', 'actionlint']}
+augroup END
+
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 0
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['black'],
+\   'css': ['prettier'],
+\   'json': ['prettier'],
+\   'yaml': ['prettier'],
+\}
+let g:ale_completion_enabled = 0
+let g:ale_sign_column_always = 1
+let g:ale_echo_msg_format = '[ALE][%severity%][%linter%] %s'
+nnoremap <F10> :ALEGoToDefinition<CR>
+nnoremap <F11> :ALEFindReferences<CR>
+
+" vim-fugitive uses its default commands and mappings.
+
 " indentLine
 " https://github.com/Yggdroot/indentLine
 " toggle with :IndentLinesToggle

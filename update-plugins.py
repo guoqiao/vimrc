@@ -30,6 +30,12 @@ START = [
     'https://github.com/michaeljsmith/vim-indent-object',
     # show vertical indent lines
     'https://github.com/Yggdroot/indentLine',
+    # git commands from vim: :Git, :Gdiffsplit, :Git blame
+    'https://github.com/tpope/vim-fugitive',
+    # show git diff signs in the gutter
+    'https://github.com/airblade/vim-gitgutter',
+    # async linting and fixing
+    'https://github.com/dense-analysis/ale',
     # show status line
     'https://github.com/vim-airline/vim-airline',
     # color schema
