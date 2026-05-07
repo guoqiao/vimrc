@@ -17,6 +17,11 @@ let NERDSpaceDelims = 1  " add space after comment delim for pep8
 noremap <C-_> :call NERDComment(0, "toggle")<cr>
 
 noremap TT :TagbarToggle<CR>
+if executable('ctags-universal')
+  let g:tagbar_ctags_bin = 'ctags-universal'
+elseif executable('universal-ctags')
+  let g:tagbar_ctags_bin = 'universal-ctags'
+endif
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_foldlevel = 0

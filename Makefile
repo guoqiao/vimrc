@@ -8,13 +8,14 @@ apt:
 		jq \
 		shellcheck \
 		silversearcher-ag \
-		exuberant-ctags \
+		universal-ctags \
 		vim || true
 
 pip:
 	python3 -m pip install --user -Ur requirements.txt
 
 brew:
+	which brew && brew unlink ctags || true
 	which brew && brew install \
 		tree \
 		bat \
@@ -22,7 +23,7 @@ brew:
 		jq \
 		actionlint \
 		checkmake \
-		ctags \
+		universal-ctags \
 		hadolint \
 		jq \
 		ripgrep \
