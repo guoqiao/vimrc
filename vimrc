@@ -1,5 +1,9 @@
-" this file is aimed to use vim without plugins
-" drop it on any linux or mac, start your work
+" This file is aimed to use vim without plugins:
+" drop it on any linux or mac, start your work.
+
+" ---------------------------------------------------------------------------
+" Core startup
+" ---------------------------------------------------------------------------
 set nocompatible
 
 syntax on
@@ -8,52 +12,66 @@ filetype on
 filetype indent on
 filetype plugin on
 
-" bottom status bar
+" ---------------------------------------------------------------------------
+" Interface: status, gutter, and editing area
+" ---------------------------------------------------------------------------
+
+" Bottom status bar
 set showmode
 set showcmd
 set ruler
 set laststatus=2
 set scrolloff=10
 
-" left side bar
+" Left side bar
 set number
 set relativenumber
 " vi doesn't support this
 " set signcolumn=yes
 
-" middle working area
+" Middle working area
 set lazyredraw
 set undolevels=32
 set backspace=eol,start,indent
 set iskeyword+=-
-" list mode, show tabs and spaces
+
+" List mode, show tabs and spaces
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
+
 " this will force cursor jump to new line
 " set textwidth=80
 set nowrap
 set linebreak
 
+" Colors
 set background=dark
 " :colorscheme <Tab> --> list all
 " /usr/share/vim/vim80/colors
 colorscheme desert
 
-" file
+" ---------------------------------------------------------------------------
+" Files, buffers, and undo
+" ---------------------------------------------------------------------------
 set hidden
 set autoread
 set wildignore=*.o,*~,*.pyc
-set encoding=utf8
+set encoding=utf-8
 set ffs=unix,dos,mac
+
 " Turn backup off, since most stuff is in git.
 set nobackup
 set nowritebackup
 set noswapfile
+
 " make it possible to undo when reopen
 set undofile
 " // indicates that the file has abs path(?)
 set undodir=~/.vim/.undo//
 
+" ---------------------------------------------------------------------------
+" Command line, completion, and file lookup
+" ---------------------------------------------------------------------------
 " :ls :buffers
 " :bn(ext) :bp(rev)
 " b <Tab>
@@ -61,20 +79,8 @@ set undodir=~/.vim/.undo//
 set wildmenu
 set wildmode=longest:list,full
 set wildchar=<Tab> wildcharm=<C-Z>
-
-" No annoying sound on errors
-set noerrorbells
-set visualbell
-set t_vb=
-set tm=500
-
-" search
-" with ingorecase if all lowercase, otherwise case sensitive
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
-set showmatch
+set history=9999
+set tags=tags
 
 " add all files to find path
 " :find  FILE -> find FILE and open in current window
@@ -84,6 +90,26 @@ set path=$PWD/**
 " enable wildmenu above status bar
 " (wildmenu and wildmode already set above)
 
+" ---------------------------------------------------------------------------
+" Feedback and search
+" ---------------------------------------------------------------------------
+" No annoying sound on errors
+set noerrorbells
+set visualbell
+set t_vb=
+set tm=500
+
+" with ignorecase if all lowercase, otherwise case sensitive
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set showmatch
+let loaded_matchparen = 1 " disable matching parentheses
+
+" ---------------------------------------------------------------------------
+" Folding
+" ---------------------------------------------------------------------------
 " control current fold at cursor: zc: close, zo: open, za: toggle, zr: reduce 1 fold level, zm: 1 more folder level
 " control all parent folds at cursor: zC, zO, zA
 " control all folds in file(you may only need these):
@@ -96,6 +122,9 @@ set foldmethod=indent
 " set foldlevel=1
 " set foldnestmax=10
 
+" ---------------------------------------------------------------------------
+" Indentation
+" ---------------------------------------------------------------------------
 " default indent 4-space
 set autoindent
 " not needed
@@ -109,18 +138,21 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
-" python
-autocmd FileType py setlocal smarttab shiftwidth=4 softtabstop=4 tabstop=4
-" frontend indent 2-space
-autocmd FileType html,yaml,yml,css,js,tf   setlocal shiftwidth=2 softtabstop=2 tabstop=2
-" c indent 8-space
-autocmd FileType c setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
-" makefile: tab used for indent
-autocmd FileType make setlocal noexpandtab
+augroup user_indent
+  autocmd!
+  " python
+  autocmd FileType python setlocal smarttab shiftwidth=4 softtabstop=4 tabstop=4
+  " frontend and infrastructure indent 2-space
+  autocmd FileType html,yaml,css,javascript,terraform setlocal shiftwidth=2 softtabstop=2 tabstop=2
+  " c indent 8-space
+  autocmd FileType c setlocal shiftwidth=8 softtabstop=8 tabstop=8 noexpandtab
+  " makefile: tab used for indent
+  autocmd FileType make setlocal noexpandtab
+augroup END
 
-set history=9999
-set tags=tags
-
+" ---------------------------------------------------------------------------
+" Platform integration
+" ---------------------------------------------------------------------------
 if has('macunix')
     set clipboard=unnamed
 else
@@ -129,6 +161,12 @@ endif
 
 " FIX: right click will open menu in neovim 0.8+
 set mouse=
+
+" ---------------------------------------------------------------------------
+" Mappings
+" ---------------------------------------------------------------------------
+" let mapleader = "\<Space>"
+let mapleader = ","
 
 nnoremap ; :
 
@@ -159,11 +197,6 @@ nnoremap tc :tabclose<CR>
 nnoremap tm :tabmove<CR>
 nnoremap to :tabonly<CR>
 
-let loaded_matchparen = 1 " disable math parenthiese
-
-" let mapleader = "\<Space>"
-let mapleader = ","
-
 noremap <leader>h :nohlsearch<CR>
 noremap <leader>w :w<CR>
 noremap <leader>e :e!<CR>
@@ -175,6 +208,9 @@ noremap <leader>sv :source $MYVIMRC<CR>
 
 set pastetoggle=<F2>
 
+" ---------------------------------------------------------------------------
+" Appearance details
+" ---------------------------------------------------------------------------
 set t_Co=256
 set guioptions-=r
 set guioptions-=L
@@ -184,6 +220,9 @@ highlight Normal guibg=NONE ctermbg=NONE
 highlight ColorColumn ctermbg=red
 set colorcolumn=80
 
+" ---------------------------------------------------------------------------
+" Cursor
+" ---------------------------------------------------------------------------
 " Cursor in terminal
 " https://vim.fandom.com/wiki/Configuring_the_cursor
 " 1 or 0 -> blinking block
@@ -208,18 +247,34 @@ set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
 
-" only show cursorline in insert mode
-autocmd InsertEnter * set cursorline
-autocmd InsertLeave * set nocursorline
+" ---------------------------------------------------------------------------
+" Autocommands and custom commands
+" ---------------------------------------------------------------------------
+augroup user_cursorline
+  autocmd!
+  " only show cursorline in insert mode
+  autocmd InsertEnter * set cursorline
+  autocmd InsertLeave * set nocursorline
+augroup END
 
-autocmd! bufwritepost vimrc source %
-command FJ % !python3 -m json.tool --indent 2
+augroup user_vimrc
+  autocmd!
+  autocmd BufWritePost vimrc source %
+augroup END
+
+command! FJ % !python3 -m json.tool --indent 2
 
 cmap w!! w !sudo tee > /dev/null %
 
+" ---------------------------------------------------------------------------
+" References
+" ---------------------------------------------------------------------------
 " good vim reference
 " https://www.tutorialdocs.com/article/vim-configuration.html
 
+" ---------------------------------------------------------------------------
+" Optional plugin config
+" ---------------------------------------------------------------------------
 " load plugins if available
 if filereadable(expand("~/.vim/vimrc.plugins"))
   source ~/.vim/vimrc.plugins
