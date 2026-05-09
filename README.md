@@ -12,6 +12,10 @@ On Ubuntu or macOS, open a terminal:
 ```
 git clone git@github.com:guoqiao/vimrc.git ~/.vim; cd ~/.vim; make all
 ```
+This installs only Vim and the tools referenced by this config:
+`vim`, `git`, `fd`, `universal-ctags`, `shellcheck`, `checkmake`, `hadolint`,
+`actionlint`, `prettier`, plus the Python linters/formatters in
+`requirements.txt`.
 
 ### Minimal Install without deps and plugins:
 If you don't want plugins, you can just use the vimrc file:
