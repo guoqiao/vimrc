@@ -1,7 +1,4 @@
-.PHONY: all brew pip plugins
-
-pip:
-	python3 -m pip install --user -Ur requirements.txt
+.PHONY: all brew plugins
 
 brew:
 	brew install \
@@ -19,4 +16,4 @@ brew:
 plugins:
 	./update-plugins.py
 
-all: brew pip plugins
+all: brew plugins
