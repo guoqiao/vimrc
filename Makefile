@@ -1,40 +1,22 @@
-.PHONY: all test clean
-
-apt:
-	which apt && sudo apt update && sudo apt install --yes \
-		git \
-		tig \
-		tree \
-		jq \
-		shellcheck \
-		silversearcher-ag \
-		universal-ctags \
-		vim || true
+.PHONY: all brew pip plugins
 
 pip:
 	python3 -m pip install --user -Ur requirements.txt
 
 brew:
-	which brew && brew unlink ctags || true
-	which brew && brew install \
-		tree \
-		bat \
-		zsh \
-		jq \
+	brew install \
+		vim \
+		git \
+		python \
 		actionlint \
 		checkmake \
-		universal-ctags \
+		fd \
 		hadolint \
-		jq \
-		ripgrep \
+		prettier \
 		shellcheck \
-		the_silver_searcher \
-		yq || true
-
-npm:
-	which npm && npm install -g prettier || true
+		universal-ctags
 
 plugins:
 	./update-plugins.py
 
-all: brew npm plugins
+all: brew pip plugins
