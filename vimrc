@@ -161,6 +161,9 @@ endif
 " FIX: right click will open menu in neovim 0.8+
 set mouse=
 
+" Keep classic terminal control-key handling for Ctrl+h/j/k/l window movement.
+set keyprotocol=
+
 " ---------------------------------------------------------------------------
 " Mappings
 " ---------------------------------------------------------------------------
