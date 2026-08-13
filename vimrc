@@ -208,6 +208,9 @@ noremap <leader>x :x<CR>
 noremap <leader>ev :e $MYVIMRC<CR>
 noremap <leader>sv :source $MYVIMRC<CR>
 
+" trim trailing whitespaces
+nnoremap <leader>ss :%s/\s\+$//e<CR>
+
 set pastetoggle=<F2>
 
 " ---------------------------------------------------------------------------
